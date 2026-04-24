@@ -57,6 +57,24 @@
     build: {
       target: 'esnext',
       outDir: 'dist',
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('node_modules/@radix-ui')) {
+              return 'radix-ui';
+            }
+            if (id.includes('node_modules/recharts') || id.includes('node_modules/d3')) {
+              return 'charts';
+            }
+            if (id.includes('node_modules/lucide-react')) {
+              return 'icons';
+            }
+          },
+        },
+      },
     },
     server: {
       port: 3000,
