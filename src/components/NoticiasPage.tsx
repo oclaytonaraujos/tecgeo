@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, Calendar, Tag, User, Clock, ChevronRight, Sparkles, TrendingUp, Search, X, ChevronLeft, ChevronsLeft, ChevronsRight } from 'lucide-react';
-import { newsData, NewsItem, ContentBlock } from '../data/news';
+import { NewsItem, ContentBlock } from '../data/news';
+import { supabase } from '../lib/supabase';
 import { NewsCard } from './NewsCard';
 import { ShareButtons } from './ShareButtons';
 import { PhotoGallery } from './PhotoGallery';
@@ -110,15 +111,23 @@ export function NoticiasPage({ onNavigate, initialNewsId }: NoticiasPageProps) {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [allNews, setAllNews] = useState<NewsItem[]>(newsData);
+  const [allNews, setAllNews] = useState<NewsItem[]>([]);
   const newsPerPage = 6;
 
-  // Carregar notícias do localStorage se disponível
   useEffect(() => {
-    const storedNews = localStorage.getItem('newsData');
-    if (storedNews) {
-      setAllNews(JSON.parse(storedNews));
-    }
+    supabase
+      .from('news')
+      .select('*')
+      .order('date', { ascending: false })
+      .then(({ data }) => {
+        if (data) setAllNews(data.map(r => ({
+          id: r.id, title: r.title, excerpt: r.excerpt,
+          content: r.content, image: r.image, date: r.date,
+          category: r.category, featured: r.featured,
+          author: r.author, readingTime: r.reading_time,
+          photoAlbum: r.photo_album,
+        })));
+      });
   }, []);
 
   // Set initial news if provided

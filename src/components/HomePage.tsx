@@ -1,7 +1,8 @@
 import { CheckCircle2, MapPin, Award, Users, Zap, Ruler, Leaf, FileCheck, Tractor, Map, GitBranch, FileText, Building2, ArrowRight, ChevronLeft, ChevronRight, Sparkles, TrendingUp, Shield, Newspaper, HelpCircle, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { newsData, NewsItem } from '../data/news';
+import { NewsItem } from '../data/news';
+import { supabase } from '../lib/supabase';
 import { NewsCard } from './NewsCard';
 
 interface HomePageProps {
@@ -11,14 +12,23 @@ interface HomePageProps {
 export function HomePage({ onNavigate }: HomePageProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [allNews, setAllNews] = useState<NewsItem[]>(newsData);
+  const [allNews, setAllNews] = useState<NewsItem[]>([]);
 
-  // Carregar notícias do localStorage se disponível
   useEffect(() => {
-    const storedNews = localStorage.getItem('newsData');
-    if (storedNews) {
-      setAllNews(JSON.parse(storedNews));
-    }
+    supabase
+      .from('news')
+      .select('*')
+      .order('date', { ascending: false })
+      .limit(6)
+      .then(({ data }) => {
+        if (data) setAllNews(data.map(r => ({
+          id: r.id, title: r.title, excerpt: r.excerpt,
+          content: r.content, image: r.image, date: r.date,
+          category: r.category, featured: r.featured,
+          author: r.author, readingTime: r.reading_time,
+          photoAlbum: r.photo_album,
+        })));
+      });
   }, []);
 
   const slides = [

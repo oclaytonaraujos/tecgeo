@@ -1,7 +1,10 @@
-import { Mail, MapPin, Phone, Clock, Send, User, MessageSquare, MapPinned, Briefcase, Building } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, Send, User, MessageSquare, MapPinned, Briefcase, Building, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { SuccessModal } from './SuccessModal';
+import { supabase } from '../lib/supabase';
+
+const PHONE_REGEX = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
 
 export function ContatoPage() {
   const [formData, setFormData] = useState({
@@ -17,36 +20,57 @@ export function ContatoPage() {
 
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validate = () => {
+    const errors: Record<string, string> = {};
+    if (!formData.name.trim() || formData.name.trim().length < 3)
+      errors.name = 'Informe seu nome completo (mín. 3 caracteres).';
+    if (!PHONE_REGEX.test(formData.phone.replace(/\s/g, '')))
+      errors.phone = 'Telefone inválido. Ex: (64) 99999-9999';
+    if (!formData.municipality.trim())
+      errors.municipality = 'Informe o município da propriedade.';
+    if (!formData.areaSize.trim())
+      errors.areaSize = 'Informe o tamanho aproximado da área.';
+    if (!formData.service)
+      errors.service = 'Selecione o serviço de interesse.';
+    return errors;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Salvar dados no localStorage
-    const contactData = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-      id: Date.now().toString(),
-    };
-    
-    const existingData = localStorage.getItem('contactSubmissions');
-    const submissions = existingData ? JSON.parse(existingData) : [];
-    submissions.push(contactData);
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-    
-    // Mostrar modal de sucesso
-    setShowSuccessModal(true);
-    
-    // Limpar formulário
-    setFormData({
-      name: '',
-      phone: '',
-      whatsapp: '',
-      municipality: '',
-      areaSize: '',
-      propertyStatus: '',
-      service: '',
-      message: '',
+    setSubmitError(null);
+
+    const errors = validate();
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+    setSubmitting(true);
+
+    const { error } = await supabase.from('contact_submissions').insert({
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      whatsapp: formData.whatsapp.trim() || null,
+      municipality: formData.municipality.trim(),
+      area_size: formData.areaSize.trim(),
+      property_status: formData.propertyStatus || null,
+      service: formData.service,
+      message: formData.message.trim() || null,
     });
+
+    setSubmitting(false);
+
+    if (error) {
+      setSubmitError('Erro ao enviar formulário. Por favor, tente novamente ou entre em contato pelo WhatsApp.');
+      return;
+    }
+
+    setShowSuccessModal(true);
+    setFormData({ name: '', phone: '', whatsapp: '', municipality: '', areaSize: '', propertyStatus: '', service: '', message: '' });
   };
 
   const services = [
@@ -110,6 +134,14 @@ export function ContatoPage() {
 
                 {/* Formulário */}
                 <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                  {/* Erro de envio */}
+                  {submitError && (
+                    <div className="flex items-start gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                      <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
+                      {submitError}
+                    </div>
+                  )}
+
                   {/* Nome completo */}
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -126,15 +158,15 @@ export function ContatoPage() {
                       <input
                         type="text"
                         id="name"
-                        required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) => { setFormData({ ...formData, name: e.target.value }); setFieldErrors(prev => ({ ...prev, name: '' })); }}
                         onFocus={() => setFocusedField('name')}
                         onBlur={() => setFocusedField(null)}
-                        className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300"
+                        className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.name ? 'border-red-400' : 'border-gray-200'}`}
                         placeholder="Digite seu nome completo"
                       />
                     </div>
+                    {fieldErrors.name && <p className="mt-1 text-xs text-red-600">{fieldErrors.name}</p>}
                   </motion.div>
 
                   {/* Telefone/WhatsApp - Grid 2 colunas */}
@@ -154,15 +186,15 @@ export function ContatoPage() {
                         <input
                           type="tel"
                           id="phone"
-                          required
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => { setFormData({ ...formData, phone: e.target.value }); setFieldErrors(prev => ({ ...prev, phone: '' })); }}
                           onFocus={() => setFocusedField('phone')}
                           onBlur={() => setFocusedField(null)}
-                          className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300"
+                          className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.phone ? 'border-red-400' : 'border-gray-200'}`}
                           placeholder="(00) 00000-0000"
                         />
                       </div>
+                      {fieldErrors.phone && <p className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
                     </motion.div>
 
                     <motion.div
@@ -180,15 +212,15 @@ export function ContatoPage() {
                         <input
                           type="text"
                           id="municipality"
-                          required
                           value={formData.municipality}
-                          onChange={(e) => setFormData({ ...formData, municipality: e.target.value })}
+                          onChange={(e) => { setFormData({ ...formData, municipality: e.target.value }); setFieldErrors(prev => ({ ...prev, municipality: '' })); }}
                           onFocus={() => setFocusedField('municipality')}
                           onBlur={() => setFocusedField(null)}
-                          className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300"
+                          className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.municipality ? 'border-red-400' : 'border-gray-200'}`}
                           placeholder="Ex: Goiânia"
                         />
                       </div>
+                      {fieldErrors.municipality && <p className="mt-1 text-xs text-red-600">{fieldErrors.municipality}</p>}
                     </motion.div>
                   </div>
 
@@ -209,15 +241,15 @@ export function ContatoPage() {
                         <input
                           type="text"
                           id="areaSize"
-                          required
                           value={formData.areaSize}
-                          onChange={(e) => setFormData({ ...formData, areaSize: e.target.value })}
+                          onChange={(e) => { setFormData({ ...formData, areaSize: e.target.value }); setFieldErrors(prev => ({ ...prev, areaSize: '' })); }}
                           onFocus={() => setFocusedField('areaSize')}
                           onBlur={() => setFocusedField(null)}
-                          className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300"
+                          className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.areaSize ? 'border-red-400' : 'border-gray-200'}`}
                           placeholder="Ex: 50 hectares"
                         />
                       </div>
+                      {fieldErrors.areaSize && <p className="mt-1 text-xs text-red-600">{fieldErrors.areaSize}</p>}
                     </motion.div>
 
                     <motion.div
@@ -265,21 +297,19 @@ export function ContatoPage() {
                       </div>
                       <select
                         id="service"
-                        required
                         value={formData.service}
-                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                        onChange={(e) => { setFormData({ ...formData, service: e.target.value }); setFieldErrors(prev => ({ ...prev, service: '' })); }}
                         onFocus={() => setFocusedField('service')}
                         onBlur={() => setFocusedField(null)}
-                        className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 appearance-none cursor-pointer"
+                        className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 appearance-none cursor-pointer ${fieldErrors.service ? 'border-red-400' : 'border-gray-200'}`}
                       >
                         <option value="">Selecione um serviço</option>
                         {services.map((service, index) => (
-                          <option key={index} value={service}>
-                            {service}
-                          </option>
+                          <option key={index} value={service}>{service}</option>
                         ))}
                       </select>
                     </div>
+                    {fieldErrors.service && <p className="mt-1 text-xs text-red-600">{fieldErrors.service}</p>}
                   </motion.div>
 
                   {/* Situação do imóvel - Textarea */}
@@ -314,10 +344,23 @@ export function ContatoPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                     type="submit"
-                    className="group w-full bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white py-5 rounded-xl hover:shadow-2xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3 text-lg shadow-lg"
+                    disabled={submitting}
+                    className="group w-full bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white py-5 rounded-xl hover:shadow-2xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3 text-lg shadow-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <Send size={22} className="group-hover:translate-x-1 transition-transform" />
-                    Solicitar diagnóstico gratuito
+                    {submitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                        </svg>
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={22} className="group-hover:translate-x-1 transition-transform" />
+                        Solicitar diagnóstico gratuito
+                      </>
+                    )}
                   </motion.button>
 
                   {/* Nota de privacidade */}

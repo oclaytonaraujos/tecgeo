@@ -216,12 +216,6 @@ export function Footer({ onNavigate }: FooterProps) {
             >
               Termos de Uso
             </button>
-            <button 
-              onClick={() => onNavigate('admin')}
-              className="hover:text-white transition-colors"
-            >
-              Admin
-            </button>
           </div>
         </div>
       </div>
