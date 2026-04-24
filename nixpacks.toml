@@ -1,2 +1,5 @@
+[variables]
+NIXPACKS_STATIC_ASSETS_PATH = "dist"
+
 [phases.build]
 cmds = ["npm ci", "npm run build"]
