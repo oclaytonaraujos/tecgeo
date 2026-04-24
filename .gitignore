@@ -2,7 +2,6 @@
 node_modules/
 
 # Build
-build/
 dist/
 
 # Variáveis de ambiente (NUNCA commitar)
@@ -17,11 +16,8 @@ npm-debug.log*
 # Editor
 .vscode/
 .idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
 *.sw?
+
 
 # OS
 .DS_Store
