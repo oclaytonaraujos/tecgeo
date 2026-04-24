@@ -1,5 +1,5 @@
-[variables]
-NIXPACKS_STATIC_ASSETS_PATH = "dist"
-
 [phases.build]
 cmds = ["npm ci", "npm run build"]
+
+[start]
+cmd = "npx --yes serve -s dist -l ${PORT:-80}"
