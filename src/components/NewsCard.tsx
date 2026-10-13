@@ -100,3 +100,4 @@ export function NewsCard({ title, excerpt, image, date, category, onClick, featu
     </motion.div>
   );
 }
+

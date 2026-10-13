@@ -1,4 +1,4 @@
-import { Ruler, Leaf, FileCheck, Building2, Tractor, GitBranch, Map, FileText, CheckCircle, Award, Users, Zap, ArrowRight, Sparkles, BadgeDollarSign, Calendar, ShieldCheck, TrendingUp, Satellite, Camera, Compass, Cpu, FileStack, MapPinned, Stamp, Building, Split, Star } from 'lucide-react';
+import { Ruler, Leaf, FileCheck, Building2, Tractor, GitBranch, Map, FileText, CheckCircle, Award, Users, Zap, ArrowRight, Sparkles, BadgeDollarSign, Calendar, ShieldCheck, TrendingUp, Satellite, Camera, Compass, Cpu, FileStack, MapPinned, Stamp, Building, Split, Star, Briefcase } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ServicosPageProps {
@@ -24,9 +24,9 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
     {
       icon: FileCheck,
       title: 'Licenciamento Ambiental',
-      description: 'Obtenção de licenças ambientais para agricultura (irrigada ou sequeiro) e pecuária extensiva. Outorga de água ou dispensa conforme atividade. Elaboração de relatórios técnicos e documentação para órgãos ambientais estaduais e federais.',
+      description: 'O licenciamento ambiental é de suma importância para a retirada do crédito rural — sem ele, financiamentos e financiamentos ficam bloqueados. Existem vários tipos: Licença Prévia (LP), Licença de Instalação (LI), Licença de Operação (LO), além de licenças simplificadas para agricultura irrigada ou de sequeiro, pecuária extensiva, outorga de água e dispensa. A TECGEO cuida de toda a documentação junto aos órgãos ambientais estaduais e federais.',
       color: '#001B80',
-      highlights: ['Outorga de água', 'Relatórios técnicos', 'Órgãos federais'],
+      highlights: ['Essencial para crédito rural', 'Vários tipos de licença', 'Outorga de água'],
     },
     {
       icon: Building2,
@@ -59,9 +59,16 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
     {
       icon: FileText,
       title: 'Assessoria em Escrituras Públicas',
-      description: 'Suporte técnico completo para elaboração de escrituras de compra e venda, doação, partilha, entre outras. Verificação de documentação, coordenação com cartórios, acompanhamento do processo e garantia de conformidade legal.',
+      description: 'Suporte técnico completo para elaboração de escrituras públicas de compra e venda, doação, partilha e escritura de estremação. Verificação de documentação, coordenação com cartórios, acompanhamento do processo e garantia de conformidade legal.',
       color: '#1EB53A',
-      highlights: ['Suporte completo', 'Coordenação cartórios', 'Conformidade legal'],
+      highlights: ['Escritura de estremação', 'Coordenação cartórios', 'Conformidade legal'],
+    },
+    {
+      icon: MapPinned,
+      title: 'Regularize Geo',
+      description: 'Programa de assessoria completa para regularização fundiária que atende não somente o produtor rural, mas também responsáveis técnicos que buscam suporte especializado em seus trabalhos. Oferecemos assessoria técnica, orientação documental e acompanhamento de processos para profissionais da área.',
+      color: '#001B80',
+      highlights: ['Produtores e responsáveis técnicos', 'Assessoria especializada', 'Orientação documental'],
     },
   ];
 
@@ -99,49 +106,25 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-        </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-5 py-2.5 rounded-full mb-6 shadow-lg">
-            <Sparkles size={20} />
-            <span>Nossos Serviços</span>
-          </div>
-          <h1 className="mb-6" style={{ textAlign: 'center' }}>Soluções completas em regularização</h1>
+      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="mb-6" style={{ textAlign: 'center' }}>Serviços &amp; Consultoria TECGEO</h1>
           <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-            Tecnologia de ponta, equipe especializada e conformidade legal para regularizar seu imóvel rural ou urbano
+            Tecnologia de ponta, equipe especializada e conformidade legal para regularizar seu imóvel rural ou urbano — agora também com <strong>consultoria estratégica</strong> completa
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Banner Plano Agro+ */}
-      <section className="relative py-16 bg-gradient-to-r from-[#1EB53A] via-[#22c943] to-[#1EB53A] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#001B80]/10 rounded-full blur-3xl"></div>
-        </div>
+      <section className="py-16 bg-gradient-to-r from-[#1EB53A] via-[#22c943] to-[#1EB53A]">
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Lado esquerdo - Conteúdo */}
             <div className="flex-1 text-white">
-              <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-4 backdrop-blur-xl">
-                <TrendingUp size={18} />
-                <span className="text-sm">Melhor custo-benefício</span>
-              </div>
+
               <h2 className="text-white mb-4">
                 <span className="text-4xl lg:text-5xl">Plano Agro+</span>
               </h2>
@@ -157,7 +140,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl backdrop-blur-xl border border-white/20">
                   <Calendar size={20} />
-                  <span>Parcele em até 12x</span>
+                  <span>Parcele em até 10x</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl backdrop-blur-xl border border-white/20">
                   <ShieldCheck size={20} />
@@ -167,7 +150,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
 
               <button
                 onClick={() => onNavigate('plano-agro')}
-                className="group relative bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:shadow-2xl transition-all hover:scale-105 shadow-xl inline-flex items-center gap-3 overflow-hidden"
+                className="group relative bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:shadow-2xl transition-all shadow-xl inline-flex items-center gap-3 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-3">
                   Saiba mais sobre o Agro+
@@ -181,12 +164,8 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
             <div className="flex-shrink-0">
               <div className="relative">
                 {/* Card principal */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-2xl p-8 rounded-3xl border border-white/30 shadow-2xl w-80"
+                <div
+                  className="bg-white/10 backdrop-blur-2xl p-8 rounded-xl border border-white/30 shadow-2xl w-80"
                 >
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
@@ -225,15 +204,11 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                       <span className="text-2xl">30%</span>
                     </div>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Badge flutuante */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="absolute -top-4 -right-4 bg-[#001B80] text-white rounded-2xl shadow-xl border-4 border-white overflow-hidden"
+                <div
+                  className="absolute -top-4 -right-4 bg-[#001B80] text-white rounded-xl shadow-xl border-4 border-white overflow-hidden"
                 >
                   <div className="flex flex-col items-center gap-1.5 p-3">
                     <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
@@ -241,43 +216,31 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                     </div>
                     <div className="text-xs uppercase tracking-wide">Mais vendido</div>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Lista de Serviços - Grid Moderno */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block bg-[#001B80]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#001B80]">8 Serviços Especializados</span>
-            </div>
+          <div className="text-center mb-16">
             <h2 className="text-[#001B80] mb-4">O que oferecemos</h2>
             <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Cada serviço projetado para resolver desafios específicos da sua propriedade
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                viewport={{ once: true }}
                 className="group relative h-full"
               >
                 <div 
-                  className="relative bg-white rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col"
+                  className="relative bg-white rounded-xl p-8 transition-all duration-300 h-full flex flex-col"
                   style={{
                     background: 'rgba(255, 255, 255, 0.95)',
                     backdropFilter: 'blur(20px) saturate(180%)',
@@ -295,7 +258,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                   {/* Ícone com Badge de Número */}
                   <div className="flex items-start gap-6 mb-6">
                     <div 
-                      className="relative flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
+                      className="relative flex-shrink-0 w-20 h-20 rounded-xl flex items-center justify-center transition-all duration-300"
                       style={{ 
                         background: `linear-gradient(135deg, ${service.color}15 0%, ${service.color}08 100%)`,
                         boxShadow: `0 4px 12px ${service.color}15`,
@@ -323,7 +286,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                     {service.highlights.map((highlight, i) => (
                       <span
                         key={i}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all group-hover:scale-105"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all"
                         style={{
                           background: `${service.color}08`,
                           color: service.color,
@@ -336,15 +299,9 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                     ))}
                   </div>
 
-                  {/* Gradient Overlay */}
-                  <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
-                    style={{
-                      background: `linear-gradient(135deg, ${service.color}03 0%, transparent 100%)`,
-                    }}
-                  ></div>
+
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -353,29 +310,17 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       {/* Nossas Aplicações */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block bg-[#001B80]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#001B80]">Nossas Aplicações</span>
-            </div>
+          <div className="text-center mb-16">
             <h2 className="text-[#001B80] mb-4">Aplicações em Georreferenciamento</h2>
             <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Atendemos diferentes necessidades com soluções técnicas especializadas
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Propriedades Rurais */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+            <div
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
             >
               <div className="w-14 h-14 bg-[#001B80]/10 rounded-xl flex items-center justify-center mb-6">
                 <Tractor className="text-[#001B80]" size={28} />
@@ -399,15 +344,11 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                   <span>Desmembramento de áreas</span>
                 </li>
               </ul>
-            </motion.div>
+            </div>
 
             {/* Áreas Urbanas */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+            <div
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
             >
               <div className="w-14 h-14 bg-[#1EB53A]/10 rounded-xl flex items-center justify-center mb-6">
                 <Building className="text-[#1EB53A]" size={28} />
@@ -431,15 +372,11 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                   <span>Unificação de áreas</span>
                 </li>
               </ul>
-            </motion.div>
+            </div>
 
             {/* Documentação Legal */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+            <div
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
             >
               <div className="w-14 h-14 bg-[#001B80]/10 rounded-xl flex items-center justify-center mb-6">
                 <FileStack className="text-[#001B80]" size={28} />
@@ -456,22 +393,18 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>ART/RRT técnica</span>
+                  <span>TRT técnica</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
                   <span>Certificação INCRA</span>
                 </li>
               </ul>
-            </motion.div>
+            </div>
 
             {/* Serviços Complementares */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
+            <div
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
             >
               <div className="w-14 h-14 bg-[#1EB53A]/10 rounded-xl flex items-center justify-center mb-6">
                 <Split className="text-[#1EB53A]" size={28} />
@@ -495,7 +428,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                   <span>Acompanhamento processual</span>
                 </li>
               </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -503,119 +436,115 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       {/* Tecnologias */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block bg-[#1EB53A]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#1EB53A]">Tecnologia de Ponta</span>
-            </div>
+          <div className="text-center mb-16">
             <h2 className="text-[#001B80] mb-4">Tecnologias que Utilizamos</h2>
             <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Equipamentos de última geração para garantir a máxima precisão em nossos levantamentos
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* GPS Geodésico */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100"
+            <div
+              className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#001B80] to-[#002bb3] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-[#001B80] rounded-xl flex items-center justify-center mb-6">
                 <Satellite className="text-white" size={32} />
               </div>
               <h3 className="text-[#001B80] mb-3">GPS Geodésico</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Receptores GNSS de alta precisão que utilizam correções RTK para obter coordenadas com precisão centimétrica.
               </p>
-            </motion.div>
+            </div>
 
             {/* Drones de Mapeamento */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-              className="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100"
+            <div
+              className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#1EB53A] to-[#189c30] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-[#1EB53A] rounded-xl flex items-center justify-center mb-6">
                 <Camera className="text-white" size={32} />
               </div>
               <h3 className="text-[#001B80] mb-3">Drones de Mapeamento</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Aeronaves não tripuladas equipadas com câmeras de alta resolução para levantamentos aerofotogramétricos.
               </p>
-            </motion.div>
-
-            {/* Estação Total */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              viewport={{ once: true }}
-              className="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#001B80] to-[#002bb3] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Compass className="text-white" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">Estação Total</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Equipamentos eletrônicos que combinam teodolito e distanciômetro para medições angulares e lineares precisas.
-              </p>
-            </motion.div>
+            </div>
 
             {/* Software Especializado */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              viewport={{ once: true }}
-              className="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100"
+            <div
+              className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#1EB53A] to-[#189c30] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-[#1EB53A] rounded-xl flex items-center justify-center mb-6">
                 <Cpu className="text-white" size={32} />
               </div>
               <h3 className="text-[#001B80] mb-3">Software Especializado</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Utilizamos os melhores softwares de topografia e geodésia para processamento e análise dos dados coletados.
               </p>
-            </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Banner Consultoria */}
+      <section className="py-16 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#001B80] to-[#002f99] rounded-2xl p-8 sm:p-12 text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+                  <Sparkles size={14} />
+                  Nova Frente TECGEO
+                </div>
+                <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
+                  Precisa de mais do que um serviço técnico?
+                </h2>
+                <p className="text-gray-200 text-lg leading-relaxed">
+                  A TECGEO agora oferece <strong>consultoria estratégica</strong> para produtores, investidores e profissionais: auditoria territorial, due diligence, parecer técnico e gestão fundiária integrada.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
+                <button
+                  onClick={() => onNavigate('consultoria')}
+                  className="group flex-1 bg-[#1EB53A] text-white px-6 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-lg hover:scale-105"
+                >
+                  <Briefcase size={20} />
+                  Ver Consultoria TECGEO
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                </button>
+                <button
+                  onClick={() => onNavigate('contato')}
+                  className="flex-1 border-2 border-white/60 text-white px-6 py-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
+                >
+                  Falar com Consultor
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <div className="bg-gradient-to-br from-[#001B80]/5 to-[#1EB53A]/5 p-12 rounded-3xl border border-gray-100">
+          <div className="bg-gradient-to-br from-[#001B80]/5 to-[#1EB53A]/5 p-12 rounded-xl border border-gray-100">
             <h2 className="text-[#001B80] mb-6">Precisa de algum desses serviços?</h2>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
               Entre em contato conosco e receba um diagnóstico inicial gratuito com orçamento personalizado para sua propriedade
             </p>
             <button
               onClick={() => onNavigate('contato')}
-              className="group relative bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-10 py-5 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-2xl inline-flex items-center gap-3 overflow-hidden mt-[25px] mr-[0px] mb-[0px] ml-[0px]"
+              className="group bg-[#1EB53A] text-white px-10 py-5 rounded-xl transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-3"
             >
-              <span className="relative z-10 flex items-center gap-3">
-                Solicitar orçamento gratuito
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </span>
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              Solicitar orçamento gratuito
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </button>
           </div>
-        </motion.div>
+        </div>
       </section>
     </div>
   );
 }
+

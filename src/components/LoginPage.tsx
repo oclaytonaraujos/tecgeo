@@ -122,3 +122,4 @@ export function LoginPage({ onSuccess }: LoginPageProps) {
     </div>
   );
 }
+

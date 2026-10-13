@@ -8,20 +8,16 @@ interface FooterProps {
 export function Footer({ onNavigate }: FooterProps) {
   return (
     <footer className="relative bg-gradient-to-br from-[#001B80] via-[#002090] to-[#002bb3] text-white overflow-hidden">
-      {/* Efeito de background decorativo */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-      </div>
+
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Seção Principal */}
         <div className="py-12 sm:py-14 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
           {/* Logo e Descrição - 4 colunas */}
           <div className="lg:col-span-4">
-            <img src={logo} alt="TecGeo" className="h-8 sm:h-9 mb-4" />
+            <img src={logo} alt="TECGEO" className="h-8 sm:h-9 mb-4" />
             <p className="text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
-              Regularização de imóveis rurais com precisão técnica e conformidade ambiental em todo o estado de Goiás.
+              Regularização e <strong className="text-[#1EB53A]">consultoria estratégica</strong> para imóveis rurais — precisão técnica, conformidade ambiental e segurança jurídica em todo o estado de Goiás.
             </p>
           </div>
 
@@ -51,6 +47,23 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-gray-300 hover:text-[#1EB53A] transition-all duration-300 hover:translate-x-1 inline-block text-sm sm:text-base"
                 >
                   Serviços
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('consultoria')}
+                  className="text-gray-300 hover:text-[#1EB53A] transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-2 text-sm sm:text-base"
+                >
+                  Consultoria
+                  <span className="bg-[#1EB53A] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">NOVO</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('regularize-geo')}
+                  className="text-gray-300 hover:text-[#1EB53A] transition-all duration-300 hover:translate-x-1 inline-block text-sm sm:text-base"
+                >
+                  Regularize Geo
                 </button>
               </li>
               <li>
@@ -91,9 +104,10 @@ export function Footer({ onNavigate }: FooterProps) {
                     <MapPin size={18} className="text-[#1EB53A]" />
                   </div>
                   <div>
-                    <p className="text-white mb-1 text-sm sm:text-base">Cachoeira Alta - GO</p>
+                    <p className="text-white mb-0.5 text-sm sm:text-base">Cachoeira Alta - GO</p>
+                    <p className="text-gray-400 text-xs mb-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
                     <a 
-                      href="https://maps.app.goo.gl/gi4QuaoSTXgWFs9D8"
+                      href="https://www.google.com/maps/search/Av.+A,+Qd.+06,+Lt.+06,+Setor+Canaa,+Cachoeira+Alta,+GO,+75870-000"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
@@ -129,12 +143,12 @@ export function Footer({ onNavigate }: FooterProps) {
                       Ver no mapa →
                     </a>
                     <a 
-                      href="https://wa.me/5564996004693"
+                      href="https://wa.me/5564999558696"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors mt-1 block"
                     >
-                      (64) 99600-4693
+                      (64) 99955-8696
                     </a>
                   </div>
                 </div>
@@ -148,7 +162,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               <li>
                 <a 
-                  href="https://wa.me/5564999825619"
+                  href="https://wa.me/5564999558696"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-300 hover:text-[#1EB53A] transition-all group"
@@ -182,7 +196,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   href="https://www.instagram.com/tecgeo.agrimensura/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 transition-all duration-300 hover:scale-110 border border-white/20 hover:border-transparent"
+                  className="group relative bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 transition-all duration-300 border border-white/20 hover:border-transparent"
                   aria-label="Instagram"
                 >
                   <Instagram size={20} />
@@ -201,7 +215,7 @@ export function Footer({ onNavigate }: FooterProps) {
         {/* Copyright */}
         <div className="py-6 sm:py-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm">
           <p className="text-gray-400 text-center md:text-left">
-            © 2025 TecGeo - Todos os direitos reservados - CNPJ: 32.426.812/0001-90
+            © 2025 TECGEO - Todos os direitos reservados - CNPJ: 32.426.812/0001-90
           </p>
           <div className="flex items-center gap-4 sm:gap-6 text-gray-400 text-xs sm:text-sm">
             <button 
@@ -222,10 +236,10 @@ export function Footer({ onNavigate }: FooterProps) {
 
       {/* Botão WhatsApp Flutuante */}
       <a
-        href="https://wa.me/5564999825619"
+        href="https://wa.me/5564999558696"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-gradient-to-br from-[#1EB53A] to-[#25D366] text-white p-4 rounded-full shadow-2xl hover:shadow-[#1EB53A]/50 hover:scale-110 transition-all duration-300 z-50 group animate-bounce hover:animate-none"
+        className="fixed bottom-6 right-6 bg-gradient-to-br from-[#1EB53A] to-[#25D366] text-white p-4 rounded-full shadow-2xl hover:shadow-[#1EB53A]/50 transition-all duration-300 z-50 group"
         aria-label="Fale no WhatsApp"
       >
         <svg
@@ -242,3 +256,4 @@ export function Footer({ onNavigate }: FooterProps) {
     </footer>
   );
 }
+

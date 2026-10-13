@@ -603,3 +603,4 @@ export function PacoteGeoPage({ onNavigate }: PacoteGeoPageProps) {
     </div>
   );
 }
+

@@ -9,6 +9,8 @@ import { ContatoPage } from './components/ContatoPage';
 import { NoticiasPage } from './components/NoticiasPage';
 import { AdminPage } from './components/AdminPage';
 import { LoginPage } from './components/LoginPage';
+import { RegularizeGeoPage } from './components/RegularizeGeoPage';
+import { ConsultoriaPage } from './components/ConsultoriaPage';
 import { useAuth } from './hooks/useAuth';
 
 export default function App() {
@@ -45,6 +47,8 @@ export default function App() {
         {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
         {currentPage === 'plano-agro' && <PlanoAgroPage onNavigate={handleNavigate} />}
         {currentPage === 'servicos' && <ServicosPage onNavigate={handleNavigate} />}
+        {currentPage === 'consultoria' && <ConsultoriaPage onNavigate={handleNavigate} />}
+        {currentPage === 'regularize-geo' && <RegularizeGeoPage onNavigate={handleNavigate} />}
         {currentPage === 'noticias' && <NoticiasPage onNavigate={handleNavigate} initialNewsId={selectedNewsId} />}
         {currentPage === 'sobre' && <SobrePage onNavigate={handleNavigate} />}
         {currentPage === 'contato' && <ContatoPage />}
@@ -54,3 +58,4 @@ export default function App() {
     </div>
   );
 }
+

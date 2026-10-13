@@ -805,3 +805,4 @@ export function NoticiasPage({ onNavigate, initialNewsId }: NoticiasPageProps) {
     </div>
   );
 }
+

@@ -530,3 +530,4 @@ export function AdminPage({ onNavigate }: AdminPageProps) {
     </div>
   );
 }
+

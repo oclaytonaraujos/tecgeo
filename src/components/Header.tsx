@@ -24,6 +24,8 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     { id: 'home', label: 'Home' },
     { id: 'plano-agro', label: 'Plano Agro+' },
     { id: 'servicos', label: 'Serviços' },
+    { id: 'consultoria', label: 'Consultoria', isNew: true },
+    { id: 'regularize-geo', label: 'Regularize Geo' },
     { id: 'noticias', label: 'Notícias' },
     { id: 'sobre', label: 'Sobre' },
     { id: 'contato', label: 'Contato' },
@@ -67,7 +69,12 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                     : 'text-gray-600 hover:text-[#001B80]'
                 }`}
               >
-                {item.label}
+                <span className="relative">
+                  {item.label}
+                  {item.isNew && (
+                    <span className="absolute -top-2.5 -right-5 bg-[#1EB53A] text-white text-[9px] font-bold px-1 py-0.5 rounded-full leading-none">NEW</span>
+                  )}
+                </span>
                 {/* Active state underline */}
                 {currentPage === item.id && (
                   <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1EB53A] to-[#001B80] rounded-full"></span>
@@ -79,7 +86,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               </button>
             ))}
             <a
-              href="https://wa.me/5564999825619"
+              href="https://wa.me/5564999558696"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-4 py-2 rounded-full hover:shadow-2xl transition-all hover:scale-105 overflow-hidden text-sm whitespace-nowrap"
@@ -120,11 +127,16 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
-                {item.label}
+                <span className="flex items-center gap-2">
+                  {item.label}
+                  {item.isNew && (
+                    <span className="bg-[#1EB53A] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">NOVO</span>
+                  )}
+                </span>
               </button>
             ))}
             <a
-              href="https://wa.me/5564999825619"
+              href="https://wa.me/5564999558696"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-6 py-3 mt-4 rounded-full hover:shadow-lg transition-all text-sm"
@@ -137,3 +149,4 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
     </header>
   );
 }
+

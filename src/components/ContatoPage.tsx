@@ -384,11 +384,13 @@ export function ContatoPage() {
                     <h4 className="text-[#001B80] mb-1">Nossas Unidades</h4>
                     <p className="text-gray-700">
                       <strong>Cachoeira Alta - GO</strong><br />
+                      Setor Canaã, Av. A, Qd. 06, Lt. 06<br />
+                      CEP 75870-000<br />
                       Tel/WhatsApp: (64) 99955-8696<br />
                       <br />
                       <strong>Caçu - GO</strong><br />
                       R. José Reinaldo Viêira, 1223<br />
-                      Tel/WhatsApp: (64) 99600-4693
+                      Tel/WhatsApp: (64) 99955-8696
                     </p>
                   </div>
                 </div>
@@ -400,7 +402,7 @@ export function ContatoPage() {
                   <div>
                     <h4 className="text-[#001B80] mb-1">WhatsApp Principal</h4>
                     <p className="text-gray-700">
-                      (64) 99982-5619
+                      (64) 99955-8696
                     </p>
                   </div>
                 </div>
@@ -436,7 +438,7 @@ export function ContatoPage() {
                   Atendimento rápido e direto com nossa equipe
                 </p>
                 <a
-                  href="https://wa.me/5564999825619"
+                  href="https://wa.me/5564999558696"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-[#1EB53A] px-8 py-3 rounded-lg hover:bg-gray-100 transition-all mt-[10px] mr-[0px] mb-[0px] ml-[0px]"
@@ -469,12 +471,12 @@ export function ContatoPage() {
                 </div>
                 <div className="relative w-full" style={{ paddingBottom: '75%' }}>
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3418.8998028918363!2d-50.946433802032914!3d-18.75321255940048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzE4LjEiUyA1MMKwNTYnMzguMCJX!5e1!3m2!1spt-BR!2sbr!4v1765120456893!5m2!1spt-BR!2sbr" 
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   ></iframe>
                 </div>
               </div>
@@ -486,7 +488,9 @@ export function ContatoPage() {
                   </div>
                   <div>
                     <h3 className="text-[#001B80] mb-2">Escritório de Cachoeira Alta, Goiás</h3>
-                    <p className="text-gray-600 mt-1">
+                    <p className="text-gray-600 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
+                    <p className="text-gray-500 text-sm">CEP 75870-000 — Cachoeira Alta - GO</p>
+                    <p className="text-gray-600 mt-2">
                       Tel/WhatsApp: (64) 99955-8696
                     </p>
                   </div>
@@ -528,7 +532,7 @@ export function ContatoPage() {
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   ></iframe>
                 </div>
               </div>
@@ -544,7 +548,7 @@ export function ContatoPage() {
                       R. José Reinaldo Viêira, 1223
                     </p>
                     <p className="text-gray-600">
-                      Tel/WhatsApp: (64) 99600-4693
+                      Tel/WhatsApp: (64) 99955-8696
                     </p>
                   </div>
                 </div>
@@ -577,3 +581,6 @@ export function ContatoPage() {
     </div>
   );
 }
+
+
+

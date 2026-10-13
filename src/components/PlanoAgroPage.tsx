@@ -39,7 +39,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
       badge: { icon: Package, text: 'Pacote Completo' },
     },
     {
-      title: 'Atendimento direto com o engenheiro responsável',
+      title: 'Atendimento direto com o responsável técnico',
       subtitle: 'Sem burocracia. Acompanhamento personalizado em cada etapa do processo. Transparência total do início ao fim.',
       image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwbWVldGluZyUyMG9mZmljZXxlbnwxfHx8fDE3NjUwNjQ1NjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
       badge: { icon: Zap, text: 'Atendimento VIP' },
@@ -151,7 +151,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
                     onClick={() => onNavigate('contato')}
                     className="group bg-white text-[#1EB53A] sm:px-8 sm:py-4 rounded-full hover:bg-gray-100 transition-all hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl px-[32px] py-[16px]"
                   >
-                    <span className="text-center">Solicitar diagnóstico gratuito</span>
+                    <span className="text-center">Solicitar contratação do serviço</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform flex-shrink-0" size={20} />
                   </button>
                   <button
@@ -202,7 +202,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
             </div>
             <h2 className="text-[#001B80] mb-6">O que é o Plano Agro+?</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              O Agro+ é um pacote criado pela TecGeo para resolver as três maiores pendências que impedem um imóvel rural de ficar completamente regularizado.
+              O Agro+ é um pacote criado pela TECGEO para resolver as três maiores pendências que impedem um imóvel rural de ficar completamente regularizado.
             </p>
           </motion.div>
 
@@ -213,7 +213,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
             className="bg-gradient-to-br from-[#001B80]/5 to-[#1EB53A]/5 border border-gray-100 p-12 rounded-3xl"
           >
             <p className="text-lg text-gray-700 text-center leading-relaxed">
-              Ao invés de contratar três serviços separados, você contrata <strong className="text-[#001B80]">um único pacote integrado</strong> com <strong className="text-[#1EB53A]">condições especiais de pagamento</strong> e atendimento personalizado da equipe TecGeo.
+              Ao invés de contratar três serviços separados, você contrata <strong className="text-[#001B80]">um único pacote integrado</strong> com <strong className="text-[#1EB53A]">condições especiais de pagamento</strong> e atendimento personalizado da equipe TECGEO.
             </p>
           </motion.div>
         </div>
@@ -272,9 +272,10 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
                 number: '03',
                 title: 'Licenciamento Ambiental',
                 items: [
-                  'Para atividades de agricultura e pecuária',
-                  'Agricultura irrigada ou de sequeiro',
-                  'Pecuária extensiva',
+                  'De suma importância para retirada do crédito rural',
+                  'Existem vários tipos: LP, LI, LO e simplificada',
+                  'Para agricultura irrigada ou de sequeiro',
+                  'Para pecuária extensiva',
                   'Outorga de água ou dispensa',
                   'Relatórios e documentos para órgãos ambientais',
                 ],
@@ -465,11 +466,11 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 px-6 py-3 rounded-full mb-6">
               <Sparkles size={20} />
-              <span>Diagnóstico Gratuito</span>
+              <span>Contratação de Serviço</span>
             </div>
-            <h2 className="mb-6">Receba um diagnóstico inicial gratuito</h2>
+            <h2 className="mb-6">Contrate o serviço e indicamos toda a documentação necessária</h2>
             <p className="text-xl text-gray-200 leading-relaxed">
-              Preencha o formulário e descubra o que sua propriedade precisa para estar 100% regularizada
+              Preencha o formulário, entre em contato com nossa equipe e ao contratar o serviço indicaremos toda a documentação necessária para regularizar sua propriedade
             </p>
           </motion.div>
 
@@ -715,7 +716,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
                 className="group relative w-full bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white py-5 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Solicitar diagnóstico gratuito
+                  Solicitar contratação do serviço
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                 </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -727,3 +728,4 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
     </div>
   );
 }
+

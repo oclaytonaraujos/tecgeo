@@ -450,3 +450,4 @@ export function NewsEditor({ news: initialNews, isNew, onSave, onCancel }: NewsE
     </div>
   );
 }
+

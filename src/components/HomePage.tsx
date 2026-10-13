@@ -1,4 +1,4 @@
-import { CheckCircle2, MapPin, Award, Users, Zap, Ruler, Leaf, FileCheck, Tractor, Map, GitBranch, FileText, Building2, ArrowRight, ChevronLeft, ChevronRight, Sparkles, TrendingUp, Shield, Newspaper, HelpCircle, ChevronDown } from 'lucide-react';
+import { CheckCircle2, MapPin, Award, Users, Zap, Ruler, Leaf, FileCheck, Tractor, Map, GitBranch, FileText, Building2, ArrowRight, TrendingUp, ChevronDown, Briefcase, ShieldCheck, Scale } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { NewsItem } from '../data/news';
@@ -34,7 +34,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const slides = [
     {
       title: 'Regularizar sua propriedade nunca foi tão simples.',
-      subtitle: 'Com o Plano Agro+ TecGeo, você resolve Geo + CAR + Licenciamento em um único pacote e com pagamento parcelado.',
+      subtitle: 'Com o Plano Agro+ TECGEO, você resolve Geo + CAR + Licenciamento em um único pacote e com pagamento parcelado.',
       image: 'https://images.unsplash.com/photo-1669837783743-4450b160c701?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjBmYXJtJTIwZmllbGR8ZW58MXx8fHwxNzY1MDY0NTYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
     },
     {
@@ -55,22 +55,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
   ];
 
-  // Auto-advance slides every 20 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 20000);
-
     return () => clearInterval(timer);
   }, [slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   const featuredNews = allNews.filter(news => news.featured).slice(0, 3);
 
@@ -83,13 +73,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
     { icon: Map, title: 'Unificação', description: 'Junção de matrículas adjacentes' },
     { icon: FileText, title: 'Assessoria em Escrituras', description: 'Suporte completo para escrituras públicas' },
     { icon: FileCheck, title: 'Licenciamento Ambiental', description: 'Licenças para agricultura e pecuária' },
-  ];
-
-  const stats = [
-    { number: '10+', label: 'Anos de experiência', icon: Award },
-    { number: '500+', label: 'Propriedades regularizadas', icon: MapPin },
-    { number: '100%', label: 'Conformidade legal', icon: Shield },
-    { number: '24h', label: 'Tempo de resposta', icon: Zap },
   ];
 
   const steps = [
@@ -120,49 +103,33 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
             
             <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="max-w-full sm:max-w-2xl text-white"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="inline-flex items-center gap-2 bg-[#1EB53A] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-6 sm:mb-8 shadow-lg"
-                >
-                  <Sparkles size={18} className="sm:w-5 sm:h-5" />
-                  <span className="text-sm sm:text-base">Plano Agro+ Disponível</span>
-                </motion.div>
-                
+              <div className="max-w-full sm:max-w-2xl text-white">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 drop-shadow-2xl leading-tight">
                   {slides[currentSlide].title}
                 </h1>
-                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-12 sm:mb-16 lg:mb-20 text-gray-100 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-10 sm:mb-12 text-gray-100 leading-relaxed max-w-xl">
                   {slides[currentSlide].subtitle}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
                     onClick={() => onNavigate('plano-agro')}
-                    className="group bg-[#1EB53A] text-white sm:px-8 sm:py-4 rounded-full hover:bg-[#189c30] transition-all hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl px-[32px] py-[16px] mx-[0px] my-[38px]"
+                    className="group bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-lg"
                   >
-                    <span className="text-center">Quero regularizar minha propriedade</span>
+                    Quero regularizar minha propriedade
                     <ArrowRight className="group-hover:translate-x-1 transition-transform flex-shrink-0" size={20} />
                   </button>
                   <button
                     onClick={() => onNavigate('contato')}
-                    className="border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-white hover:text-[#001B80] transition-all backdrop-blur-sm text-sm sm:text-base shadow-lg mx-[0px] my-[35px]"
+                    className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#001B80] transition-all text-sm sm:text-base"
                   >
                     Falar com um especialista
                   </button>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation */}
         <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
           <div className="flex gap-2.5">
             {slides.map((_, index) => (
@@ -180,49 +147,34 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Stats Bar */}
+      {/* Stats */}
       <section className="bg-white py-8 sm:py-12 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#1EB53A]/10 rounded-2xl mb-2 sm:mb-3">
-                  <stat.icon className="text-[#1EB53A]" size={24} />
-                </div>
-                <div className="text-2xl sm:text-3xl text-[#001B80] mb-1">{stat.number}</div>
-                <div className="text-gray-600 text-xs sm:text-sm px-2">{stat.label}</div>
-              </motion.div>
+            {[
+              { number: '10+', label: 'Anos de experiência' },
+              { number: '500+', label: 'Propriedades regularizadas' },
+              { number: '100%', label: 'Conformidade legal' },
+              { number: '24h', label: 'Tempo de resposta' },
+            ].map((stat, index) => (
+              <div key={index} className="text-center py-2">
+                <div className="text-2xl sm:text-3xl font-bold text-[#001B80] mb-1">{stat.number}</div>
+                <div className="text-gray-500 text-xs sm:text-sm">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Noticias */}
+      {/* Notícias */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 sm:mb-12 lg:mb-16"
-          >
-            <div className="inline-flex items-center gap-2 bg-[#1EB53A]/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
-              <Newspaper className="text-[#1EB53A]" size={18} />
-              <span className="text-[#1EB53A] text-sm sm:text-base">Notícias</span>
-            </div>
-            <h2 className="text-[#001B80] mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl px-4">Últimas notícias</h2>
-            <p className="text-center text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Mantenha-se atualizado com as novidades da TecGeo e do setor
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-[#001B80] mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl">Últimas notícias</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+              Mantenha-se atualizado com as novidades da TECGEO e do setor
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {featuredNews.map((news) => (
@@ -250,81 +202,46 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Por que a TecGeo existe */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+      {/* Por que a TECGEO existe */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 sm:mb-12 lg:mb-16"
-          >
-            <div className="inline-block bg-[#1EB53A]/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4">
-              <span className="text-[#1EB53A] text-sm sm:text-base">Nossa missão</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl">Por que a TECGEO existe?</h2>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                A TECGEO ajuda produtores rurais e proprietários a regularizarem seus imóveis com precisão técnica, agilidade e conformidade ambiental.
+              </p>
             </div>
-            <h2 className="text-[#001B80] mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl px-4">Por que a TecGeo existe?</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              A TecGeo ajuda produtores rurais e proprietários a regularizarem seus imóveis com precisão técnica, agilidade e conformidade ambiental.
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {[
-              { icon: Award, text: '10+ anos de experiência', color: '#1EB53A' },
-              { icon: MapPin, text: 'Atendimento em todo Goiás', color: '#001B80' },
-              { icon: Zap, text: 'Tecnologia avançada', color: '#1EB53A' },
-              { icon: Users, text: 'Equipe de especialistas', color: '#001B80' },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group text-center p-8 rounded-3xl hover:bg-white transition-all cursor-pointer"
-              >
-                <div
-                  className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110"
-                  style={{ backgroundColor: `${item.color}15` }}
-                >
-                  <item.icon style={{ color: item.color }} size={36} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {[
+                { icon: Award, text: '10+ anos de experiência' },
+                { icon: MapPin, text: 'Atendimento em todo Goiás' },
+                { icon: Zap, text: 'Tecnologia avançada' },
+                { icon: Users, text: 'Equipe de especialistas' },
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3 p-4 bg-white rounded-xl">
+                  <item.icon className="text-[#1EB53A] flex-shrink-0" size={22} />
+                  <span className="text-[#001B80] text-sm sm:text-base">{item.text}</span>
                 </div>
-                <p className="text-[#001B80]">{item.text}</p>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Plano Agro+ - DESTAQUE */}
-      <section className="py-24 bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-6 py-3 rounded-full mb-6">
-              <Leaf size={24} />
-              <span className="text-lg">Plano Agro+</span>
-            </div>
+      {/* Plano Agro+ */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-6">
               A regularização completa da sua propriedade, em um único pacote
             </h2>
             <p className="text-xl text-gray-200 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
               O tripé da regularização rural em uma solução integrada
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 sm:mb-16">
             {[
               {
                 icon: Ruler,
@@ -356,22 +273,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 ],
               },
             ].map((card, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="group bg-white/10 backdrop-blur-md p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/10"
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10"
               >
-                <div className="bg-[#1EB53A] w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <card.icon size={32} />
+                <div className="bg-[#1EB53A] w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                  <card.icon size={28} />
                 </div>
                 <h3 className="mb-6">{card.title}</h3>
                 <ul className="space-y-3 text-gray-200">
                   {card.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="flex-shrink-0 mt-0.5 text-[#1EB53A]" />
+                      <CheckCircle2 size={18} className="flex-shrink-0 mt-0.5 text-[#1EB53A]" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -379,75 +292,56 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 {card.note && (
                   <p className="text-sm text-gray-300 mt-6 italic">{card.note}</p>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Vantagem Exclusiva */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#1EB53A] to-[#189c30] p-10 rounded-3xl text-center max-w-4xl mx-auto"
-          >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <TrendingUp size={32} />
+          <div className="bg-gradient-to-r from-[#1EB53A] to-[#189c30] p-8 sm:p-10 rounded-xl text-center max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <TrendingUp size={28} />
               <h3>Vantagem exclusiva</h3>
             </div>
-            <p className="text-xl mb-12 leading-relaxed">
+            <p className="text-lg sm:text-xl mb-8 leading-relaxed">
               Pagamento parcelado em pacote único, sem comprometer o fluxo de caixa da safra.
             </p>
             <button
               onClick={() => onNavigate('plano-agro')}
-              className="bg-white text-[#1EB53A] px-8 py-4 rounded-full hover:bg-gray-100 transition-all hover:scale-105 shadow-xl inline-flex items-center gap-2 mx-[0px] my-[13px] mt-[35px] mr-[0px] mb-[0px] ml-[0px]"
+              className="bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg inline-flex items-center gap-2"
             >
               Conheça o Plano Agro+
               <ArrowRight size={20} />
             </button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Serviços */}
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block bg-[#001B80]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#001B80]">Nossos serviços</span>
-            </div>
-            <h2 className="text-[#001B80] mb-6">Serviços TecGeo</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-[#001B80] mb-4 text-center">Serviços TECGEO</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-center" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Soluções completas para regularização de imóveis
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="group bg-white p-8 rounded-3xl hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100 cursor-pointer"
+                className="group bg-white p-6 sm:p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-100"
               >
-                <div className="bg-[#001B80]/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#1EB53A]/10 transition-colors">
-                  <service.icon className="text-[#001B80] group-hover:text-[#1EB53A] transition-colors" size={28} />
+                <div className="bg-[#001B80]/5 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#1EB53A]/10 transition-colors">
+                  <service.icon className="text-[#001B80] group-hover:text-[#1EB53A] transition-colors" size={26} />
                 </div>
-                <h4 className="text-[#001B80] mb-3">{service.title}</h4>
+                <h4 className="text-[#001B80] mb-2">{service.title}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
             <button
               onClick={() => onNavigate('servicos')}
               className="group inline-flex items-center gap-2 text-[#001B80] hover:text-[#1EB53A] transition-colors"
@@ -455,128 +349,113 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Ver todos os serviços
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </button>
+            <span className="hidden sm:block text-gray-300">|</span>
+            <button
+              onClick={() => onNavigate('consultoria')}
+              className="group inline-flex items-center gap-2 text-[#1EB53A] hover:text-[#001B80] transition-colors font-semibold"
+            >
+              <Briefcase size={18} />
+              Conhecer nossa Consultoria
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Como funciona */}
-      <section className="py-24 bg-gray-50">
+      {/* Banner Consultoria TECGEO */}
+      <section className="py-16 bg-gradient-to-br from-[#001B80] via-[#00289e] to-[#001B80] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block bg-[#1EB53A]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#1EB53A]">Processo</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 bg-[#1EB53A] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                <ShieldCheck size={16} />
+                <span>Nova Frente TECGEO</span>
+              </div>
+              <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                A TECGEO agora é{' '}
+                <span className="text-[#1EB53A]">Consultoria</span>
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed mb-8">
+                Muito além do levantamento técnico: agora oferecemos{' '}
+                <strong>consultoria estratégica completa</strong> para produtores
+                rurais, investidores, advogados do agronegócio e responsáveis técnicos.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                {[
+                  { icon: Scale, text: 'Auditoria & Due Diligence Territorial' },
+                  { icon: ShieldCheck, text: 'Segurança Jurídica Patrimonial' },
+                  { icon: Users, text: 'Parecer Técnico para Advogados' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                    <item.icon className="text-[#1EB53A] flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-sm text-gray-200 font-medium">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => onNavigate('consultoria')}
+                className="group bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center gap-3 font-semibold shadow-lg hover:scale-105 w-fit"
+              >
+                <Briefcase size={20} />
+                Conhecer a Consultoria TECGEO
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </button>
             </div>
-            <h2 className="text-[#001B80] mb-6">Como funciona o processo</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+            <div className="lg:col-span-5 hidden lg:grid grid-cols-2 gap-4">
+              {[
+                { title: 'Regularização Fundiária', sub: 'Saneamento registral e documental' },
+                { title: 'Consultoria Ambiental', sub: 'CAR, licenciamento e outorgas' },
+                { title: 'Due Diligence', sub: 'Proteção na compra de fazendas' },
+                { title: 'Suporte Técnico', sub: 'Para advogados e engenheiros' },
+              ].map((card, i) => (
+                <div key={i} className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15 hover:bg-white/15 transition-colors cursor-default">
+                  <CheckCircle2 className="text-[#1EB53A] mb-3" size={22} />
+                  <p className="text-white font-bold text-sm mb-1">{card.title}</p>
+                  <p className="text-gray-300 text-xs leading-relaxed">{card.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Como funciona */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-[#001B80] mb-4">Como funciona o processo</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Processo simples e transparente em 4 etapas
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="text-center">
-                  <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white rounded-2xl mb-6 shadow-lg">
-                    <span className="text-2xl">{step.number}</span>
-                  </div>
-                  <h4 className="text-[#001B80] mb-3">{step.title}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+              <div key={index} className="relative text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#1EB53A] text-white rounded-xl mb-5">
+                  <span className="text-xl font-semibold">{step.number}</span>
                 </div>
+                <h4 className="text-[#001B80] mb-2">{step.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#1EB53A]/50 to-transparent"></div>
+                  <div className="hidden lg:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-[#1EB53A]/20"></div>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Depoimentos */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block bg-[#001B80]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#001B80]">Depoimentos</span>
-            </div>
-            <h2 className="text-[#001B80] mb-6">O que nossos clientes dizem</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                text: 'A TecGeo resolveu toda a regularização da minha fazenda de forma rápida e profissional. Recomendo!',
-                author: 'João Silva',
-                role: 'Produtor Rural',
-              },
-              {
-                text: 'O Plano Agro+ facilitou muito o pagamento. Consegui regularizar tudo sem comprometer o capital de giro.',
-                author: 'Maria Santos',
-                role: 'Proprietária Rural',
-              },
-              {
-                text: 'Equipe técnica excelente. Tudo foi feito com precisão e dentro do prazo combinado.',
-                author: 'Carlos Oliveira',
-                role: 'Fazendeiro',
-              },
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-3xl hover:shadow-lg transition-all"
-              >
-                <div className="text-[#1EB53A] text-4xl mb-4">&ldquo;</div>
-                <p className="text-gray-600 mb-6 italic leading-relaxed">{testimonial.text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#001B80]/10 rounded-full flex items-center justify-center">
-                    <Users className="text-[#001B80]" size={24} />
-                  </div>
-                  <div>
-                    <p className="text-[#001B80]">{testimonial.author}</p>
-                    <p className="text-gray-500 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ - Perguntas Frequentes */}
-      <section className="py-20 sm:py-24 bg-white">
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-10">
             <h2 className="text-[#001B80] mb-3">Dúvidas sobre nossos serviços?</h2>
             <p className="text-gray-600">
-              Encontre respostas para as perguntas mais comuns sobre regularização de propriedades rurais
+              Respostas para as perguntas mais comuns sobre regularização de propriedades rurais
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-3">
             {[
@@ -597,29 +476,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 answer: 'Sim! Oferecemos parcelamento em até 12 vezes para todos os serviços. No Plano Agro+, que combina Georreferenciamento + CAR + Licenciamento, você ainda economiza até 30% e pode parcelar sem comprometer o fluxo de caixa da sua safra.',
               },
               {
-                question: 'Preciso de licenciamento ambiental para minha propriedade rural?',
-                answer: 'Depende da atividade exercida. Agricultura irrigada, pecuária extensiva, piscicultura e outras atividades potencialmente poluidoras necessitam de licenciamento. Nossa equipe faz uma análise gratuita para identificar as licenças necessárias para seu caso específico.',
-              },
-              {
-                question: 'O georreferenciamento feito pela TecGeo é aceito pelo INCRA?',
+                question: 'O georreferenciamento feito pela TECGEO é aceito pelo INCRA?',
                 answer: 'Sim, 100%! Utilizamos equipamentos GNSS de precisão centimétrica e seguimos rigorosamente todas as normas técnicas do INCRA. Nossa equipe é formada por engenheiros credenciados e com vasta experiência em certificação de imóveis rurais.',
               },
-              {
-                question: 'Quais documentos preciso para iniciar um serviço?',
-                answer: 'Basicamente: matrícula atualizada do imóvel, documento pessoal (RG e CPF) do proprietário, comprovante de propriedade e, se aplicável, procuração. Durante o diagnóstico gratuito, nossa equipe identifica todos os documentos necessários para seu caso específico.',
-              },
-              {
-                question: 'A TecGeo atende em todo o estado de Goiás?',
-                answer: 'Sim! Atendemos propriedades rurais e urbanas em todo o estado de Goiás. Nossa sede fica em Goiânia, mas temos equipes preparadas para atender qualquer município goiano com a mesma qualidade e agilidade.',
-              },
             ].map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.3 }}
-                viewport={{ once: true }}
-                className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-gray-300 transition-colors"
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-gray-300 transition-colors"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
@@ -648,17 +511,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div 
-            className="text-center mt-10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
+          <div className="text-center mt-8">
             <p className="text-gray-600 mb-3">Não encontrou a resposta que procurava?</p>
             <button
               onClick={() => onNavigate('contato')}
@@ -667,39 +524,29 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Entre em contato conosco
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* CTA Final - Diagnóstico */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl px-4 leading-tight">
+      {/* CTA Final */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl leading-tight">
             Quer saber o que falta para sua propriedade ficar 100% regularizada?
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl mb-10 sm:mb-12 lg:mb-14 text-gray-100 leading-relaxed px-4">
+          <p className="text-base sm:text-lg lg:text-xl mb-10 sm:mb-12 text-gray-100 leading-relaxed">
             Solicite um diagnóstico gratuito e descubra como regularizar sua propriedade
           </p>
           <button
             onClick={() => onNavigate('contato')}
-            className="group bg-white text-[#1EB53A] px-8 sm:px-10 py-4 sm:py-5 rounded-full hover:bg-gray-100 transition-all hover:scale-105 shadow-2xl inline-flex items-center gap-2 text-sm sm:text-base mt-[35px] mr-[0px] mb-[0px] ml-[0px]"
+            className="group bg-white text-[#1EB53A] px-8 sm:px-10 py-4 sm:py-5 rounded-xl hover:bg-gray-100 transition-all shadow-lg inline-flex items-center gap-2 text-sm sm:text-base"
           >
-            Solicitar diagnóstico TecGeo
+            Solicitar diagnóstico TECGEO
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </button>
-        </motion.div>
+        </div>
       </section>
     </div>
   );
 }
+

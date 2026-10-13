@@ -1,6 +1,7 @@
 import image_dea1c37b8860fa12ad2cebb7d4eb6c1b99167f21 from 'figma:asset/dea1c37b8860fa12ad2cebb7d4eb6c1b99167f21.png';
 import image_c761b00ab8c6f71db4a1a590bb1d1f2ce46d3b6e from 'figma:asset/c761b00ab8c6f71db4a1a590bb1d1f2ce46d3b6e.png';
-import { Target, Eye, Heart, Award, Users, MapPin, Clock } from 'lucide-react';
+import fotoAngela from '../assets/foto-angela.jpeg';
+import { Target, Eye, Heart, Award, Users, MapPin, Clock, Briefcase, ArrowRight } from 'lucide-react';
 
 interface SobrePageProps {
   onNavigate: (page: string) => void;
@@ -31,8 +32,6 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
   ];
 
   const team = [
-    'Engenheiros Agrimensores',
-    'Engenheiros Ambientais',
     'Técnicos em Agrimensura',
     'Especialistas em Geoprocessamento',
     'Consultores Ambientais',
@@ -44,7 +43,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       <section className="bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="mb-4" style={{ textAlign: 'center' }}>Sobre a TecGeo</h1>
+            <h1 className="mb-4" style={{ textAlign: 'center' }}>Sobre a TECGEO</h1>
             <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Mais de 10 anos transformando a regularização de imóveis rurais em Goiás
             </p>
@@ -60,13 +59,13 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
               <h2 className="text-[#001B80] mb-6">Nossa História</h2>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  A TecGeo nasceu da percepção de que muitos produtores rurais e proprietários de imóveis enfrentavam dificuldades para regularizar suas terras. Processos burocráticos, falta de informação técnica e custos elevados eram barreiras comuns.
+                  A TECGEO nasceu da percepção de que muitos produtores rurais e proprietários de imóveis enfrentavam dificuldades para regularizar suas terras. Processos burocráticos, falta de informação técnica e custos elevados eram barreiras comuns.
                 </p>
                 <p>
                   Com mais de uma década de atuação, especializamo-nos em tornar o processo de regularização mais simples, acessível e eficiente. Nossa equipe de engenheiros e especialistas combina experiência técnica com conhecimento profundo da legislação local e federal.
                 </p>
                 <p>
-                  Hoje, somos referência em georreferenciamento, CAR e licenciamento ambiental em todo o estado de Goiás, atendendo desde pequenos produtores até grandes propriedades rurais.
+                  Hoje, somos referência em georreferenciamento, CAR e licenciamento ambiental em todo o estado de Goiás, atendendo desde pequenos produtores até grandes propriedades rurais. E agora, como <strong className="text-[#001B80]">consultoria estratégica</strong>, também atuamos em auditoria territorial, due diligence para compra e venda de fazendas, assessoria a advogados e suporte a responsáveis técnicos.
                 </p>
               </div>
             </div>
@@ -81,8 +80,49 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
         </div>
       </section>
 
+      {/* Fundadora */}
+      <section className="py-16 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Foto da Fundadora */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="relative group w-full max-w-xs">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white">
+                  <img
+                    src={fotoAngela}
+                    alt="Ângela da Silva Paula de Oliveira - Fundadora da TECGEO"
+                    className="w-full h-80 sm:h-96 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#001B80]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <span className="text-white text-sm font-medium">Fundadora & Técnica em Agrimensura</span>
+                  </div>
+                </div>
+                <div className="mt-3 text-center sm:text-left">
+                  <p className="text-sm font-bold text-[#001B80]">Ângela S. P. de Oliveira</p>
+                  <p className="text-xs text-gray-500">Fundadora da TECGEO</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Minibio */}
+            <div className="lg:col-span-8">
+              <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Fundadora</span>
+              <h2 className="text-[#001B80] mt-1 mb-6 text-3xl sm:text-4xl">Ângela da Silva Paula de Oliveira</h2>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  De origens humildes a empresária de destaque, Ângela construiu sua trajetória com base na superação e no trabalho duro, iniciado aos 13 anos. Ainda na juventude, descobriu sua vocação para a área documental ao atuar nos cartórios da Comarca de Cachoeira Alta (GO), onde adquiriu uma base sólida sobre escrituras e registros.
+                </p>
+                <p>
+                  Unindo essa forte vivência prática à sua formação técnica em Agrimensura pelo Instituto Federal de Goiás (IFG), atua há mais de uma década no setor de regularização fundiária. Hoje, é fundadora da TECGEO, empresa referência nos municípios de Caçu e Cachoeira Alta, onde alia visão estratégica, precisão técnica e segurança jurídica para entregar as melhores soluções em georreferenciamento e gestão territorial.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Missão, Visão e Valores */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white p-8 rounded-xl text-center shadow-sm">
@@ -189,12 +229,12 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
                 </div>
                 <div className="relative w-full" style={{ paddingBottom: '75%' }}>
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3418.8998028918363!2d-50.946433802032914!3d-18.75321255940048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzE4LjEiUyA1MMKwNTYnMzguMCJX!5e1!3m2!1spt-BR!2sbr!4v1765120456893!5m2!1spt-BR!2sbr" 
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   ></iframe>
                 </div>
               </div>
@@ -206,7 +246,9 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
                   </div>
                   <div>
                     <h3 className="text-[#001B80] mb-2">Escritório de Cachoeira Alta, Goiás</h3>
-                    <p className="text-gray-600 mt-1">
+                    <p className="text-gray-600 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
+                    <p className="text-gray-500 text-sm">CEP 75870-000 — Cachoeira Alta - GO</p>
+                    <p className="text-gray-600 mt-2">
                       Tel/WhatsApp: (64) 99955-8696
                     </p>
                   </div>
@@ -248,7 +290,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   ></iframe>
                 </div>
               </div>
@@ -264,7 +306,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
                       R. José Reinaldo Viêira, 1223
                     </p>
                     <p className="text-gray-600">
-                      Tel/WhatsApp: (64) 99600-4693
+                      Tel/WhatsApp: (64) 99955-8696
                     </p>
                   </div>
                 </div>
@@ -292,18 +334,34 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-6">Vamos regularizar sua propriedade?</h2>
-          <p className="text-xl mb-8 text-gray-100">
+          <h2 className="mb-4">Vamos regularizar sua propriedade?</h2>
+          <p className="text-xl mb-3 text-gray-100">
             Entre em contato e descubra como podemos ajudar você
           </p>
-          <button
-            onClick={() => onNavigate('contato')}
-            className="bg-white text-[#1EB53A] px-8 py-4 rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-lg mt-[35px] mr-[0px] mb-[0px] ml-[0px]"
-          >
-            Entrar em contato
-          </button>
+          <p className="text-base text-white/80 mb-8">
+            Agora também com <strong>Consultoria Estratégica</strong> para produtores, investidores e profissionais do agronegócio
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => onNavigate('contato')}
+              className="bg-white text-[#1EB53A] px-8 py-4 rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
+            >
+              Entrar em contato
+            </button>
+            <button
+              onClick={() => onNavigate('consultoria')}
+              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-semibold"
+            >
+              <Briefcase size={18} />
+              Conhecer a Consultoria
+              <ArrowRight size={18} />
+            </button>
+          </div>
         </div>
       </section>
     </div>
   );
 }
+
+
+
