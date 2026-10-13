@@ -1,5 +1,4 @@
-import { Ruler, Leaf, FileCheck, Building2, Tractor, GitBranch, Map, FileText, CheckCircle, Award, Users, Zap, ArrowRight, Sparkles, BadgeDollarSign, Calendar, ShieldCheck, TrendingUp, Satellite, Camera, Compass, Cpu, FileStack, MapPinned, Stamp, Building, Split, Star, Briefcase } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Ruler, Leaf, FileCheck, Building2, Tractor, GitBranch, Map, FileText, CheckCircle, Award, Users, Zap, ArrowRight, ShieldCheck, Satellite, Camera, Cpu, FileStack, MapPinned, Split, Briefcase } from 'lucide-react';
 
 interface ServicosPageProps {
   onNavigate: (page: string) => void;
@@ -8,298 +7,156 @@ interface ServicosPageProps {
 export function ServicosPage({ onNavigate }: ServicosPageProps) {
   const services = [
     {
+      number: '01',
       icon: Ruler,
-      title: 'Georreferenciamento',
-      description: 'Medição certificada de imóveis rurais com tecnologia GNSS de precisão centimétrica. Atende todas as exigências do INCRA e é fundamental para escrituração e regularização de grandes propriedades. Levantamento completo de perímetro, área e divisas com memorial descritivo.',
-      color: '#001B80',
-      highlights: ['Precisão centimétrica', 'Certificado INCRA', 'Memorial descritivo'],
+      title: 'Georreferenciamento de Imóveis Rurais',
+      description: 'Medição certificada com tecnologia GNSS e precisão centimétrica. Cumpre todas as exigências do INCRA e da Lei 10.267, indispensável para escrituração, desmembramento e segurança patrimonial de imóveis rurais. Inclui levantamento perimétrico, marcos geodésicos e memorial descritivo oficial.',
+      highlights: ['Precisão centimétrica GNSS', 'Certificação no SIGEF / INCRA', 'Memorial descritivo homologado'],
     },
     {
+      number: '02',
       icon: Leaf,
-      title: 'CAR – Cadastro Ambiental Rural',
-      description: 'Cadastro e atualização no sistema SigCAR Goiás. Mapeamento de Reserva Legal, APPs, recursos hídricos (rios, represas, nascentes), áreas consolidadas e uso do solo. Regularização ambiental obrigatória para propriedades rurais conforme Código Florestal.',
-      color: '#1EB53A',
-      highlights: ['Sistema SigCAR', 'Reserva Legal', 'Conformidade ambiental'],
+      title: 'CAR – Cadastro Ambiental Rural (SigCAR Goiás)',
+      description: 'Elaboração, retificação e atualização completa no sistema oficial SigCAR. Mapeamento de Reserva Legal, Áreas de Preservação Permanente (APPs), hidrografia, áreas consolidadas e remanescentes de vegetação nativa conforme o Código Florestal brasileiro.',
+      highlights: ['Conformidade com o Código Florestal', 'Mapeamento de Reserva Legal e APPs', 'Habilitação para crédito bancário'],
     },
     {
+      number: '03',
       icon: FileCheck,
-      title: 'Licenciamento Ambiental',
-      description: 'O licenciamento ambiental é de suma importância para a retirada do crédito rural — sem ele, financiamentos e financiamentos ficam bloqueados. Existem vários tipos: Licença Prévia (LP), Licença de Instalação (LI), Licença de Operação (LO), além de licenças simplificadas para agricultura irrigada ou de sequeiro, pecuária extensiva, outorga de água e dispensa. A TECGEO cuida de toda a documentação junto aos órgãos ambientais estaduais e federais.',
-      color: '#001B80',
-      highlights: ['Essencial para crédito rural', 'Vários tipos de licença', 'Outorga de água'],
+      title: 'Licenciamento Ambiental & Outorgas',
+      description: 'Regularização ambiental essencial para liberação e manutenção de financiamentos agrícolas e pecuários. Conduzimos processos de Licença Prévia (LP), Instalação (LI), Operação (LO), além de licenças simplificadas para agricultura de sequeiro ou irrigada, pecuária, outorgas de uso d’água e dispensas perante a SEMAD Goiás.',
+      highlights: ['Desbloqueio de crédito e custeio', 'Outorgas d’água e dispensas', 'Protocolo e acompanhamento na SEMAD'],
     },
     {
+      number: '04',
       icon: Building2,
       title: 'Loteamento Urbano',
-      description: 'Projetos completos de loteamento urbano com aprovação em prefeitura e cartório. Levantamento topográfico, divisão de lotes, arruamento, infraestrutura básica. Memorial descritivo e todas as plantas necessárias para aprovação e registro.',
-      color: '#1EB53A',
-      highlights: ['Aprovação prefeitura', 'Divisão de lotes', 'Infraestrutura'],
+      description: 'Projetos técnicos completos de parcelamento do solo urbano com aprovação perante prefeituras municipais e cartórios de registro de imóveis. Levantamento planialtimétrico, divisão de quadras e lotes, arruamento, memorial descritivo urbanístico e peças gráficas.',
+      highlights: ['Aprovação municipal e registral', 'Divisão de quadras e lotes', 'Plantas e memoriais completos'],
     },
     {
+      number: '05',
       icon: Tractor,
-      title: 'Loteamento Rural',
-      description: 'Divisão e regularização de áreas rurais em lotes menores. Atende legislação específica para desmembramento rural. Levantamento topográfico, definição de acessos, memoriais descritivos e averbações necessárias.',
-      color: '#001B80',
-      highlights: ['Desmembramento rural', 'Acessos', 'Averbações'],
+      title: 'Loteamento & Parcelamento Rural',
+      description: 'Divisão e regularização técnica de áreas rurais em frações ideais ou glebas autônomas, respeitando a fração mínima de parcelamento (FMP) e as normas agrárias do INCRA. Definição de acessos, servidões de passagem e plantas georreferenciadas.',
+      highlights: ['Respeito à FMP e normas INCRA', 'Acessos e servidões definidos', 'Plantas e averbações de partilha'],
     },
     {
+      number: '06',
       icon: GitBranch,
-      title: 'Desmembramento',
-      description: 'Separação legal de propriedades, dividindo uma matrícula em duas ou mais matrículas independentes. Processo completo incluindo levantamento topográfico, memorial descritivo, aprovação em prefeitura (quando necessário) e registro em cartório.',
-      color: '#1EB53A',
-      highlights: ['Separação de matrículas', 'Processo completo', 'Registro cartorário'],
+      title: 'Desmembramento de Matrículas',
+      description: 'Separação jurídica e física de propriedades, desdobrando uma matrícula matriz em duas ou mais matrículas independentes para venda fracionada ou partilha sucessória entre herdeiros. Acompanhamento completo em campo e no cartório.',
+      highlights: ['Geração de matrículas autônomas', 'Levantamento topográfico pericial', 'Suporte notarial e registral'],
     },
     {
+      number: '07',
       icon: Map,
-      title: 'Unificação',
-      description: 'Junção de matrículas adjacentes em uma única matrícula. Simplifica a gestão de propriedades contíguas. Inclui levantamento topográfico unificado, memorial descritivo e todo o processo de registro cartorário.',
-      color: '#001B80',
-      highlights: ['Junção de matrículas', 'Gestão simplificada', 'Topografia unificada'],
+      title: 'Unificação Registral',
+      description: 'Fusão de matrículas contíguas pertencentes ao mesmo proprietário em uma única certidão imobiliária unificada. Simplifica a gestão patrimonial, recolhimento de tributos (ITR) e facilita a obtenção de garantias bancárias consolidadas.',
+      highlights: ['Fusão de áreas contíguas', 'Gestão patrimonial integrada', 'Memorial unificado oficial'],
     },
     {
+      number: '08',
       icon: FileText,
-      title: 'Assessoria em Escrituras Públicas',
-      description: 'Suporte técnico completo para elaboração de escrituras públicas de compra e venda, doação, partilha e escritura de estremação. Verificação de documentação, coordenação com cartórios, acompanhamento do processo e garantia de conformidade legal.',
-      color: '#1EB53A',
-      highlights: ['Escritura de estremação', 'Coordenação cartórios', 'Conformidade legal'],
+      title: 'Assessoria em Escrituras Públicas & Estremação',
+      description: 'Suporte técnico e pericial na elaboração de escrituras de compra e venda, permuta, doação e escrituras de estremação (procedimento notarial que extingue condomínios de fato e fixa com precisão os limites territoriais definitivos de áreas em comum).',
+      highlights: ['Escrituras de estremação definitiva', 'Eliminação de conflitos de divisa', 'Coordenação direta com tabelionatos'],
     },
     {
+      number: '09',
       icon: MapPinned,
-      title: 'Regularize Geo',
-      description: 'Programa de assessoria completa para regularização fundiária que atende não somente o produtor rural, mas também responsáveis técnicos que buscam suporte especializado em seus trabalhos. Oferecemos assessoria técnica, orientação documental e acompanhamento de processos para profissionais da área.',
-      color: '#001B80',
-      highlights: ['Produtores e responsáveis técnicos', 'Assessoria especializada', 'Orientação documental'],
-    },
-  ];
-
-  const benefits = [
-    {
-      icon: Award,
-      number: '10+',
-      title: 'Anos de experiência',
-      description: 'Mais de uma década regularizando imóveis em Goiás',
-      color: '#1EB53A',
-    },
-    {
-      icon: CheckCircle,
-      number: '100%',
-      title: 'Conformidade legal',
-      description: 'Todos os serviços em conformidade com órgãos reguladores',
-      color: '#001B80',
-    },
-    {
-      icon: Users,
-      number: '✓',
-      title: 'Equipe técnica qualificada',
-      description: 'Engenheiros e especialistas certificados',
-      color: '#1EB53A',
-    },
-    {
-      icon: Zap,
-      number: '⚡',
-      title: 'Tecnologia avançada',
-      description: 'Equipamentos de última geração para máxima precisão',
-      color: '#001B80',
+      title: 'Regularize Geo – Assessoria a Profissionais & Técnicos',
+      description: 'Programa dedicado de cooperação e assessoria técnica que atende tanto produtores quanto topógrafos, engenheiros agrônomos e peritos. Prestamos suporte especializado na superação de notas devolutivas, validação de peças técnicas e rotinas perante INCRA e cartórios.',
+      highlights: ['Suporte para engenheiros e peritos', 'Superação de notas devolutivas', 'Validação de peças cartográficas'],
     },
   ];
 
   return (
-    <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="mb-6" style={{ textAlign: 'center' }}>Serviços &amp; Consultoria TECGEO</h1>
-          <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-            Tecnologia de ponta, equipe especializada e conformidade legal para regularizar seu imóvel rural ou urbano — agora também com <strong>consultoria estratégica</strong> completa
-          </p>
-        </div>
-      </section>
-
-      {/* Banner Plano Agro+ */}
-      <section className="py-16 bg-gradient-to-r from-[#1EB53A] via-[#22c943] to-[#1EB53A]">
-
-        <div
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        >
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            {/* Lado esquerdo - Conteúdo */}
-            <div className="flex-1 text-white">
-
-              <h2 className="text-white mb-4">
-                <span className="text-4xl lg:text-5xl">Plano Agro+</span>
-              </h2>
-              <p className="text-xl text-white/90 mb-6 leading-relaxed max-w-2xl">
-                Contrate <strong>Georreferenciamento + CAR + Licenciamento Ambiental</strong> em um pacote completo com economia e parcelamento que cabe no seu bolso
-              </p>
-
-              {/* Destaques rápidos */}
-              <div className="flex flex-wrap gap-4 mb-6">
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl backdrop-blur-xl border border-white/20">
-                  <BadgeDollarSign size={20} />
-                  <span>Até 30% de economia</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl backdrop-blur-xl border border-white/20">
-                  <Calendar size={20} />
-                  <span>Parcele em até 10x</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl backdrop-blur-xl border border-white/20">
-                  <ShieldCheck size={20} />
-                  <span>Regularização completa</span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => onNavigate('plano-agro')}
-                className="group relative bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:shadow-2xl transition-all shadow-xl inline-flex items-center gap-3 overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center gap-3">
-                  Saiba mais sobre o Agro+
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </span>
-                <div className="absolute inset-0 bg-gray-50 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-              </button>
-            </div>
-
-            {/* Lado direito - Cards visuais */}
-            <div className="flex-shrink-0">
-              <div className="relative">
-                {/* Card principal */}
-                <div
-                  className="bg-white/10 backdrop-blur-2xl p-8 rounded-xl border border-white/30 shadow-2xl w-80"
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
-                      <Sparkles className="text-[#1EB53A]" size={24} />
-                    </div>
-                    <div>
-                      <div className="text-white/70 text-sm">Pacote Completo</div>
-                      <div className="text-white text-xl">3 em 1</div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-3 text-white">
-                      <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Ruler size={16} />
-                      </div>
-                      <span>Georreferenciamento</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-white">
-                      <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Leaf size={16} />
-                      </div>
-                      <span>CAR</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-white">
-                      <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <FileCheck size={16} />
-                      </div>
-                      <span>Licenciamento</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/20">
-                    <div className="flex items-center justify-between text-white">
-                      <span className="text-sm">Economia</span>
-                      <span className="text-2xl">30%</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Badge flutuante */}
-                <div
-                  className="absolute -top-4 -right-4 bg-[#001B80] text-white rounded-xl shadow-xl border-4 border-white overflow-hidden"
-                >
-                  <div className="flex flex-col items-center gap-1.5 p-3">
-                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                      <Star className="text-white" size={18} fill="white" />
-                    </div>
-                    <div className="text-xs uppercase tracking-wide">Mais vendido</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="bg-white text-slate-900">
+      {/* Hero Institucional */}
+      <section className="bg-[#001B80] text-white py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-3">
+              Engenharia & Regularização Territorial
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
+              Serviços Especializados TECGEO
+            </h1>
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
+              Rigor técnico, equipamentos geodésicos de ponta e profundo domínio notarial e ambiental para desembaraçar, certificar e valorizar imóveis rurais e urbanos em Goiás.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Lista de Serviços - Grid Moderno */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      {/* Banner Plano Agro+ - Layout Sóbrio */}
+      <section className="bg-slate-900 text-white py-12 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[#001B80] mb-4">O que oferecemos</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Cada serviço projetado para resolver desafios específicos da sua propriedade
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                Pacote Integrado para o Produtor Rural
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                Plano Agro+: Georreferenciamento + CAR + Licenciamento
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Contrate as três maiores pendências do imóvel rural em um único processo coordenado com economia de até 30% e parcelamento adaptado à safra.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('plano-agro')}
+              className="bg-[#1EB53A] text-white px-7 py-3.5 rounded hover:bg-[#189c30] transition-colors inline-flex items-center gap-2 text-sm font-medium whitespace-nowrap"
+            >
+              Conhecer o Plano Agro+
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Lista Principal de Serviços - Layout Tabular Aberto */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Soluções Completas
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">
+              Portfólio de Serviços Técnicos
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base mt-2">
+              Cada serviço é executado com responsabilidade técnica formal (ART/TRT), rastreabilidade geodésica e conformidade com a legislação aplicável.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="divide-y divide-slate-200 border-y border-slate-200">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="group relative h-full"
-              >
-                <div 
-                  className="relative bg-white rounded-xl p-8 transition-all duration-300 h-full flex flex-col"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.95)',
-                    backdropFilter: 'blur(20px) saturate(180%)',
-                    WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                    border: '1px solid rgba(255, 255, 255, 0.5)',
-                    boxShadow: `0 8px 32px ${service.color}10`,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = `0 20px 60px ${service.color}25`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = `0 8px 32px ${service.color}10`;
-                  }}
-                >
-                  {/* Ícone com Badge de Número */}
-                  <div className="flex items-start gap-6 mb-6">
-                    <div 
-                      className="relative flex-shrink-0 w-20 h-20 rounded-xl flex items-center justify-center transition-all duration-300"
-                      style={{ 
-                        background: `linear-gradient(135deg, ${service.color}15 0%, ${service.color}08 100%)`,
-                        boxShadow: `0 4px 12px ${service.color}15`,
-                      }}
-                    >
-                      <service.icon size={36} style={{ color: service.color }} />
-                      {/* Número do serviço */}
-                      <div 
-                        className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs shadow-lg"
-                        style={{ background: service.color }}
-                      >
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
+              <div key={index} className="py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                {/* Número e Ícone */}
+                <div className="lg:col-span-1 flex items-center lg:flex-col lg:items-start gap-3">
+                  <span className="font-mono text-sm font-bold text-[#1EB53A]">{service.number}</span>
+                  <service.icon size={22} className="text-[#001B80]" />
+                </div>
+
+                {/* Título e Descrição */}
+                <div className="lg:col-span-7">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{service.description}</p>
+                </div>
+
+                {/* Highlights e Ação */}
+                <div className="lg:col-span-4 lg:pl-6 space-y-2">
+                  <span className="text-xs uppercase tracking-wider font-semibold text-slate-400 block mb-2">
+                    Destaques Técnicos
+                  </span>
+                  {service.highlights.map((h, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle size={15} className="text-[#1EB53A] flex-shrink-0 mt-0.5" />
+                      <span>{h}</span>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-[#001B80] mb-2 group-hover:text-[#1EB53A] transition-colors">{service.title}</h3>
-                    </div>
-                  </div>
-
-                  {/* Descrição */}
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow">{service.description}</p>
-
-                  {/* Highlights */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {service.highlights.map((highlight, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all"
-                        style={{
-                          background: `${service.color}08`,
-                          color: service.color,
-                          border: `1px solid ${service.color}20`,
-                        }}
-                      >
-                        <CheckCircle size={14} />
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-
-
+                  ))}
                 </div>
               </div>
             ))}
@@ -307,244 +164,131 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
         </div>
       </section>
 
-      {/* Nossas Aplicações */}
-      <section className="py-24 bg-gray-50">
+      {/* Áreas de Atuação - 4 Colunas Abertas com Divisórias */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[#001B80] mb-4">Aplicações em Georreferenciamento</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Atendemos diferentes necessidades com soluções técnicas especializadas
-            </p>
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Segmentos & Esferas
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">Onde a TECGEO Atua</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Propriedades Rurais */}
-            <div
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className="w-14 h-14 bg-[#001B80]/10 rounded-xl flex items-center justify-center mb-6">
-                <Tractor className="text-[#001B80]" size={28} />
-              </div>
-              <h3 className="text-[#001B80] mb-4">Propriedades Rurais</h3>
-              <ul className="space-y-2.5 text-gray-600 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Georreferenciamento para INCRA</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Certificação de imóveis rurais</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Regularização fundiária</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Desmembramento de áreas</span>
-                </li>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="border-t-2 border-slate-200 pt-6">
+              <h4 className="text-base font-bold text-[#001B80] mb-3">Imóveis Rurais</h4>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li>• Fazendas e glebas de lavoura e pecuária</li>
+                <li>• Certificação INCRA / SIGEF</li>
+                <li>• Reserva Legal e CAR Goiás</li>
+                <li>• Licenciamentos e outorgas d’água</li>
               </ul>
             </div>
 
-            {/* Áreas Urbanas */}
-            <div
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className="w-14 h-14 bg-[#1EB53A]/10 rounded-xl flex items-center justify-center mb-6">
-                <Building className="text-[#1EB53A]" size={28} />
-              </div>
-              <h3 className="text-[#001B80] mb-4">Áreas Urbanas</h3>
-              <ul className="space-y-2.5 text-gray-600 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Loteamentos urbanos</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Regularização de lotes</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Projetos de parcelamento</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Unificação de áreas</span>
-                </li>
+            <div className="border-t-2 border-slate-200 pt-6">
+              <h4 className="text-base font-bold text-[#001B80] mb-3">Áreas Urbanas</h4>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li>• Loteamentos e parcelamentos do solo</li>
+                <li>• Regularização fundiária urbana (REURB)</li>
+                <li>• Desmembramento e unificação de lotes</li>
+                <li>• Levantamento topográfico para projetos</li>
               </ul>
             </div>
 
-            {/* Documentação Legal */}
-            <div
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className="w-14 h-14 bg-[#001B80]/10 rounded-xl flex items-center justify-center mb-6">
-                <FileStack className="text-[#001B80]" size={28} />
-              </div>
-              <h3 className="text-[#001B80] mb-4">Documentação Legal</h3>
-              <ul className="space-y-2.5 text-gray-600 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Memorial descritivo</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Planta topográfica</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>TRT técnica</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Certificação INCRA</span>
-                </li>
+            <div className="border-t-2 border-slate-200 pt-6">
+              <h4 className="text-base font-bold text-[#001B80] mb-3">Documentação Legal</h4>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li>• Memorial descritivo com ART/TRT</li>
+                <li>• Plantas georreferenciadas certificadas</li>
+                <li>• Escritura de estremação notarial</li>
+                <li>• Saneamento de notas devolutivas</li>
               </ul>
             </div>
 
-            {/* Serviços Complementares */}
-            <div
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all"
-            >
-              <div className="w-14 h-14 bg-[#1EB53A]/10 rounded-xl flex items-center justify-center mb-6">
-                <Split className="text-[#1EB53A]" size={28} />
-              </div>
-              <h3 className="text-[#001B80] mb-4">Serviços Complementares</h3>
-              <ul className="space-y-2.5 text-gray-600 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Retificação de áreas</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Assessoria em escrituras</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Consultoria técnica</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle size={16} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
-                  <span>Acompanhamento processual</span>
-                </li>
+            <div className="border-t-2 border-slate-200 pt-6">
+              <h4 className="text-base font-bold text-[#001B80] mb-3">Consultoria Estratégica</h4>
+              <ul className="space-y-2 text-sm text-slate-600">
+                <li>• Auditoria pré-aquisição de fazendas</li>
+                <li>• Pareceres para advogados agraristas</li>
+                <li>• Apoio técnico pericial em divisas</li>
+                <li>• Planejamento em partilhas sucessórias</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tecnologias */}
-      <section className="py-24 bg-white">
+      {/* Tecnologias - Linhas Limpas */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[#001B80] mb-4">Tecnologias que Utilizamos</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Equipamentos de última geração para garantir a máxima precisão em nossos levantamentos
-            </p>
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Infraestrutura
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">Tecnologias Utilizadas em Campo</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* GPS Geodésico */}
-            <div
-              className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-[#001B80] rounded-xl flex items-center justify-center mb-6">
-                <Satellite className="text-white" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">GPS Geodésico</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Receptores GNSS de alta precisão que utilizam correções RTK para obter coordenadas com precisão centimétrica.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="border-l-2 border-slate-300 pl-6 py-2">
+              <Satellite size={24} className="text-[#001B80] mb-3" />
+              <h4 className="text-base font-bold text-slate-900 mb-2">Receptores GNSS Geodésicos</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Equipamentos de dupla frequência operando em modo RTK e pós-processado para rastreio milimétrico de vértices e confrontações.
               </p>
             </div>
 
-            {/* Drones de Mapeamento */}
-            <div
-              className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-[#1EB53A] rounded-xl flex items-center justify-center mb-6">
-                <Camera className="text-white" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">Drones de Mapeamento</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Aeronaves não tripuladas equipadas com câmeras de alta resolução para levantamentos aerofotogramétricos.
+            <div className="border-l-2 border-slate-300 pl-6 py-2">
+              <Camera size={24} className="text-[#1EB53A] mb-3" />
+              <h4 className="text-base font-bold text-slate-900 mb-2">Aerofotogrametria & Drones</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Mapeamento aéreo de alta resolução para identificação visual de APPs, hidrografia, benfeitorias e uso atual do solo.
               </p>
             </div>
 
-            {/* Software Especializado */}
-            <div
-              className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-[#1EB53A] rounded-xl flex items-center justify-center mb-6">
-                <Cpu className="text-white" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">Software Especializado</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Utilizamos os melhores softwares de topografia e geodésia para processamento e análise dos dados coletados.
+            <div className="border-l-2 border-slate-300 pl-6 py-2">
+              <Cpu size={24} className="text-[#001B80] mb-3" />
+              <h4 className="text-base font-bold text-slate-900 mb-2">Softwares de Geoprocessamento</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Processamento cartográfico e SIG em plataformas líderes do setor para compatibilização perfeita com bases do INCRA e SEMAD.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Banner Consultoria */}
-      <section className="py-16 bg-gray-50 border-t border-gray-100">
+      {/* Chamada para Consultoria - Editorial */}
+      <section className="py-16 sm:py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#001B80] to-[#002f99] rounded-2xl p-8 sm:p-12 text-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
-                  <Sparkles size={14} />
-                  Nova Frente TECGEO
-                </div>
-                <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
-                  Precisa de mais do que um serviço técnico?
-                </h2>
-                <p className="text-gray-200 text-lg leading-relaxed">
-                  A TECGEO agora oferece <strong>consultoria estratégica</strong> para produtores, investidores e profissionais: auditoria territorial, due diligence, parecer técnico e gestão fundiária integrada.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
-                <button
-                  onClick={() => onNavigate('consultoria')}
-                  className="group flex-1 bg-[#1EB53A] text-white px-6 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-lg hover:scale-105"
-                >
-                  <Briefcase size={20} />
-                  Ver Consultoria TECGEO
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-                </button>
-                <button
-                  onClick={() => onNavigate('contato')}
-                  className="flex-1 border-2 border-white/60 text-white px-6 py-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
-                >
-                  Falar com Consultor
-                </button>
-              </div>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                Visão Além da Medição
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                Precisa de uma abordagem consultiva e estratégica?
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Conheça a <strong>TECGEO Consultoria</strong>: nossa divisão especializada em due diligence para investidores, pareceres periciais para advogados e saneamento de impasses registrais complexos.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <div className="bg-gradient-to-br from-[#001B80]/5 to-[#1EB53A]/5 p-12 rounded-xl border border-gray-100">
-            <h2 className="text-[#001B80] mb-6">Precisa de algum desses serviços?</h2>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Entre em contato conosco e receba um diagnóstico inicial gratuito com orçamento personalizado para sua propriedade
-            </p>
-            <button
-              onClick={() => onNavigate('contato')}
-              className="group bg-[#1EB53A] text-white px-10 py-5 rounded-xl transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-3"
-            >
-              Solicitar orçamento gratuito
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={() => onNavigate('consultoria')}
+                className="bg-[#1EB53A] text-white px-7 py-3.5 rounded hover:bg-[#189c30] transition-colors inline-flex items-center gap-2 text-sm font-medium whitespace-nowrap"
+              >
+                <Briefcase size={18} />
+                Conhecer a Consultoria
+              </button>
+              <button
+                onClick={() => onNavigate('contato')}
+                className="border border-white/60 text-white px-7 py-3.5 rounded hover:bg-white/10 transition-colors text-sm font-medium whitespace-nowrap"
+              >
+                Solicitar Orçamento
+              </button>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-

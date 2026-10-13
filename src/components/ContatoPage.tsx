@@ -1,6 +1,5 @@
-import { Mail, MapPin, Phone, Clock, Send, User, MessageSquare, MapPinned, Briefcase, Building, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, Send, User, MessageSquare, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
-import { motion } from 'motion/react';
 import { SuccessModal } from './SuccessModal';
 import { supabase } from '../lib/supabase';
 
@@ -18,7 +17,6 @@ export function ContatoPage() {
     message: '',
   });
 
-  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -75,375 +73,317 @@ export function ContatoPage() {
 
   const services = [
     'Plano Agro+ (Geo + CAR + Licenciamento)',
-    'Georreferenciamento',
-    'CAR - Cadastro Ambiental Rural',
-    'Licenciamento Ambiental',
+    'Georreferenciamento de Imóvel Rural',
+    'CAR – Cadastro Ambiental Rural (SigCAR)',
+    'Licenciamento Ambiental & Outorgas',
     'Loteamento Urbano',
-    'Loteamento Rural',
-    'Desmembramento',
-    'Unificação',
-    'Assessoria em Escrituras',
-    'Outro',
+    'Loteamento & Parcelamento Rural',
+    'Desmembramento de Matrículas',
+    'Unificação Registral',
+    'Assessoria em Escrituras & Estremação',
+    'TECGEO Consultoria Estratégica',
+    'Outro serviço técnico',
   ];
 
   return (
-    <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-5 py-2.5 rounded-full mb-6 shadow-lg">
-              <MessageSquare size={20} />
-              <span>Fale Conosco</span>
-            </div>
-            <h1 className="mb-6" style={{ textAlign: 'center' }}>Entre em Contato</h1>
-            <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Estamos prontos para atender você. Fale conosco e descubra como podemos ajudar a regularizar sua propriedade
+    <div className="bg-white text-slate-900">
+      {/* Hero Institucional */}
+      <section className="bg-[#001B80] text-white py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-3">
+              Canais de Atendimento
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              Fale com a TECGEO
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal">
+              Nossa equipe técnica e consultiva está à disposição em Cachoeira Alta, Caçu e em todo o estado de Goiás. Solicite um diagnóstico preliminar do seu imóvel.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Formulário com Design Inovador */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative">
+      {/* Seção Principal: Formulário + Dados de Contato */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Formulário - Ocupa 2 colunas */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-2"
-            >
-              <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
-                {/* Header do Card */}
-                <div className="bg-gradient-to-r from-[#001B80] to-[#003cb3] p-8 text-white">
-                  <h2 className="text-2xl mb-2">Receba um diagnóstico inicial gratuito</h2>
-                  <p className="text-gray-200">Preencha o formulário e descubra o que sua propriedade precisa para estar 100% regularizada</p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Formulário Institucional (7 colunas) */}
+            <div className="lg:col-span-7 border border-slate-200 p-8 sm:p-10 bg-slate-50">
+              <div className="mb-8">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                  Atendimento Técnico
+                </span>
+                <h2 className="text-2xl font-bold text-[#001B80] mb-2">
+                  Solicitação de Diagnóstico e Orçamento
+                </h2>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Preencha os dados do imóvel. Nossa equipe fará a triagem inicial e retornará com orientações precisas.
+                </p>
+              </div>
+
+              {submitError && (
+                <div className="flex items-start gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded text-sm mb-6">
+                  <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
+                  <span>{submitError}</span>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Nome completo */}
+                <div>
+                  <label htmlFor="ct-name" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                    Nome completo *
+                  </label>
+                  <input
+                    type="text"
+                    id="ct-name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      setFieldErrors((prev) => ({ ...prev, name: '' }));
+                    }}
+                    placeholder="Seu nome completo"
+                    className={`w-full px-4 py-3 bg-white border rounded text-sm text-slate-900 focus:outline-none ${
+                      fieldErrors.name ? 'border-red-400' : 'border-slate-300 focus:border-[#001B80]'
+                    }`}
+                  />
+                  {fieldErrors.name && <p className="mt-1 text-xs text-red-600">{fieldErrors.name}</p>}
                 </div>
 
-                {/* Formulário */}
-                <form onSubmit={handleSubmit} className="p-8 space-y-6">
-                  {/* Erro de envio */}
-                  {submitError && (
-                    <div className="flex items-start gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-                      <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
-                      {submitError}
-                    </div>
-                  )}
-
-                  {/* Nome completo */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <label htmlFor="name" className="block text-sm mb-2 text-gray-700">
-                      Nome completo *
+                {/* Telefone e WhatsApp */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="ct-phone" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Telefone / Celular *
                     </label>
-                    <div className="relative group">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors">
-                        <User size={20} />
-                      </div>
-                      <input
-                        type="text"
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => { setFormData({ ...formData, name: e.target.value }); setFieldErrors(prev => ({ ...prev, name: '' })); }}
-                        onFocus={() => setFocusedField('name')}
-                        onBlur={() => setFocusedField(null)}
-                        className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.name ? 'border-red-400' : 'border-gray-200'}`}
-                        placeholder="Digite seu nome completo"
-                      />
-                    </div>
-                    {fieldErrors.name && <p className="mt-1 text-xs text-red-600">{fieldErrors.name}</p>}
-                  </motion.div>
-
-                  {/* Telefone/WhatsApp - Grid 2 colunas */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <label htmlFor="phone" className="block text-sm mb-2 text-gray-700">
-                        Telefone/WhatsApp *
-                      </label>
-                      <div className="relative group">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors">
-                          <Phone size={20} />
-                        </div>
-                        <input
-                          type="tel"
-                          id="phone"
-                          value={formData.phone}
-                          onChange={(e) => { setFormData({ ...formData, phone: e.target.value }); setFieldErrors(prev => ({ ...prev, phone: '' })); }}
-                          onFocus={() => setFocusedField('phone')}
-                          onBlur={() => setFocusedField(null)}
-                          className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.phone ? 'border-red-400' : 'border-gray-200'}`}
-                          placeholder="(00) 00000-0000"
-                        />
-                      </div>
-                      {fieldErrors.phone && <p className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.25 }}
-                    >
-                      <label htmlFor="municipality" className="block text-sm mb-2 text-gray-700">
-                        Município da propriedade *
-                      </label>
-                      <div className="relative group">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors">
-                          <MapPinned size={20} />
-                        </div>
-                        <input
-                          type="text"
-                          id="municipality"
-                          value={formData.municipality}
-                          onChange={(e) => { setFormData({ ...formData, municipality: e.target.value }); setFieldErrors(prev => ({ ...prev, municipality: '' })); }}
-                          onFocus={() => setFocusedField('municipality')}
-                          onBlur={() => setFocusedField(null)}
-                          className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.municipality ? 'border-red-400' : 'border-gray-200'}`}
-                          placeholder="Ex: Goiânia"
-                        />
-                      </div>
-                      {fieldErrors.municipality && <p className="mt-1 text-xs text-red-600">{fieldErrors.municipality}</p>}
-                    </motion.div>
+                    <input
+                      type="tel"
+                      id="ct-phone"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => {
+                        setFormData({ ...formData, phone: e.target.value });
+                        setFieldErrors((prev) => ({ ...prev, phone: '' }));
+                      }}
+                      placeholder="(64) 99999-9999"
+                      className={`w-full px-4 py-3 bg-white border rounded text-sm text-slate-900 focus:outline-none ${
+                        fieldErrors.phone ? 'border-red-400' : 'border-slate-300 focus:border-[#001B80]'
+                      }`}
+                    />
+                    {fieldErrors.phone && <p className="mt-1 text-xs text-red-600">{fieldErrors.phone}</p>}
                   </div>
 
-                  {/* Tamanho da área - Grid 2 colunas */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <label htmlFor="areaSize" className="block text-sm mb-2 text-gray-700">
-                        Tamanho da área (hectares aproximados) *
-                      </label>
-                      <div className="relative group">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors">
-                          <Building size={20} />
-                        </div>
-                        <input
-                          type="text"
-                          id="areaSize"
-                          value={formData.areaSize}
-                          onChange={(e) => { setFormData({ ...formData, areaSize: e.target.value }); setFieldErrors(prev => ({ ...prev, areaSize: '' })); }}
-                          onFocus={() => setFocusedField('areaSize')}
-                          onBlur={() => setFocusedField(null)}
-                          className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 ${fieldErrors.areaSize ? 'border-red-400' : 'border-gray-200'}`}
-                          placeholder="Ex: 50 hectares"
-                        />
-                      </div>
-                      {fieldErrors.areaSize && <p className="mt-1 text-xs text-red-600">{fieldErrors.areaSize}</p>}
-                    </motion.div>
+                  <div>
+                    <label htmlFor="ct-whatsapp" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                      WhatsApp (se diferente)
+                    </label>
+                    <input
+                      type="tel"
+                      id="ct-whatsapp"
+                      value={formData.whatsapp}
+                      onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                      placeholder="(64) 99999-9999"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded text-sm text-slate-900 focus:border-[#001B80] focus:outline-none"
+                    />
+                  </div>
+                </div>
 
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.35 }}
-                    >
-                      <label htmlFor="propertyStatus" className="block text-sm mb-2 text-gray-700">
-                        Situação do imóvel
-                      </label>
-                      <div className="relative group">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors z-10">
-                          <Briefcase size={20} />
-                        </div>
-                        <select
-                          id="propertyStatus"
-                          value={formData.propertyStatus}
-                          onChange={(e) => setFormData({ ...formData, propertyStatus: e.target.value })}
-                          onFocus={() => setFocusedField('propertyStatus')}
-                          onBlur={() => setFocusedField(null)}
-                          className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 appearance-none cursor-pointer"
-                        >
-                          <option value="">Selecione</option>
-                          <option value="possui-geo">Já possui Georreferenciamento</option>
-                          <option value="possui-car">Já possui CAR</option>
-                          <option value="possui-licenca">Já possui Licenciamento</option>
-                          <option value="nenhum">Não possui nenhum</option>
-                        </select>
-                      </div>
-                    </motion.div>
+                {/* Município e Área */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="ct-mun" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Município da propriedade *
+                    </label>
+                    <input
+                      type="text"
+                      id="ct-mun"
+                      required
+                      value={formData.municipality}
+                      onChange={(e) => {
+                        setFormData({ ...formData, municipality: e.target.value });
+                        setFieldErrors((prev) => ({ ...prev, municipality: '' }));
+                      }}
+                      placeholder="Ex: Cachoeira Alta - GO"
+                      className={`w-full px-4 py-3 bg-white border rounded text-sm text-slate-900 focus:outline-none ${
+                        fieldErrors.municipality ? 'border-red-400' : 'border-slate-300 focus:border-[#001B80]'
+                      }`}
+                    />
+                    {fieldErrors.municipality && <p className="mt-1 text-xs text-red-600">{fieldErrors.municipality}</p>}
                   </div>
 
-                  {/* Serviço de interesse */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <label htmlFor="service" className="block text-sm mb-2 text-gray-700">
-                      Serviço de interesse *
+                  <div>
+                    <label htmlFor="ct-area" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Tamanho aproximado *
                     </label>
-                    <div className="relative group">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors z-10">
-                        <Briefcase size={20} />
-                      </div>
-                      <select
-                        id="service"
-                        value={formData.service}
-                        onChange={(e) => { setFormData({ ...formData, service: e.target.value }); setFieldErrors(prev => ({ ...prev, service: '' })); }}
-                        onFocus={() => setFocusedField('service')}
-                        onBlur={() => setFocusedField(null)}
-                        className={`w-full pl-12 pr-4 py-4 bg-gray-50 border-2 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 appearance-none cursor-pointer ${fieldErrors.service ? 'border-red-400' : 'border-gray-200'}`}
-                      >
-                        <option value="">Selecione um serviço</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service}>{service}</option>
-                        ))}
-                      </select>
-                    </div>
-                    {fieldErrors.service && <p className="mt-1 text-xs text-red-600">{fieldErrors.service}</p>}
-                  </motion.div>
+                    <input
+                      type="text"
+                      id="ct-area"
+                      required
+                      value={formData.areaSize}
+                      onChange={(e) => {
+                        setFormData({ ...formData, areaSize: e.target.value });
+                        setFieldErrors((prev) => ({ ...prev, areaSize: '' }));
+                      }}
+                      placeholder="Ex: 85 ha / 18 alqueires / 500 m²"
+                      className={`w-full px-4 py-3 bg-white border rounded text-sm text-slate-900 focus:outline-none ${
+                        fieldErrors.areaSize ? 'border-red-400' : 'border-slate-300 focus:border-[#001B80]'
+                      }`}
+                    />
+                    {fieldErrors.areaSize && <p className="mt-1 text-xs text-red-600">{fieldErrors.areaSize}</p>}
+                  </div>
+                </div>
 
-                  {/* Situação do imóvel - Textarea */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.45 }}
+                {/* Serviço de Interesse */}
+                <div>
+                  <label htmlFor="ct-service" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                    Serviço de interesse *
+                  </label>
+                  <select
+                    id="ct-service"
+                    required
+                    value={formData.service}
+                    onChange={(e) => {
+                      setFormData({ ...formData, service: e.target.value });
+                      setFieldErrors((prev) => ({ ...prev, service: '' }));
+                    }}
+                    className={`w-full px-4 py-3 bg-white border rounded text-sm text-slate-900 focus:outline-none cursor-pointer ${
+                      fieldErrors.service ? 'border-red-400' : 'border-slate-300 focus:border-[#001B80]'
+                    }`}
                   >
-                    <label htmlFor="message" className="block text-sm mb-2 text-gray-700">
-                      Situação do imóvel
-                    </label>
-                    <div className="relative group">
-                      <div className="absolute left-4 top-4 text-gray-400 group-focus-within:text-[#1EB53A] transition-colors">
-                        <MessageSquare size={20} />
-                      </div>
-                      <textarea
-                        id="message"
-                        rows={5}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        onFocus={() => setFocusedField('message')}
-                        onBlur={() => setFocusedField(null)}
-                        placeholder="Descreva brevemente a situação atual do imóvel (se já possui geo, CAR, licenças, etc.)"
-                        className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#1EB53A]/20 focus:border-[#1EB53A] transition-all hover:border-gray-300 resize-none"
-                      />
-                    </div>
-                  </motion.div>
+                    <option value="">Selecione o serviço</option>
+                    {services.map((svc, idx) => (
+                      <option key={idx} value={svc}>{svc}</option>
+                    ))}
+                  </select>
+                  {fieldErrors.service && <p className="mt-1 text-xs text-red-600">{fieldErrors.service}</p>}
+                </div>
 
-                  {/* Botão de Envio */}
-                  <motion.button
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
+                {/* Mensagem / Situação */}
+                <div>
+                  <label htmlFor="ct-msg" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+                    Situação do imóvel ou detalhes adicionais
+                  </label>
+                  <textarea
+                    id="ct-msg"
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Descreva se o imóvel já possui Geo antigo, se há pendências de divisa, notas devolutivas de cartório, etc."
+                    className="w-full px-4 py-3 bg-white border border-slate-300 rounded text-sm text-slate-900 focus:border-[#001B80] focus:outline-none resize-none"
+                  />
+                </div>
+
+                <div className="pt-2">
+                  <button
                     type="submit"
                     disabled={submitting}
-                    className="group w-full bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white py-5 rounded-xl hover:shadow-2xl transition-all hover:scale-[1.02] flex items-center justify-center gap-3 text-lg shadow-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="w-full bg-[#001B80] text-white py-3.5 rounded hover:bg-[#001566] transition-colors text-sm font-semibold flex items-center justify-center gap-2 disabled:opacity-60"
                   >
-                    {submitting ? (
-                      <>
-                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-                        </svg>
-                        Enviando...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={22} className="group-hover:translate-x-1 transition-transform" />
-                        Solicitar diagnóstico gratuito
-                      </>
-                    )}
-                  </motion.button>
-
-                  {/* Nota de privacidade */}
-                  <p className="text-xs text-gray-500 text-center leading-relaxed">
-                    Ao enviar este formulário, você concorda com nossa política de privacidade. Seus dados serão utilizados apenas para entrar em contato com você.
+                    {submitting ? 'Enviando dados...' : 'Solicitar Diagnóstico Preliminar'}
+                    {!submitting && <Send size={16} />}
+                  </button>
+                  <p className="text-xs text-slate-500 text-center mt-3">
+                    Seus dados são protegidos por sigilo profissional e utilizados exclusivamente para contato técnico.
                   </p>
-                </form>
+                </div>
+              </form>
+            </div>
+
+            {/* Informações de Contato (5 colunas) */}
+            <div className="lg:col-span-5 space-y-8">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                  Atendimento Corporativo
+                </span>
+                <h3 className="text-2xl font-bold text-[#001B80] mb-6">Nossos Canais</h3>
+
+                <div className="space-y-6 divide-y divide-slate-200 border-y border-slate-200 py-6">
+                  {/* WhatsApp Direto */}
+                  <div className="pt-4 first:pt-0">
+                    <div className="flex items-start gap-3">
+                      <Phone size={18} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">WhatsApp & Telefone</h4>
+                        <p className="text-base font-bold text-slate-900 mt-0.5">(64) 99955-8696</p>
+                        <a
+                          href="https://wa.me/5564999558696"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-[#1EB53A] hover:underline font-semibold mt-1 inline-block"
+                        >
+                          Abrir conversa no WhatsApp →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* E-mail */}
+                  <div className="pt-4">
+                    <div className="flex items-start gap-3">
+                      <Mail size={18} className="text-[#001B80] mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">E-mail Institucional</h4>
+                        <p className="text-sm font-medium text-slate-900 mt-0.5">tecgeodepambiental@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Horário */}
+                  <div className="pt-4">
+                    <div className="flex items-start gap-3">
+                      <Clock size={18} className="text-[#1EB53A] mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">Horário de Funcionamento</h4>
+                        <p className="text-sm text-slate-700 mt-0.5">
+                          Segunda a Sexta: 8h às 18h<br />
+                          Sábado: 8h às 12h
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Unidades */}
+                  <div className="pt-4">
+                    <div className="flex items-start gap-3">
+                      <MapPin size={18} className="text-[#001B80] mt-0.5 flex-shrink-0" />
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">Unidade Cachoeira Alta (Sede)</h4>
+                          <p className="text-xs text-slate-700 mt-0.5">
+                            Setor Canaã, Av. A, Qd. 06, Lt. 06 — CEP 75870-000
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">Unidade Caçu</h4>
+                          <p className="text-xs text-slate-700 mt-0.5">
+                            Rua José Reinaldo Viêira, 1223 — CEP 75813-000
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </motion.div>
 
-            {/* Informações de Contato */}
-            <div>
-              <h2 className="text-[#001B80] mb-6">Informações de Contato</h2>
-              
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                  <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-[#001B80] mb-1">Nossas Unidades</h4>
-                    <p className="text-gray-700">
-                      <strong>Cachoeira Alta - GO</strong><br />
-                      Setor Canaã, Av. A, Qd. 06, Lt. 06<br />
-                      CEP 75870-000<br />
-                      Tel/WhatsApp: (64) 99955-8696<br />
-                      <br />
-                      <strong>Caçu - GO</strong><br />
-                      R. José Reinaldo Viêira, 1223<br />
-                      Tel/WhatsApp: (64) 99955-8696
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                  <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-[#1EB53A]" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-[#001B80] mb-1">WhatsApp Principal</h4>
-                    <p className="text-gray-700">
-                      (64) 99955-8696
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                  <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-[#1EB53A]" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-[#001B80] mb-1">E-mail</h4>
-                    <p className="text-gray-700">tecgeodepambiental@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
-                  <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-[#001B80] mb-1">Horário de Atendimento</h4>
-                    <p className="text-gray-700">
-                      Segunda a Sexta: 8h às 18h<br />
-                      Sábado: 8h às 12h
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* WhatsApp Destaque */}
-              <div className="bg-gradient-to-br from-[#1EB53A] to-[#189c30] p-8 rounded-xl text-white text-center">
-                <h3 className="mb-4">Fale conosco pelo WhatsApp</h3>
-                <p className="mb-6">
-                  Atendimento rápido e direto com nossa equipe
+              {/* Box Rápido WhatsApp */}
+              <div className="border border-slate-200 bg-slate-50 p-6">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-1">
+                  Atendimento Imediato
+                </span>
+                <h4 className="text-base font-bold text-slate-900 mb-2">Prefere falar pelo WhatsApp?</h4>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                  Envie sua certidão ou dúvida diretamente para nossa equipe técnica e receba retorno no mesmo dia útil.
                 </p>
                 <a
                   href="https://wa.me/5564999558696"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-white text-[#1EB53A] px-8 py-3 rounded-lg hover:bg-gray-100 transition-all mt-[10px] mr-[0px] mb-[0px] ml-[0px]"
+                  className="bg-[#1EB53A] text-white px-5 py-2.5 rounded hover:bg-[#189c30] transition-colors text-xs font-semibold inline-flex items-center gap-2"
                 >
-                  Abrir WhatsApp
+                  Iniciar Conversa no WhatsApp
+                  <Send size={13} />
                 </a>
               </div>
             </div>
@@ -451,122 +391,50 @@ export function ContatoPage() {
         </div>
       </section>
 
-      {/* Nossas Localizações */}
-      <section className="py-20 bg-gray-50">
+      {/* Mapas de Localização - Linhas Limpas */}
+      <section className="py-16 sm:py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-[#001B80] mb-[25px] text-center mt-[0px] mr-[0px] ml-[0px]">Nossas Localizações</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-[25px] mr-[0px] mb-[0px] ml-[0px]">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Endereços Físicos
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">Como Chegar às Nossas Unidades</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Cachoeira Alta */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Cachoeira Alta - Goiás</p>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
-                </div>
+            <div className="border border-slate-200 bg-white p-6">
+              <div className="mb-4">
+                <h3 className="text-lg font-bold text-slate-900">Cachoeira Alta - GO</h3>
+                <p className="text-xs text-slate-500 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
               </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Cachoeira Alta, Goiás</h3>
-                    <p className="text-gray-600 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
-                    <p className="text-gray-500 text-sm">CEP 75870-000 — Cachoeira Alta - GO</p>
-                    <p className="text-gray-600 mt-2">
-                      Tel/WhatsApp: (64) 99955-8696
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
-                  </div>
-                </div>
+              <div className="relative w-full aspect-[16/9] border border-slate-200">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
               </div>
             </div>
 
             {/* Caçu */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Caçu - Goiás</p>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
-                </div>
+            <div className="border border-slate-200 bg-white p-6">
+              <div className="mb-4">
+                <h3 className="text-lg font-bold text-slate-900">Caçu - GO</h3>
+                <p className="text-xs text-slate-500 mt-1">Rua José Reinaldo Viêira, 1223</p>
               </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Caçu, Goiás</h3>
-                    <p className="text-gray-600 mt-1">
-                      R. José Reinaldo Viêira, 1223
-                    </p>
-                    <p className="text-gray-600">
-                      Tel/WhatsApp: (64) 99955-8696
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
-                  </div>
-                </div>
+              <div className="relative w-full aspect-[16/9] border border-slate-200">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -574,13 +442,9 @@ export function ContatoPage() {
       </section>
 
       {/* Modal de Sucesso */}
-      <SuccessModal
-        isOpen={showSuccessModal}
-        onClose={() => setShowSuccessModal(false)}
-      />
+      {showSuccessModal && (
+        <SuccessModal onClose={() => setShowSuccessModal(false)} />
+      )}
     </div>
   );
 }
-
-
-

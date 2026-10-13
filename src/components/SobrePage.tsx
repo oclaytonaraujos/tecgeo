@@ -12,108 +12,122 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
     {
       icon: Award,
       title: 'Excelência Técnica',
-      description: 'Compromisso com a qualidade e precisão em todos os nossos serviços',
+      description: 'Compromisso com o rigor geodésico, precisão centimétrica e conformidade integral com normas do INCRA e SEMAD.',
     },
     {
       icon: Users,
-      title: 'Foco no Cliente',
-      description: 'Atendimento personalizado e soluções sob medida para cada necessidade',
+      title: 'Atendimento Personalizado',
+      description: 'Acompanhamento próximo de cada produtor, investidor ou parceiro, com comunicação clara em cada etapa.',
     },
     {
       icon: Heart,
-      title: 'Ética e Transparência',
-      description: 'Relações baseadas em confiança, honestidade e responsabilidade',
+      title: 'Ética & Segurança Jurídica',
+      description: 'Relações de confiança construídas com transparência documental e respeito à verdade registral.',
     },
     {
       icon: Clock,
-      title: 'Pontualidade',
-      description: 'Cumprimento de prazos e compromisso com a entrega no tempo acordado',
+      title: 'Compromisso de Prazos',
+      description: 'Condução ágil e previsível dos processos técnicos e notariais para não comprometer janelas de crédito rural.',
     },
   ];
 
   const team = [
-    'Técnicos em Agrimensura',
-    'Especialistas em Geoprocessamento',
-    'Consultores Ambientais',
+    'Técnicos em Agrimensura credenciados pelo INCRA',
+    'Especialistas em Geoprocessamento e SIG',
+    'Consultores em Legislação Ambiental e Notarial',
+    'Analistas de Processos Cartorários',
   ];
 
   return (
-    <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white py-16">
+    <div className="bg-white text-slate-900">
+      {/* Hero Institucional */}
+      <section className="bg-[#001B80] text-white py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="mb-4" style={{ textAlign: 'center' }}>Sobre a TECGEO</h1>
-            <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Mais de 10 anos transformando a regularização de imóveis rurais em Goiás
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-3">
+              Institucional TECGEO
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
+              Sobre a TECGEO
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal">
+              Mais de uma década aliando engenharia geodésica, inteligência cartorária e consultoria estratégica para desimpedir e valorizar o agronegócio em Goiás.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Nossa História */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-[#001B80] mb-6">Nossa História</h2>
-              <div className="space-y-4 text-gray-700">
-                <p>
-                  A TECGEO nasceu da percepção de que muitos produtores rurais e proprietários de imóveis enfrentavam dificuldades para regularizar suas terras. Processos burocráticos, falta de informação técnica e custos elevados eram barreiras comuns.
-                </p>
-                <p>
-                  Com mais de uma década de atuação, especializamo-nos em tornar o processo de regularização mais simples, acessível e eficiente. Nossa equipe de engenheiros e especialistas combina experiência técnica com conhecimento profundo da legislação local e federal.
-                </p>
-                <p>
-                  Hoje, somos referência em georreferenciamento, CAR e licenciamento ambiental em todo o estado de Goiás, atendendo desde pequenos produtores até grandes propriedades rurais. E agora, como <strong className="text-[#001B80]">consultoria estratégica</strong>, também atuamos em auditoria territorial, due diligence para compra e venda de fazendas, assessoria a advogados e suporte a responsáveis técnicos.
-                </p>
-              </div>
-            </div>
-            <div className="bg-gray-100 rounded-xl h-80 flex items-center justify-center">
-              <img
-                src={image_c761b00ab8c6f71db4a1a590bb1d1f2ce46d3b6e}
-                alt="Vista aérea de propriedade rural"
-                className="w-full h-full object-cover rounded-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fundadora */}
-      <section className="py-16 bg-gray-50 border-y border-gray-100">
+      {/* Nossa História - Editorial 2 Colunas */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Foto da Fundadora */}
-            <div className="lg:col-span-4 flex justify-center">
-              <div className="relative group w-full max-w-xs">
-                <div className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white">
-                  <img
-                    src={fotoAngela}
-                    alt="Ângela da Silva Paula de Oliveira - Fundadora da TECGEO"
-                    className="w-full h-80 sm:h-96 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#001B80]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
-                    <span className="text-white text-sm font-medium">Fundadora & Técnica em Agrimensura</span>
-                  </div>
-                </div>
-                <div className="mt-3 text-center sm:text-left">
-                  <p className="text-sm font-bold text-[#001B80]">Ângela S. P. de Oliveira</p>
-                  <p className="text-xs text-gray-500">Fundadora da TECGEO</p>
+            <div className="lg:col-span-7">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                Nossa Trajetória
+              </span>
+              <h2 className="text-3xl font-bold text-[#001B80] mb-6 leading-tight">
+                Mais de 10 Anos Transformando a Regularização de Terras em Goiás
+              </h2>
+              <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p>
+                  A TECGEO nasceu da percepção de que produtores rurais, investidores e famílias enfrentavam imensas travas para regularizar suas terras. Exigências cartorárias complexas, sobreposições no INCRA e descompasso com leis ambientais geravam insegurança jurídica e bloqueio de crédito rural.
+                </p>
+                <p>
+                  Ao longo de mais de dez anos, estruturamos uma abordagem que vai além da topografia comum: aliamos tecnologia GNSS de alta precisão a uma profunda vivência prática das rotinas dos cartórios de imóveis e órgãos fiscalizadores.
+                </p>
+                <p>
+                  Hoje, somos referência regional com unidades em Cachoeira Alta e Caçu, atendendo com rigor técnico e credibilidade técnica em todo o estado de Goiás.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="border border-slate-200 p-2 bg-slate-50">
+                <img
+                  src={image_c761b00ab8c6f71db4a1a590bb1d1f2ce46d3b6e}
+                  alt="Vista aérea de propriedade rural regularizada"
+                  className="w-full h-72 sm:h-80 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fundadora - Perfil Executivo Limpo */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4">
+              <div className="border border-slate-200 p-2 bg-white">
+                <img
+                  src={fotoAngela}
+                  alt="Ângela da Silva Paula de Oliveira - Fundadora da TECGEO"
+                  className="w-full h-80 sm:h-96 object-cover object-top filter grayscale contrast-110 hover:grayscale-0 transition-all duration-300"
+                />
+                <div className="p-4 bg-white border-t border-slate-100">
+                  <h3 className="text-base font-bold text-slate-900">Ângela S. P. de Oliveira</h3>
+                  <p className="text-xs text-[#001B80] font-semibold mt-0.5">Fundadora da TECGEO</p>
+                  <p className="text-xs text-slate-500 mt-1">Técnica em Agrimensura (IFG) & Especialista Notarial</p>
                 </div>
               </div>
             </div>
 
-            {/* Minibio */}
             <div className="lg:col-span-8">
-              <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Fundadora</span>
-              <h2 className="text-[#001B80] mt-1 mb-6 text-3xl sm:text-4xl">Ângela da Silva Paula de Oliveira</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                Liderança & Origem
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#001B80] mb-6">
+                Ângela da Silva Paula de Oliveira
+              </h2>
+              <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
                 <p>
-                  De origens humildes a empresária de destaque, Ângela construiu sua trajetória com base na superação e no trabalho duro, iniciado aos 13 anos. Ainda na juventude, descobriu sua vocação para a área documental ao atuar nos cartórios da Comarca de Cachoeira Alta (GO), onde adquiriu uma base sólida sobre escrituras e registros.
+                  Ângela construiu sua carreira com base no compromisso, na resiliência e no estudo contínuo. Iniciou sua trajetória profissional ainda jovem nos cartórios da Comarca de Cachoeira Alta (GO), onde absorveu os fundamentos da prática notarial, títulos de domínio e registros públicos de imóveis.
                 </p>
                 <p>
-                  Unindo essa forte vivência prática à sua formação técnica em Agrimensura pelo Instituto Federal de Goiás (IFG), atua há mais de uma década no setor de regularização fundiária. Hoje, é fundadora da TECGEO, empresa referência nos municípios de Caçu e Cachoeira Alta, onde alia visão estratégica, precisão técnica e segurança jurídica para entregar as melhores soluções em georreferenciamento e gestão territorial.
+                  Unindo essa experiência prática à formação técnica em Agrimensura pelo Instituto Federal de Goiás (IFG), especializou-se na regularização fundiária de áreas rurais e urbanas.
+                </p>
+                <p>
+                  À frente da TECGEO, consolidou a empresa como sinônimo de segurança jurídica, responsabilidade técnica perante o INCRA e ética profissional, liderando também a expansão da divisão de Consultoria Estratégica.
                 </p>
               </div>
             </div>
@@ -121,86 +135,94 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
         </div>
       </section>
 
-      {/* Missão, Visão e Valores */}
-      <section className="py-16 bg-white">
+      {/* Missão, Visão e Valores - 3 Colunas Abertas com Divisória */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-xl text-center shadow-sm">
-              <div className="bg-[#1EB53A]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="text-[#1EB53A]" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">Missão</h3>
-              <p className="text-gray-700">
-                Facilitar a regularização de imóveis rurais com excelência técnica, agilidade e conformidade legal, contribuindo para o desenvolvimento sustentável do campo.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl text-center shadow-sm">
-              <div className="bg-[#1EB53A]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Eye className="text-[#1EB53A]" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">Visão</h3>
-              <p className="text-gray-700">
-                Ser a empresa mais confiável e inovadora em regularização de imóveis rurais em Goiás, reconhecida pela qualidade e compromisso com nossos clientes.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl text-center shadow-sm">
-              <div className="bg-[#1EB53A]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="text-[#1EB53A]" size={32} />
-              </div>
-              <h3 className="text-[#001B80] mb-3">Valores</h3>
-              <p className="text-gray-700">
-                Ética, transparência, excelência técnica, comprometimento, inovação e respeito ao meio ambiente e às pessoas.
-              </p>
-            </div>
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Diretrizes Corporativas
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">Missão, Visão e Valores</h2>
           </div>
 
-          {/* Valores Detalhados */}
-          <div className="mt-12">
-            <h3 className="text-[#001B80] text-center mb-[10px] mt-[0px] mr-[0px] ml-[0px]">Nossos Valores em Prática</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                  <div className="bg-[#001B80]/10 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <value.icon className="text-[#001B80]" size={24} />
-                  </div>
-                  <h4 className="text-[#001B80] mb-2">{value.title}</h4>
-                  <p className="text-gray-600 text-sm">{value.description}</p>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 border-y border-slate-200 py-10">
+            <div className="py-6 md:py-0 md:px-8 first:pl-0 last:pr-0">
+              <Target size={24} className="text-[#001B80] mb-4" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Missão</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Facilitar e assegurar a regularização imobiliária rural e urbana com excelência técnica, agilidade e conformidade jurídica, contribuindo diretamente para o desenvolvimento sustentável e o crédito no agronegócio.
+              </p>
+            </div>
+
+            <div className="py-6 md:py-0 md:px-8 first:pl-0 last:pr-0">
+              <Eye size={24} className="text-[#1EB53A] mb-4" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Visão</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Ser a empresa de engenharia diagnóstica e consultoria fundiária mais confiável e recomendada em Goiás, reconhecida pela precisão métrica, blindagem patrimonial e integridade em cada certidão entregue.
+              </p>
+            </div>
+
+            <div className="py-6 md:py-0 md:px-8 first:pl-0 last:pr-0">
+              <Heart size={24} className="text-[#001B80] mb-4" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Valores</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Rigor técnico inegociável, transparência documental, respeito aos prazos e às normas ambientais, sigilo pericial e compromisso absoluto com o patrimônio de quem confia em nosso trabalho.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Nossa Equipe */}
-      <section className="py-16 bg-white">
+      {/* Valores em Prática - Grid Aberto */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-[#001B80] mb-4">Nossa Equipe</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Profissionais qualificados e experientes para garantir a excelência em cada projeto
-            </p>
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Princípios Operacionais
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">Nossos Valores em Prática</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-100 rounded-xl h-80 flex items-center justify-center">
-              <img
-                src={image_dea1c37b8860fa12ad2cebb7d4eb6c1b99167f21}
-                alt="Equipe trabalhando em campo"
-                className="w-full h-full object-cover rounded-xl"
-              />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((v, index) => (
+              <div key={index} className="border-t-2 border-slate-300 pt-6">
+                <v.icon size={22} className="text-[#001B80] mb-3" />
+                <h4 className="text-base font-bold text-slate-900 mb-2">{v.title}</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">{v.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Equipe Multidisciplinar */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5">
+              <div className="border border-slate-200 p-2 bg-slate-50">
+                <img
+                  src={image_dea1c37b8860fa12ad2cebb7d4eb6c1b99167f21}
+                  alt="Equipe técnica em campo"
+                  className="w-full h-72 sm:h-80 object-cover"
+                />
+              </div>
             </div>
-            <div className="flex flex-col justify-center">
-              <p className="text-gray-700 mb-6">
-                Nossa equipe multidisciplinar reúne profissionais altamente capacitados, com formação técnica sólida e experiência prática no campo. Todos comprometidos em oferecer as melhores soluções para cada cliente.
+            <div className="lg:col-span-7">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                Capacidade Técnica
+              </span>
+              <h2 className="text-3xl font-bold text-[#001B80] mb-4">
+                Corpo Técnico Especializado
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                Nosso quadro reúne profissionais com formação técnica sólida, registro formal e anos de vivência em levantamentos de campo com tecnologia GNSS e análise de cadeias dominiais.
               </p>
               <ul className="space-y-3">
                 {team.map((role, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#1EB53A] rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">{role}</span>
+                  <li key={index} className="flex items-center gap-3 text-sm font-medium text-slate-800">
+                    <span className="w-1.5 h-1.5 bg-[#1EB53A] rounded-full flex-shrink-0"></span>
+                    <span>{role}</span>
                   </li>
                 ))}
               </ul>
@@ -209,159 +231,97 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
         </div>
       </section>
 
-      {/* Localização */}
-      <section className="py-20 bg-gray-50">
+      {/* Nossas Unidades - 2 Colunas Limpas sem Molduras Excessivas */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-[#001B80] mb-[25px] text-center mt-[0px] mr-[0px] ml-[0px]">Nossas Localizações</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-[25px] mr-[0px] mb-[0px] ml-[0px]">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+              Presença Regional
+            </span>
+            <h2 className="text-3xl font-bold text-[#001B80]">Nossas Unidades em Goiás</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Cachoeira Alta */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Cachoeira Alta - Goiás</p>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
-                </div>
+            <div className="border border-slate-200 bg-white p-6">
+              <div className="mb-4">
+                <span className="text-xs font-semibold text-[#1EB53A] uppercase tracking-wider block">Unidade Sede</span>
+                <h3 className="text-xl font-bold text-slate-900 mt-1">Cachoeira Alta - GO</h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Setor Canaã, Av. A, Qd. 06, Lt. 06 — CEP 75870-000<br />
+                  Tel/WhatsApp: (64) 99955-8696 | Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h
+                </p>
               </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Cachoeira Alta, Goiás</h3>
-                    <p className="text-gray-600 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
-                    <p className="text-gray-500 text-sm">CEP 75870-000 — Cachoeira Alta - GO</p>
-                    <p className="text-gray-600 mt-2">
-                      Tel/WhatsApp: (64) 99955-8696
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
-                  </div>
-                </div>
+              <div className="relative w-full aspect-[16/9] border border-slate-200">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
               </div>
             </div>
 
             {/* Caçu */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Caçu - Goiás</p>
-                </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
-                </div>
+            <div className="border border-slate-200 bg-white p-6">
+              <div className="mb-4">
+                <span className="text-xs font-semibold text-[#1EB53A] uppercase tracking-wider block">Unidade Regional</span>
+                <h3 className="text-xl font-bold text-slate-900 mt-1">Caçu - GO</h3>
+                <p className="text-sm text-slate-600 mt-2">
+                  Rua José Reinaldo Viêira, 1223 — CEP 75813-000<br />
+                  Tel/WhatsApp: (64) 99955-8696 | Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h
+                </p>
               </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Caçu, Goiás</h3>
-                    <p className="text-gray-600 mt-1">
-                      R. José Reinaldo Viêira, 1223
-                    </p>
-                    <p className="text-gray-600">
-                      Tel/WhatsApp: (64) 99955-8696
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
-                  </div>
-                </div>
+              <div className="relative w-full aspect-[16/9] border border-slate-200">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-4">Vamos regularizar sua propriedade?</h2>
-          <p className="text-xl mb-3 text-gray-100">
-            Entre em contato e descubra como podemos ajudar você
-          </p>
-          <p className="text-base text-white/80 mb-8">
-            Agora também com <strong>Consultoria Estratégica</strong> para produtores, investidores e profissionais do agronegócio
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => onNavigate('contato')}
-              className="bg-white text-[#1EB53A] px-8 py-4 rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
-            >
-              Entrar em contato
-            </button>
-            <button
-              onClick={() => onNavigate('consultoria')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-semibold"
-            >
-              <Briefcase size={18} />
-              Conhecer a Consultoria
-              <ArrowRight size={18} />
-            </button>
+      {/* CTA Final */}
+      <section className="py-16 sm:py-20 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 border-l-4 border-[#1EB53A] bg-white p-8 sm:p-12 border border-slate-200">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#1EB53A] block mb-2">
+                Converse com a TECGEO
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#001B80] mb-3">
+                Vamos regularizar sua propriedade com precisão e segurança?
+              </h2>
+              <p className="text-slate-600 text-base leading-relaxed">
+                Entre em contato e descubra como podemos ajudar você com serviços técnicos e consultoria estratégica.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => onNavigate('contato')}
+                className="bg-[#001B80] text-white px-7 py-3 rounded hover:bg-[#001566] transition-colors text-sm font-semibold whitespace-nowrap"
+              >
+                Entrar em Contato
+              </button>
+              <button
+                onClick={() => onNavigate('consultoria')}
+                className="border border-slate-300 text-slate-800 px-7 py-3 rounded hover:bg-slate-100 transition-colors text-sm font-semibold inline-flex items-center gap-2 whitespace-nowrap"
+              >
+                <Briefcase size={16} />
+                Conhecer a Consultoria
+              </button>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-
-
-
