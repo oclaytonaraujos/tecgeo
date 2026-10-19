@@ -148,7 +148,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Stats */}
-      <section className="bg-white py-8 sm:py-12 border-b border-gray-100">
+      <section className="bg-white py-12 sm:py-16 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
@@ -167,7 +167,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Notícias */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+      <section className="py-20 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <h2 className="text-[#001B80] mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl">Últimas notícias</h2>
@@ -203,7 +203,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Por que a TECGEO existe */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <section className="py-20 sm:py-24 lg:py-28 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
@@ -230,7 +230,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Plano Agro+ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white">
+      <section className="py-24 sm:py-28 lg:py-32 bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="mb-6">
@@ -297,17 +297,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
 
           {/* Vantagem Exclusiva */}
-          <div className="bg-gradient-to-r from-[#1EB53A] to-[#189c30] p-8 sm:p-10 rounded-xl text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <TrendingUp size={28} />
-              <h3>Vantagem exclusiva</h3>
+          <div className="text-center max-w-3xl mx-auto pt-6">
+            <div className="flex items-center justify-center gap-2 text-[#1EB53A] mb-3">
+              <TrendingUp size={26} />
+              <h3 className="text-white text-xl sm:text-2xl font-bold">Vantagem exclusiva</h3>
             </div>
-            <p className="text-lg sm:text-xl mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
               Pagamento parcelado em pacote único, sem comprometer o fluxo de caixa da safra.
             </p>
             <button
               onClick={() => onNavigate('plano-agro')}
-              className="bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg inline-flex items-center gap-2"
+              className="bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all shadow-lg inline-flex items-center gap-2 font-medium"
             >
               Conheça o Plano Agro+
               <ArrowRight size={20} />
@@ -317,7 +317,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Serviços */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-24 sm:py-28 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 sm:mb-16">
             <h2 className="text-[#001B80] mb-4 text-center">Serviços TECGEO</h2>
@@ -363,7 +363,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Banner Consultoria TECGEO */}
-      <section className="py-16 bg-gradient-to-br from-[#001B80] via-[#00289e] to-[#001B80] text-white">
+      <section className="py-24 sm:py-28 bg-gradient-to-br from-[#001B80] via-[#00289e] to-[#001B80] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7">
@@ -421,7 +421,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
 
       {/* Como funciona */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <section className="py-24 sm:py-28 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-[#001B80] mb-4">Como funciona o processo</h2>
@@ -448,7 +448,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-24 sm:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-[#001B80] mb-3">Dúvidas sobre nossos serviços?</h2>
@@ -529,7 +529,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
+      <section className="py-24 sm:py-28 lg:py-32 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl leading-tight">
             Quer saber o que falta para sua propriedade ficar 100% regularizada?

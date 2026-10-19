@@ -106,7 +106,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-20">
+      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-28 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="mb-6" style={{ textAlign: 'center' }}>Serviços &amp; Consultoria TECGEO</h1>
           <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
@@ -116,7 +116,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       </section>
 
       {/* Banner Plano Agro+ */}
-      <section className="py-16 bg-gradient-to-r from-[#1EB53A] via-[#22c943] to-[#1EB53A]">
+      <section className="py-24 sm:py-28 bg-gradient-to-r from-[#1EB53A] via-[#22c943] to-[#1EB53A]">
 
         <div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -224,7 +224,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       </section>
 
       {/* Lista de Serviços - Grid Moderno */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-28 sm:py-32 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-[#001B80] mb-4">O que oferecemos</h2>
@@ -308,7 +308,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       </section>
 
       {/* Nossas Aplicações */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-[#001B80] mb-4">Aplicações em Georreferenciamento</h2>
@@ -434,7 +434,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       </section>
 
       {/* Tecnologias */}
-      <section className="py-24 bg-white">
+      <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-[#001B80] mb-4">Tecnologias que Utilizamos</h2>
@@ -487,61 +487,55 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       </section>
 
       {/* Banner Consultoria */}
-      <section className="py-16 bg-gray-50 border-t border-gray-100">
+      <section className="py-20 sm:py-24 bg-gradient-to-br from-[#001B80] to-[#002f99] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#001B80] to-[#002f99] rounded-2xl p-8 sm:p-12 text-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
-                  <Sparkles size={14} />
-                  Nova Frente TECGEO
-                </div>
-                <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
-                  Precisa de mais do que um serviço técnico?
-                </h2>
-                <p className="text-gray-200 text-lg leading-relaxed">
-                  A TECGEO agora oferece <strong>consultoria estratégica</strong> para produtores, investidores e profissionais: auditoria territorial, due diligence, parecer técnico e gestão fundiária integrada.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
+                <Sparkles size={14} />
+                Nova Frente TECGEO
               </div>
-              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
-                <button
-                  onClick={() => onNavigate('consultoria')}
-                  className="group flex-1 bg-[#1EB53A] text-white px-6 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-lg hover:scale-105"
-                >
-                  <Briefcase size={20} />
-                  Ver Consultoria TECGEO
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-                </button>
-                <button
-                  onClick={() => onNavigate('contato')}
-                  className="flex-1 border-2 border-white/60 text-white px-6 py-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
-                >
-                  Falar com Consultor
-                </button>
-              </div>
+              <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
+                Precisa de mais do que um serviço técnico?
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed">
+                A TECGEO agora oferece <strong>consultoria estratégica</strong> para produtores, investidores e profissionais: auditoria territorial, due diligence, parecer técnico e gestão fundiária integrada.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
+              <button
+                onClick={() => onNavigate('consultoria')}
+                className="group flex-1 bg-[#1EB53A] text-white px-6 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-lg hover:scale-105"
+              >
+                <Briefcase size={20} />
+                Ver Consultoria TECGEO
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+              </button>
+              <button
+                onClick={() => onNavigate('contato')}
+                className="flex-1 border-2 border-white/60 text-white px-6 py-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
+              >
+                Falar com Consultor
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <div className="bg-gradient-to-br from-[#001B80]/5 to-[#1EB53A]/5 p-12 rounded-xl border border-gray-100">
-            <h2 className="text-[#001B80] mb-6">Precisa de algum desses serviços?</h2>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Entre em contato conosco e receba um diagnóstico inicial gratuito com orçamento personalizado para sua propriedade
-            </p>
-            <button
-              onClick={() => onNavigate('contato')}
-              className="group bg-[#1EB53A] text-white px-10 py-5 rounded-xl transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-3"
-            >
-              Solicitar orçamento gratuito
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </button>
-          </div>
+      <section className="py-24 sm:py-28 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-[#001B80] mb-6">Precisa de algum desses serviços?</h2>
+          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+            Entre em contato conosco e receba um diagnóstico inicial gratuito com orçamento personalizado para sua propriedade
+          </p>
+          <button
+            onClick={() => onNavigate('contato')}
+            className="group bg-[#1EB53A] text-white px-10 py-5 rounded-xl transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-3 font-medium"
+          >
+            Solicitar orçamento gratuito
+            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+          </button>
         </div>
       </section>
     </div>

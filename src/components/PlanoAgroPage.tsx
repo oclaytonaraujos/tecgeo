@@ -112,33 +112,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="max-w-full sm:max-w-2xl text-white"
               >
-                {slides[currentSlide].showLogo ? (
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.1, duration: 0.5 }}
-                    className="mb-8"
-                  >
-                    <img 
-                      src={logoAgroMais} 
-                      alt="Plano Agro+" 
-                      className="h-64 sm:h-80 lg:h-96 drop-shadow-2xl mx-[0px] my-[-100px]"
-                    />
-                  </motion.div>
-                ) : slides[currentSlide].badge ? (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.1 }}
-                    className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-6 sm:mb-8 shadow-lg"
-                  >
-                    {(() => {
-                      const BadgeIcon = slides[currentSlide].badge!.icon;
-                      return <BadgeIcon size={18} className="sm:w-5 sm:h-5" />;
-                    })()}
-                    <span className="text-sm sm:text-base">{slides[currentSlide].badge.text}</span>
-                  </motion.div>
-                ) : null}
+
                 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 drop-shadow-2xl leading-tight">
                   {slides[currentSlide].title}
@@ -149,9 +123,9 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
                     onClick={() => onNavigate('contato')}
-                    className="group bg-white text-[#1EB53A] sm:px-8 sm:py-4 rounded-full hover:bg-gray-100 transition-all hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-xl px-[32px] py-[16px]"
+                    className="group bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:bg-gray-100 transition-all flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-lg"
                   >
-                    <span className="text-center">Solicitar contratação do serviço</span>
+                    <span>Solicitar contratação do serviço</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform flex-shrink-0" size={20} />
                   </button>
                   <button
@@ -159,7 +133,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
                       const element = document.getElementById('o-que-e-agro');
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="border-2 border-white text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-white hover:text-[#1EB53A] transition-all backdrop-blur-sm text-sm sm:text-base shadow-lg"
+                    className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#1EB53A] transition-all text-sm sm:text-base"
                   >
                     Saiba mais sobre o Agro+
                   </button>
@@ -189,7 +163,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
       </section>
 
       {/* O que é o Plano Agro+ */}
-      <section id="o-que-e-agro" className="py-24 bg-white">
+      <section id="o-que-e-agro" className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -220,7 +194,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
       </section>
 
       {/* O Tripé da Regularização */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -359,7 +333,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
       </section>
 
       {/* O Diferencial Financeiro */}
-      <section className="py-24 bg-gradient-to-br from-[#1EB53A] to-[#189c30] relative overflow-hidden">
+      <section className="py-28 sm:py-32 bg-gradient-to-br from-[#1EB53A] to-[#189c30] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -413,7 +387,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
       </section>
 
       {/* Quando o produtor precisa */}
-      <section className="py-24 bg-white">
+      <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -451,7 +425,7 @@ export function PlanoAgroPage({ onNavigate }: PlanoAgroPageProps) {
       </section>
 
       {/* Formulário de Contato */}
-      <section className="py-24 bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white relative overflow-hidden">
+      <section className="py-28 sm:py-32 bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>

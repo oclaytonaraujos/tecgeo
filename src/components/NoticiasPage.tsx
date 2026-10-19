@@ -548,22 +548,7 @@ export function NoticiasPage({ onNavigate, initialNewsId }: NoticiasPageProps) {
           viewport={{ once: true }}
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          <div
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 text-white mx-auto"
-            style={{
-              background: 'rgba(255, 255, 255, 0.1)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              display: 'flex',
-              width: 'fit-content',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-            }}
-          >
-            <Sparkles size={20} />
-            <span>Blog TecGeo</span>
-          </div>
+
           <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl" style={{ textAlign: 'center' }}>
             Notícias e Atualizações
           </h1>

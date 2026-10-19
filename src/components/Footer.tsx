@@ -13,12 +13,63 @@ export function Footer({ onNavigate }: FooterProps) {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Seção Principal */}
         <div className="py-12 sm:py-14 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
-          {/* Logo e Descrição - 4 colunas */}
+          {/* Logo, Descrição e Fale Conosco - 4 colunas */}
           <div className="lg:col-span-4">
             <img src={logo} alt="TECGEO" className="h-8 sm:h-9 mb-4" />
             <p className="text-gray-300 leading-relaxed mb-6 text-sm sm:text-base">
               Regularização e <strong className="text-[#1EB53A]">consultoria estratégica</strong> para imóveis rurais — precisão técnica, conformidade ambiental e segurança jurídica em todo o estado de Goiás.
             </p>
+
+            {/* Contato */}
+            <div className="pt-1">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-7">
+                <li>
+                  <a 
+                    href="https://wa.me/5564999558696"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-gray-300 hover:text-[#1EB53A] transition-all group"
+                  >
+                    <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
+                      <Phone size={18} className="text-[#1EB53A]" />
+                    </div>
+                    <span className="text-sm sm:text-base">(64) 99982-5619</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="mailto:tecgeodepambiental@gmail.com"
+                    className="flex items-start gap-3 text-gray-300 hover:text-[#1EB53A] transition-all group"
+                  >
+                    <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
+                      <Mail size={18} className="text-[#1EB53A]" />
+                    </div>
+                    <span className="break-all text-xs sm:text-sm leading-relaxed">
+                      tecgeodepambiental@gmail.com
+                    </span>
+                  </a>
+                </li>
+              </ul>
+
+              {/* Redes Sociais */}
+              <div>
+                <h5 className="text-xs sm:text-sm text-gray-400 mb-3">Nos siga nas redes</h5>
+                <div className="flex gap-3">
+                  <a
+                    href="https://www.instagram.com/tecgeo.agrimensura/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 transition-all duration-300 border border-white/20 hover:border-transparent"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={20} />
+                    <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                      Instagram
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Links Rápidos - 2 colunas */}
@@ -93,117 +144,92 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Nossas Unidades - 3 colunas */}
-          <div className="lg:col-span-3">
+          {/* Nossas Unidades - 6 colunas (uma do lado da outra) */}
+          <div className="md:col-span-2 lg:col-span-6">
             <h4 className="mb-4 sm:mb-6 text-white uppercase tracking-wider text-sm">Nossas Unidades</h4>
-            <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Cachoeira Alta */}
               <div className="group">
                 <div className="flex items-start gap-3 mb-2">
-                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all">
+                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
                     <MapPin size={18} className="text-[#1EB53A]" />
                   </div>
-                  <div>
-                    <p className="text-white mb-0.5 text-sm sm:text-base">Cachoeira Alta - GO</p>
+                  <div className="flex-1">
+                    <p className="text-white mb-0.5 text-sm sm:text-base font-medium">Cachoeira Alta - GO</p>
                     <p className="text-gray-400 text-xs mb-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
-                    <a 
-                      href="https://www.google.com/maps/search/Av.+A,+Qd.+06,+Lt.+06,+Setor+Canaa,+Cachoeira+Alta,+GO,+75870-000"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
-                    >
-                      Ver no mapa →
-                    </a>
-                    <a 
-                      href="https://wa.me/5564999558696"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors mt-1 block"
-                    >
-                      (64) 99955-8696
-                    </a>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <a 
+                        href="https://www.google.com/maps/search/Av.+A,+Qd.+06,+Lt.+06,+Setor+Canaa,+Cachoeira+Alta,+GO,+75870-000"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
+                      >
+                        Ver no mapa →
+                      </a>
+                      <span className="text-gray-500 text-xs hidden sm:inline">•</span>
+                      <a 
+                        href="https://wa.me/5564999558696"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors"
+                      >
+                        (64) 99955-8696
+                      </a>
+                    </div>
                   </div>
+                </div>
+                {/* Mini mapa Cachoeira Alta */}
+                <div className="mt-2.5 w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-white/15 shadow-sm bg-blue-950/40">
+                  <iframe 
+                    title="Mapa Cachoeira Alta"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
+                    className="w-full h-full border-0"
+                    loading="lazy" 
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
                 </div>
               </div>
 
               {/* Caçu */}
               <div className="group">
                 <div className="flex items-start gap-3 mb-2">
-                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all">
+                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
                     <MapPin size={18} className="text-[#1EB53A]" />
                   </div>
-                  <div>
-                    <p className="text-white mb-1 text-sm sm:text-base">Caçu - GO</p>
-                    <a 
-                      href="https://maps.app.goo.gl/Xy7CDssiqXJjPC9c7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
-                    >
-                      Ver no mapa →
-                    </a>
-                    <a 
-                      href="https://wa.me/5564999558696"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors mt-1 block"
-                    >
-                      (64) 99955-8696
-                    </a>
+                  <div className="flex-1">
+                    <p className="text-white mb-0.5 text-sm sm:text-base font-medium">Caçu - GO</p>
+                    <p className="text-gray-400 text-xs mb-1">R. José Reinaldo Viêira, 1223</p>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <a 
+                        href="https://maps.app.goo.gl/Xy7CDssiqXJjPC9c7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
+                      >
+                        Ver no mapa →
+                      </a>
+                      <span className="text-gray-500 text-xs hidden sm:inline">•</span>
+                      <a 
+                        href="https://wa.me/5564999558696"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors"
+                      >
+                        (64) 99955-8696
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contato e Redes Sociais - 3 colunas */}
-          <div className="lg:col-span-3">
-            <h4 className="mb-4 sm:mb-6 text-white uppercase tracking-wider text-sm">Fale Conosco</h4>
-            <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-              <li>
-                <a 
-                  href="https://wa.me/5564999558696"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-[#1EB53A] transition-all group"
-                >
-                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all">
-                    <Phone size={18} className="text-[#1EB53A]" />
-                  </div>
-                  <span className="text-sm sm:text-base">(64) 99982-5619</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="mailto:tecgeodepambiental@gmail.com"
-                  className="flex items-start gap-3 text-gray-300 hover:text-[#1EB53A] transition-all group"
-                >
-                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all">
-                    <Mail size={18} className="text-[#1EB53A]" />
-                  </div>
-                  <span className="break-all text-xs sm:text-sm leading-relaxed">
-                    tecgeodepambiental@gmail.com
-                  </span>
-                </a>
-              </li>
-            </ul>
-
-            {/* Redes Sociais */}
-            <div>
-              <h5 className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4">Nos siga nas redes</h5>
-              <div className="flex gap-3">
-                <a
-                  href="https://www.instagram.com/tecgeo.agrimensura/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative bg-white/10 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 transition-all duration-300 border border-white/20 hover:border-transparent"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
-                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    Instagram
-                  </span>
-                </a>
+                {/* Mini mapa Caçu */}
+                <div className="mt-2.5 w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-white/15 shadow-sm bg-blue-950/40">
+                  <iframe 
+                    title="Mapa Caçu"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
+                    className="w-full h-full border-0"
+                    loading="lazy" 
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
               </div>
             </div>
           </div>

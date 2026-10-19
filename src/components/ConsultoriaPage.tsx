@@ -134,7 +134,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-[#001B80] via-[#00289e] to-[#001B80] text-white py-20 lg:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#001B80] via-[#00289e] to-[#001B80] text-white py-28 lg:py-36 overflow-hidden">
         <div className="absolute inset-0 opacity-15 pointer-events-none">
           <div className="absolute top-0 right-10 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-400 rounded-full blur-3xl"></div>
@@ -147,32 +147,29 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 bg-[#1EB53A] text-white px-5 py-2 rounded-full mb-6 shadow-lg text-sm font-semibold tracking-wide">
-              <Sparkles size={18} />
-              <span>Nova Divisão Estratégica TECGEO</span>
-            </div>
+
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-sm">
-              TECGEO agora é <span className="text-[#1EB53A] underline decoration-wavy decoration-[#1EB53A]/40">Consultoria</span>
+              TECGEO agora é Consultoria
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto">
               Soluções integradas em <strong>gestão fundiária</strong>, <strong>ambiental</strong> e <strong>segurança patrimonial</strong>. Muito mais que medição: orientação estratégica de ponta a ponta para o agronegócio.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://wa.me/5564999558696?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Consultoria%20TECGEO."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-xl hover:scale-105"
+                className="group bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-lg"
               >
-                <PhoneCall size={20} />
                 Falar com um Consultor
+                <ArrowRight className="group-hover:translate-x-1 transition-transform flex-shrink-0" size={20} />
               </a>
               <button
                 onClick={() => onNavigate('contato')}
-                className="w-full sm:w-auto border-2 border-white/80 text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#001B80] transition-all font-semibold"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#001B80] transition-all text-sm sm:text-base"
               >
                 Solicitar Diagnóstico
               </button>
@@ -182,7 +179,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       </section>
 
       {/* Destaque / Manifesto */}
-      <section className="py-16 sm:py-20 bg-white border-b border-gray-100">
+      <section className="py-24 sm:py-28 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 flex justify-center">
@@ -245,7 +242,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       </section>
 
       {/* Áreas de Atuação da Consultoria */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Nossas Áreas</span>
@@ -304,7 +301,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       </section>
 
       {/* Como Funciona a Consultoria */}
-      <section className="py-20 bg-white">
+      <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Metodologia</span>
@@ -333,7 +330,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       </section>
 
       {/* Para quem é a Consultoria? */}
-      <section className="py-20 bg-gradient-to-br from-[#001B80] to-[#002f99] text-white">
+      <section className="py-28 sm:py-32 bg-gradient-to-br from-[#001B80] to-[#002f99] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-white text-3xl sm:text-4xl mb-4">Quem se beneficia da nossa Consultoria?</h2>
@@ -382,7 +379,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Tire suas dúvidas</span>
@@ -420,7 +417,7 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white">
+      <section className="py-24 sm:py-28 bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6 text-sm font-medium">
             <Calendar size={18} />

@@ -89,7 +89,7 @@ export function ContatoPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-24 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
@@ -102,10 +102,7 @@ export function ContatoPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-5 py-2.5 rounded-full mb-6 shadow-lg">
-              <MessageSquare size={20} />
-              <span>Fale Conosco</span>
-            </div>
+
             <h1 className="mb-6" style={{ textAlign: 'center' }}>Entre em Contato</h1>
             <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
               Estamos prontos para atender você. Fale conosco e descubra como podemos ajudar a regularizar sua propriedade
@@ -115,7 +112,7 @@ export function ContatoPage() {
       </section>
 
       {/* Formulário com Design Inovador */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative">
+      <section className="py-28 sm:py-32 bg-gradient-to-b from-white to-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Formulário - Ocupa 2 colunas */}
@@ -125,15 +122,16 @@ export function ContatoPage() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
-                {/* Header do Card */}
-                <div className="bg-gradient-to-r from-[#001B80] to-[#003cb3] p-8 text-white">
-                  <h2 className="text-2xl mb-2">Receba um diagnóstico inicial gratuito</h2>
-                  <p className="text-gray-200">Preencha o formulário e descubra o que sua propriedade precisa para estar 100% regularizada</p>
+              <div>
+                <div className="mb-8">
+                  <h2 className="text-[#001B80] text-3xl font-bold mb-3">Receba um diagnóstico inicial gratuito</h2>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    Preencha o formulário e descubra o que sua propriedade precisa para estar 100% regularizada
+                  </p>
                 </div>
 
                 {/* Formulário */}
-                <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Erro de envio */}
                   {submitError && (
                     <div className="flex items-start gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
@@ -431,21 +429,7 @@ export function ContatoPage() {
                 </div>
               </div>
 
-              {/* WhatsApp Destaque */}
-              <div className="bg-gradient-to-br from-[#1EB53A] to-[#189c30] p-8 rounded-xl text-white text-center">
-                <h3 className="mb-4">Fale conosco pelo WhatsApp</h3>
-                <p className="mb-6">
-                  Atendimento rápido e direto com nossa equipe
-                </p>
-                <a
-                  href="https://wa.me/5564999558696"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white text-[#1EB53A] px-8 py-3 rounded-lg hover:bg-gray-100 transition-all mt-[10px] mr-[0px] mb-[0px] ml-[0px]"
-                >
-                  Abrir WhatsApp
-                </a>
-              </div>
+
             </div>
           </div>
         </div>

@@ -43,6 +43,19 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       }}
     >
+      <style>{`
+        @keyframes badge-bounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+        }
+        .badge-bounce-anim {
+          animation: badge-bounce 0.9s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-2 sm:py-2.5">
           {/* Logo */}
@@ -72,7 +85,9 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 <span className="relative">
                   {item.label}
                   {item.isNew && (
-                    <span className="absolute -top-2.5 -right-5 bg-[#1EB53A] text-white text-[9px] font-bold px-1 py-0.5 rounded-full leading-none">NEW</span>
+                    <span className="absolute -top-3 -right-5 flex items-center justify-center w-[22px] h-[22px] min-w-[22px] min-h-[22px] aspect-square rounded-full bg-[#1EB53A] text-white text-[8px] font-black tracking-tight leading-none badge-bounce-anim shadow-sm pointer-events-none">
+                      NEW
+                    </span>
                   )}
                 </span>
                 {/* Active state underline */}
@@ -130,7 +145,9 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 <span className="flex items-center gap-2">
                   {item.label}
                   {item.isNew && (
-                    <span className="bg-[#1EB53A] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full leading-none">NOVO</span>
+                    <span className="inline-flex items-center justify-center w-[22px] h-[22px] min-w-[22px] min-h-[22px] aspect-square rounded-full bg-[#1EB53A] text-white text-[8px] font-black tracking-tight leading-none badge-bounce-anim shadow-sm">
+                      NEW
+                    </span>
                   )}
                 </span>
               </button>

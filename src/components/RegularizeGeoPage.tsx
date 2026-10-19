@@ -76,7 +76,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
@@ -88,10 +88,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
           transition={{ duration: 0.6 }}
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-5 py-2.5 rounded-full mb-6 shadow-lg">
-            <Sparkles size={20} />
-            <span>Programa de Assessoria</span>
-          </div>
+
           <h1 className="mb-6">Regularize Geo</h1>
           <p className="text-xl text-gray-100 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
             Assessoria completa em regularização fundiária e ambiental para produtores rurais e responsáveis técnicos
@@ -99,14 +96,14 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <button
               onClick={() => onNavigate('contato')}
-              className="group bg-[#1EB53A] text-white px-8 py-4 rounded-full hover:bg-[#189c30] transition-all hover:shadow-2xl hover:scale-105 flex items-center justify-center gap-2.5 shadow-xl"
+              className="group bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-2.5 text-sm sm:text-base shadow-lg"
             >
               Solicitar assessoria
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              <ArrowRight className="group-hover:translate-x-1 transition-transform flex-shrink-0" size={20} />
             </button>
             <button
               onClick={() => onNavigate('servicos')}
-              className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-[#001B80] transition-all"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-[#001B80] transition-all text-sm sm:text-base"
             >
               Ver todos os serviços
             </button>
@@ -115,7 +112,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
       </section>
 
       {/* O que é */}
-      <section className="py-24 bg-white">
+      <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,7 +163,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
       </section>
 
       {/* Serviços de Assessoria */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,7 +202,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
       </section>
 
       {/* Como funciona */}
-      <section className="py-24 bg-white">
+      <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -247,7 +244,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
       </section>
 
       {/* Destaque Escritura de Estremação */}
-      <section className="py-24 bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white relative overflow-hidden">
+      <section className="py-28 sm:py-32 bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
@@ -291,33 +288,31 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
       </section>
 
       {/* CTA Final */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 sm:py-28 bg-gray-50">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <div className="bg-white p-12 rounded-3xl shadow-lg border border-gray-100">
-            <h2 className="text-[#001B80] mb-6">Pronto para regularizar com assessoria completa?</h2>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Entre em contato e nossa equipe indicará toda a documentação necessária ao contratar o serviço
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => onNavigate('contato')}
-                className="group bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-10 py-5 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-2xl inline-flex items-center gap-3"
-              >
-                Falar com a equipe TECGEO
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
-              <button
-                onClick={() => onNavigate('servicos')}
-                className="border-2 border-[#001B80] text-[#001B80] px-10 py-5 rounded-2xl hover:bg-[#001B80] hover:text-white transition-all"
-              >
-                Ver todos os serviços
-              </button>
-            </div>
+          <h2 className="text-[#001B80] mb-6">Pronto para regularizar com assessoria completa?</h2>
+          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+            Entre em contato e nossa equipe indicará toda a documentação necessária ao contratar o serviço
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => onNavigate('contato')}
+              className="group bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-10 py-5 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-2xl inline-flex items-center justify-center gap-3 font-semibold"
+            >
+              Falar com a equipe TECGEO
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </button>
+            <button
+              onClick={() => onNavigate('servicos')}
+              className="border-2 border-[#001B80] text-[#001B80] px-10 py-5 rounded-2xl hover:bg-[#001B80] hover:text-white transition-all font-semibold"
+            >
+              Ver todos os serviços
+            </button>
           </div>
         </motion.div>
       </section>

@@ -40,7 +40,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white py-16">
+      <section className="bg-gradient-to-br from-[#001B80] to-[#003cb3] text-white py-28 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="mb-4" style={{ textAlign: 'center' }}>Sobre a TECGEO</h1>
@@ -52,7 +52,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       </section>
 
       {/* Nossa História */}
-      <section className="py-16 bg-white">
+      <section className="py-24 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -81,7 +81,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       </section>
 
       {/* Fundadora */}
-      <section className="py-16 bg-gray-50 border-y border-gray-100">
+      <section className="py-24 sm:py-28 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Foto da Fundadora */}
@@ -122,7 +122,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       </section>
 
       {/* Missão, Visão e Valores */}
-      <section className="py-16 bg-white">
+      <section className="py-24 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white p-8 rounded-xl text-center shadow-sm">
@@ -175,7 +175,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       </section>
 
       {/* Nossa Equipe */}
-      <section className="py-16 bg-white">
+      <section className="py-24 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-[#001B80] mb-4">Nossa Equipe</h2>
@@ -210,7 +210,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       </section>
 
       {/* Localização */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-[#001B80] mb-[25px] text-center mt-[0px] mr-[0px] ml-[0px]">Nossas Localizações</h2>
           
@@ -332,7 +332,7 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
+      <section className="py-24 sm:py-28 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-4">Vamos regularizar sua propriedade?</h2>
           <p className="text-xl mb-3 text-gray-100">
