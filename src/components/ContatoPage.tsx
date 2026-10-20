@@ -422,8 +422,8 @@ export function ContatoPage() {
                   <div>
                     <h4 className="text-[#001B80] mb-1">Horário de Atendimento</h4>
                     <p className="text-gray-700">
-                      Segunda a Sexta: 8h às 18h<br />
-                      Sábado: 8h às 12h
+                      Segunda a Sexta: 08h às 11h e das 13h às 17h<br />
+                      Sábado: 08h às 12h
                     </p>
                   </div>
                 </div>
@@ -440,115 +440,114 @@ export function ContatoPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-[#001B80] mb-[25px] text-center mt-[0px] mr-[0px] ml-[0px]">Nossas Localizações</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-[25px] mr-[0px] mb-[0px] ml-[0px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
             {/* Cachoeira Alta */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Cachoeira Alta - Goiás</p>
+            <div className="space-y-6">
+              {/* Nome da cidade do escritório */}
+              <div className="flex items-center gap-3">
+                <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-[#1EB53A]" size={24} />
                 </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
+                <div>
+                  <h3 className="text-[#001B80] text-2xl font-bold">Escritório de Cachoeira Alta, Goiás</h3>
                 </div>
               </div>
 
-              <div className="space-y-6">
+              {/* Mapa logo abaixo do nome */}
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+                <iframe 
+                  title="Mapa Cachoeira Alta"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              {/* Informações detalhadas */}
+              <div className="space-y-4 pt-1">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Cachoeira Alta, Goiás</h3>
-                    <p className="text-gray-600 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Endereço</h4>
+                    <p className="text-gray-700">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
                     <p className="text-gray-500 text-sm">CEP 75870-000 — Cachoeira Alta - GO</p>
-                    <p className="text-gray-600 mt-2">
-                      Tel/WhatsApp: (64) 99955-8696
+                    <p className="text-gray-700 font-medium mt-1">
+                      Tel/WhatsApp:{' '}
+                      <a href="https://wa.me/5564999558696" target="_blank" rel="noopener noreferrer" className="text-[#001B80] hover:text-[#1EB53A] transition-colors">
+                        (64) 99955-8696
+                      </a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Horário de Atendimento</h4>
+                    <p className="text-gray-700">Segunda a Sexta: 08h às 11h e das 13h às 17h</p>
+                    <p className="text-gray-700">Sábado: 08h às 12h</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Caçu */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Caçu - Goiás</p>
+            <div className="space-y-6">
+              {/* Nome da cidade do escritório */}
+              <div className="flex items-center gap-3">
+                <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-[#1EB53A]" size={24} />
                 </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
+                <div>
+                  <h3 className="text-[#001B80] text-2xl font-bold">Escritório de Caçu, Goiás</h3>
                 </div>
               </div>
 
-              <div className="space-y-6">
+              {/* Mapa logo abaixo do nome */}
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+                <iframe 
+                  title="Mapa Caçu"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              {/* Informações detalhadas */}
+              <div className="space-y-4 pt-1">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Caçu, Goiás</h3>
-                    <p className="text-gray-600 mt-1">
-                      R. José Reinaldo Viêira, 1223
-                    </p>
-                    <p className="text-gray-600">
-                      Tel/WhatsApp: (64) 99955-8696
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Endereço</h4>
+                    <p className="text-gray-700">R. José Reinaldo Viêira, 1223 — Água Fria</p>
+                    <p className="text-gray-500 text-sm">CEP 75813-000 — Caçu - GO</p>
+                    <p className="text-gray-700 font-medium mt-1">
+                      Tel/WhatsApp:{' '}
+                      <a href="https://wa.me/5564999558696" target="_blank" rel="noopener noreferrer" className="text-[#001B80] hover:text-[#1EB53A] transition-colors">
+                        (64) 99955-8696
+                      </a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Horário de Atendimento</h4>
+                    <p className="text-gray-700">Segunda a Sexta: 08h às 11h e das 13h às 17h</p>
+                    <p className="text-gray-700">Sábado: 08h às 12h</p>
                   </div>
                 </div>
               </div>

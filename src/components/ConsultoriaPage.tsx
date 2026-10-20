@@ -183,30 +183,25 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-sm">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+              <div className="relative group w-full max-w-xs">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white">
                   <img
                     src={fotoAngela}
                     alt="Ângela da Silva Paula de Oliveira"
-                    className="w-full h-96 sm:h-[440px] object-cover object-top"
+                    className="w-full h-80 sm:h-96 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#001B80]/90 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-                    <p className="text-lg font-bold">Ângela S. P. de Oliveira</p>
-                    <p className="text-xs text-green-300 font-medium">Fundadora & Líder do Núcleo de Consultoria</p>
-                    <p className="text-xs text-gray-300 mt-1">Especialista em Regularização Fundiária e Notarial</p>
-                  </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-[#1EB53A] text-white p-4 rounded-xl shadow-lg hidden sm:block">
-                  <BadgeCheck size={32} />
+                <div style={{marginTop: '6px'}}>
+                  <p style={{margin: 0, fontSize: '14px', fontWeight: 'bold', color: '#001B80'}}>Ângela S. P. de Oliveira</p>
+                  <p style={{margin: 0, marginTop: '2px', fontSize: '11px', color: '#6b7280'}}>Fundadora da TECGEO</p>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 text-[#1EB53A] font-semibold text-sm tracking-wider uppercase mb-3">
-                <Briefcase size={18} />
-                <span>A Nova Fase da TECGEO</span>
-              </div>
+              <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-3 tracking-wide">
+                A Nova Fase da TECGEO
+              </span>
               <h2 className="text-[#001B80] text-3xl sm:text-4xl mb-6">
                 Por que a TECGEO se tornou uma Consultoria Especializada?
               </h2>
@@ -244,12 +239,14 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       {/* Áreas de Atuação da Consultoria */}
       <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Nossas Áreas</span>
-            <h2 className="text-[#001B80] text-3xl sm:text-4xl mt-2 mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              Nossas Áreas
+            </span>
+            <h2 className="text-[#001B80] text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-balance">
               Onde a Consultoria TECGEO atua
             </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed text-pretty">
               Soluções personalizadas desenhadas para cada estágio da sua propriedade ou negócio rural
             </p>
           </div>
@@ -303,12 +300,14 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       {/* Como Funciona a Consultoria */}
       <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Metodologia</span>
-            <h2 className="text-[#001B80] text-3xl sm:text-4xl mt-2 mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              Metodologia
+            </span>
+            <h2 className="text-[#001B80] text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-balance">
               Como funciona o ciclo consultivo TECGEO
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed text-pretty">
               Um processo estruturado com clareza, prazos acordados e total previsibilidade
             </p>
           </div>
@@ -332,9 +331,9 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       {/* Para quem é a Consultoria? */}
       <section className="py-28 sm:py-32 bg-gradient-to-br from-[#001B80] to-[#002f99] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-white text-3xl sm:text-4xl mb-4">Quem se beneficia da nossa Consultoria?</h2>
-            <p className="text-gray-200 text-lg max-w-2xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-white text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-balance">Quem se beneficia da nossa Consultoria?</h2>
+            <p className="text-gray-200 text-lg max-w-2xl mx-auto leading-relaxed text-pretty">
               Atendemos diferentes perfis com soluções sob medida para cada desafio
             </p>
           </div>
@@ -381,10 +380,12 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
       {/* FAQ */}
       <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Tire suas dúvidas</span>
-            <h2 className="text-[#001B80] text-3xl sm:text-4xl mt-2 mb-4">Perguntas Frequentes sobre a Consultoria</h2>
-            <p className="text-gray-600">Entenda como a consultoria funciona na prática</p>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              Tire suas dúvidas
+            </span>
+            <h2 className="text-[#001B80] text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-balance">Perguntas Frequentes sobre a Consultoria</h2>
+
           </div>
 
           <div className="space-y-3">
@@ -418,15 +419,14 @@ export function ConsultoriaPage({ onNavigate }: ConsultoriaPageProps) {
 
       {/* CTA Final */}
       <section className="py-24 sm:py-28 bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6 text-sm font-medium">
-            <Calendar size={18} />
-            <span>Atendimento Personalizado</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-block text-sm font-semibold text-white border-b-2 border-white/80 pb-1 mb-4 tracking-wide">
+            Atendimento Personalizado
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white text-balance tracking-tight">
             Deseja uma análise consultiva da sua propriedade?
           </h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed text-pretty">
             Converse diretamente com nossos consultores técnicos e descubra a rota mais segura e econômica para regularizar seu imóvel rural.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

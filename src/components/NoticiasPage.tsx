@@ -145,7 +145,7 @@ export function NoticiasPage({ onNavigate, initialNewsId }: NoticiasPageProps) {
   useEffect(() => {
     if (selectedNews) {
       // Update document title
-      document.title = `${selectedNews.title} | TecGeo`;
+      document.title = `TecGeo Agrimensura e Consultoria | ${selectedNews.title}`;
       
       // Update meta description
       const metaDescription = document.querySelector('meta[name="description"]');
@@ -154,7 +154,7 @@ export function NoticiasPage({ onNavigate, initialNewsId }: NoticiasPageProps) {
       }
     } else {
       // Reset to default
-      document.title = 'Notícias | TecGeo - Regularização de Propriedades Rurais';
+      document.title = 'TecGeo Agrimensura e Consultoria | Notícias';
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', 'Fique por dentro das novidades sobre regularização rural, legislação e tecnologia.');
@@ -546,13 +546,13 @@ export function NoticiasPage({ onNavigate, initialNewsId }: NoticiasPageProps) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
 
-          <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl" style={{ textAlign: 'center' }}>
+          <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
             Notícias e Atualizações
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <p className="text-lg sm:text-xl text-gray-200 leading-relaxed text-pretty max-w-2xl mx-auto">
             Fique por dentro das novidades sobre regularização rural, legislação e tecnologia
           </p>
         </motion.div>

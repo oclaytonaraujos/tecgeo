@@ -22,6 +22,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p, li {
+  text-wrap: pretty;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -61,6 +69,14 @@ p {
   line-height: 1.8;
   margin: 0;
   margin-bottom: 0.5rem;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
 }
 
 button {

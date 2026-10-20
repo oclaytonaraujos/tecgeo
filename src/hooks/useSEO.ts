@@ -27,7 +27,7 @@ export function useSEO({
 }: SEOProps) {
   useEffect(() => {
     // Title
-    document.title = `${title} | TecGeo - Regularização de Propriedades Rurais`;
+    document.title = `TecGeo Agrimensura e Consultoria | ${title}`;
 
     // Meta tags básicas
     updateMetaTag('description', description);
@@ -41,7 +41,7 @@ export function useSEO({
     updateMetaTag('og:image', image, 'property');
     updateMetaTag('og:url', url, 'property');
     updateMetaTag('og:type', type, 'property');
-    updateMetaTag('og:site_name', 'TecGeo', 'property');
+    updateMetaTag('og:site_name', 'TecGeo Agrimensura e Consultoria', 'property');
 
     // Twitter Cards
     updateMetaTag('twitter:card', 'summary_large_image', 'name');
@@ -108,12 +108,12 @@ export function generateArticleSchema(article: {
     dateModified: article.date,
     author: {
       '@type': 'Organization',
-      name: 'TecGeo',
+      name: 'TecGeo Agrimensura e Consultoria',
       url: 'https://www.tecgeo.com.br',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'TecGeo',
+      name: 'TecGeo Agrimensura e Consultoria',
       logo: {
         '@type': 'ImageObject',
         url: 'https://www.tecgeo.com.br/logo.png',

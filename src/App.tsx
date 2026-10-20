@@ -13,6 +13,19 @@ import { RegularizeGeoPage } from './components/RegularizeGeoPage';
 import { ConsultoriaPage } from './components/ConsultoriaPage';
 import { useAuth } from './hooks/useAuth';
 
+const PAGE_TITLES: Record<string, string> = {
+  home: 'Início',
+  'plano-agro': 'Plano Agro+',
+  servicos: 'Serviços',
+  consultoria: 'Consultoria',
+  'regularize-geo': 'Regularize Geo',
+  noticias: 'Notícias',
+  sobre: 'Sobre',
+  contato: 'Contato',
+  admin: 'Painel Administrativo',
+  login: 'Login',
+};
+
 export default function App() {
   const initialPage = new URLSearchParams(window.location.search).get('page') ?? 'home';
   const [currentPage, setCurrentPage] = useState(initialPage);
@@ -29,7 +42,22 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const handlePopState = () => {
+      const page = new URLSearchParams(window.location.search).get('page') ?? 'home';
+      setCurrentPage(page);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  useEffect(() => {
+    if (currentPage !== 'noticias') {
+      const pageName = PAGE_TITLES[currentPage] || 'Início';
+      document.title = `TecGeo Agrimensura e Consultoria | ${pageName}`;
+    }
+  }, [currentPage]);
 
   if (currentPage === 'admin') {
     if (loading) return null;

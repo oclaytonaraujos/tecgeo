@@ -86,11 +86,11 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
 
-          <h1 className="mb-6">Regularize Geo</h1>
-          <p className="text-xl text-gray-100 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">Regularize Geo</h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed max-w-2xl mx-auto text-pretty">
             Assessoria completa em regularização fundiária e ambiental para produtores rurais e responsáveis técnicos
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
@@ -120,11 +120,11 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-16"
           >
-            <div className="inline-block bg-[#001B80]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#001B80]">O que é?</span>
-            </div>
-            <h2 className="text-[#001B80] mb-6">O que é o Regularize Geo?</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              O que é?
+            </span>
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">O que é o Regularize Geo?</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               O Regularize Geo é o programa de assessoria da TECGEO que vai além da execução técnica. Atendemos não somente o produtor rural, mas também responsáveis técnicos que buscam suporte especializado em seus trabalhos com orientação, parceria e assessoria completa.
             </p>
           </motion.div>
@@ -169,13 +169,13 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center max-w-3xl mx-auto mb-16"
           >
-            <div className="inline-block bg-[#1EB53A]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#1EB53A]">Assessorias</span>
-            </div>
-            <h2 className="text-[#001B80] mb-4">Nossas assessorias</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              Assessorias
+            </span>
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">Nossas assessorias</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-pretty text-center">
               Suporte técnico completo para cada etapa do processo de regularização
             </p>
           </motion.div>
@@ -208,13 +208,13 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center max-w-3xl mx-auto mb-16"
           >
-            <div className="inline-block bg-[#001B80]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#001B80]">Como funciona</span>
-            </div>
-            <h2 className="text-[#001B80] mb-4">Processo simples e transparente</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              Como funciona
+            </span>
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">Processo simples e transparente</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Ao contratar o serviço, nossa equipe indica toda a documentação necessária
             </p>
           </motion.div>
@@ -250,18 +250,17 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1EB53A] rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 bg-white/20 px-5 py-2.5 rounded-full mb-6">
-              <Handshake size={20} />
-              <span>Assessoria Especializada</span>
-            </div>
-            <h2 className="mb-6">Escritura de Estremação</h2>
-            <p className="text-xl text-gray-200 leading-relaxed mb-8">
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-4 tracking-wide">
+              Assessoria Especializada
+            </span>
+            <h2 className="mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">Escritura de Estremação</h2>
+            <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-8 text-pretty max-w-2xl mx-auto">
               A escritura de estremação define com precisão os limites e confrontações de uma propriedade, sendo fundamental para evitar conflitos de divisa entre vizinhos e para a correta regularização do imóvel. A TECGEO oferece assessoria completa nesse processo, desde o levantamento topográfico até o registro em cartório.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -278,7 +277,7 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
             </div>
             <button
               onClick={() => onNavigate('contato')}
-              className="group bg-[#1EB53A] text-white px-8 py-4 rounded-full hover:bg-[#189c30] transition-all hover:shadow-2xl hover:scale-105 inline-flex items-center gap-3 shadow-xl"
+              className="group bg-[#1EB53A] text-white px-8 py-4 rounded-xl hover:bg-[#189c30] transition-all hover:shadow-2xl hover:scale-105 inline-flex items-center gap-3 shadow-xl"
             >
               Solicitar assessoria em escritura
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
@@ -293,23 +292,25 @@ export function RegularizeGeoPage({ onNavigate }: RegularizeGeoPageProps) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <h2 className="text-[#001B80] mb-6">Pronto para regularizar com assessoria completa?</h2>
-          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+          <h2 className="text-[#001B80] mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">
+            Pronto para regularizar com assessoria completa?
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-10 leading-relaxed text-pretty max-w-2xl mx-auto">
             Entre em contato e nossa equipe indicará toda a documentação necessária ao contratar o serviço
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => onNavigate('contato')}
-              className="group bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-10 py-5 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-2xl inline-flex items-center justify-center gap-3 font-semibold"
+              className="group bg-gradient-to-r from-[#1EB53A] to-[#189c30] text-white px-10 py-5 rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-2xl inline-flex items-center justify-center gap-3 font-semibold"
             >
               Falar com a equipe TECGEO
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </button>
             <button
               onClick={() => onNavigate('servicos')}
-              className="border-2 border-[#001B80] text-[#001B80] px-10 py-5 rounded-2xl hover:bg-[#001B80] hover:text-white transition-all font-semibold"
+              className="border-2 border-[#001B80] text-[#001B80] px-10 py-5 rounded-xl hover:bg-[#001B80] hover:text-white transition-all font-semibold"
             >
               Ver todos os serviços
             </button>

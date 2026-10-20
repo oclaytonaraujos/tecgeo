@@ -1,4 +1,4 @@
-import { CheckCircle2, MapPin, Award, Users, Zap, Ruler, Leaf, FileCheck, Tractor, Map, GitBranch, FileText, Building2, ArrowRight, TrendingUp, ChevronDown, Briefcase, ShieldCheck, Scale } from 'lucide-react';
+import { CheckCircle2, MapPin, Award, Users, Zap, Ruler, Leaf, FileCheck, Tractor, Map, GitBranch, FileText, Building2, ArrowRight, ChevronDown, Briefcase, ShieldCheck, Scale } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { NewsItem } from '../data/news';
@@ -169,9 +169,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Notícias */}
       <section className="py-20 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-[#001B80] mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl">Últimas notícias</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-[#001B80] mb-4 sm:mb-6 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">Últimas notícias</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Mantenha-se atualizado com as novidades da TECGEO e do setor
             </p>
           </div>
@@ -232,11 +232,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Plano Agro+ */}
       <section className="py-24 sm:py-28 lg:py-32 bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6 text-balance">
               A regularização completa da sua propriedade, em um único pacote
             </h2>
-            <p className="text-xl text-gray-200 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p className="text-lg sm:text-xl text-gray-200 leading-relaxed text-pretty max-w-2xl mx-auto">
               O tripé da regularização rural em uma solução integrada
             </p>
           </div>
@@ -298,10 +298,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           {/* Vantagem Exclusiva */}
           <div className="text-center max-w-3xl mx-auto pt-6">
-            <div className="flex items-center justify-center gap-2 text-[#1EB53A] mb-3">
-              <TrendingUp size={26} />
-              <h3 className="text-white text-xl sm:text-2xl font-bold">Vantagem exclusiva</h3>
-            </div>
+            <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-3 tracking-wide">
+              Diferencial
+            </span>
+            <h3 className="text-white text-xl sm:text-2xl font-bold mb-3">Vantagem exclusiva</h3>
             <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
               Pagamento parcelado em pacote único, sem comprometer o fluxo de caixa da safra.
             </p>
@@ -319,9 +319,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Serviços */}
       <section className="py-24 sm:py-28 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 sm:mb-16">
-            <h2 className="text-[#001B80] mb-4 text-center">Serviços TECGEO</h2>
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-center" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">Serviços TECGEO</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Soluções completas para regularização de imóveis
             </p>
           </div>
@@ -354,7 +354,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
               onClick={() => onNavigate('consultoria')}
               className="group inline-flex items-center gap-2 text-[#1EB53A] hover:text-[#001B80] transition-colors font-semibold"
             >
-              <Briefcase size={18} />
               Conhecer nossa Consultoria
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </button>
@@ -367,10 +366,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 bg-[#1EB53A] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-                <ShieldCheck size={16} />
-                <span>Nova Frente TECGEO</span>
-              </div>
+              <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-6 tracking-wide">
+                Nova Frente TECGEO
+              </span>
               <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                 A TECGEO agora é{' '}
                 <span className="text-[#1EB53A]">Consultoria</span>
@@ -423,9 +421,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Como funciona */}
       <section className="py-24 sm:py-28 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-[#001B80] mb-4">Como funciona o processo</h2>
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">Como funciona o processo</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Processo simples e transparente em 4 etapas
             </p>
           </div>
@@ -450,9 +448,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* FAQ */}
       <section className="py-24 sm:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-[#001B80] mb-3">Dúvidas sobre nossos serviços?</h2>
-            <p className="text-gray-600">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <h2 className="text-[#001B80] mb-3 text-3xl sm:text-4xl font-bold tracking-tight text-balance">Dúvidas sobre nossos serviços?</h2>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Respostas para as perguntas mais comuns sobre regularização de propriedades rurais
             </p>
           </div>
@@ -530,11 +528,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* CTA Final */}
       <section className="py-24 sm:py-28 lg:py-32 bg-gradient-to-br from-[#1EB53A] to-[#189c30] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl leading-tight">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">
             Quer saber o que falta para sua propriedade ficar 100% regularizada?
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl mb-10 sm:mb-12 text-gray-100 leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl mb-10 sm:mb-12 text-gray-100 leading-relaxed text-pretty max-w-2xl mx-auto">
             Solicite um diagnóstico gratuito e descubra como regularizar sua propriedade
           </p>
           <button

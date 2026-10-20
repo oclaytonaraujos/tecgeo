@@ -149,37 +149,16 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="mb-4 sm:mb-6 text-white uppercase tracking-wider text-sm">Nossas Unidades</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Cachoeira Alta */}
-              <div className="group">
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
+              <div className="group space-y-2.5">
+                <div className="flex items-center gap-2.5">
+                  <div className="bg-[#1EB53A]/20 p-1.5 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
                     <MapPin size={18} className="text-[#1EB53A]" />
                   </div>
-                  <div className="flex-1">
-                    <p className="text-white mb-0.5 text-sm sm:text-base font-medium">Cachoeira Alta - GO</p>
-                    <p className="text-gray-400 text-xs mb-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <a 
-                        href="https://www.google.com/maps/search/Av.+A,+Qd.+06,+Lt.+06,+Setor+Canaa,+Cachoeira+Alta,+GO,+75870-000"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
-                      >
-                        Ver no mapa →
-                      </a>
-                      <span className="text-gray-500 text-xs hidden sm:inline">•</span>
-                      <a 
-                        href="https://wa.me/5564999558696"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors"
-                      >
-                        (64) 99955-8696
-                      </a>
-                    </div>
-                  </div>
+                  <p className="text-white text-sm sm:text-base font-medium">Cachoeira Alta - GO</p>
                 </div>
-                {/* Mini mapa Cachoeira Alta */}
-                <div className="mt-2.5 w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-white/15 shadow-sm bg-blue-950/40">
+
+                {/* Mini mapa Cachoeira Alta logo abaixo do nome */}
+                <div className="w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-white/15 shadow-sm bg-blue-950/40">
                   <iframe 
                     title="Mapa Cachoeira Alta"
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
@@ -188,40 +167,43 @@ export function Footer({ onNavigate }: FooterProps) {
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
                 </div>
+
+                {/* Informações de contato e endereço */}
+                <div className="text-xs sm:text-sm">
+                  <p className="text-gray-300 text-xs mb-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <a 
+                      href="https://www.google.com/maps/search/Av.+A,+Qd.+06,+Lt.+06,+Setor+Canaa,+Cachoeira+Alta,+GO,+75870-000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
+                    >
+                      Ver no mapa →
+                    </a>
+                    <span className="text-gray-500 text-xs hidden sm:inline">•</span>
+                    <a 
+                      href="https://wa.me/5564999558696"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-300 hover:text-white transition-colors"
+                    >
+                      (64) 99955-8696
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Caçu */}
-              <div className="group">
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="bg-[#1EB53A]/20 p-2 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
+              <div className="group space-y-2.5">
+                <div className="flex items-center gap-2.5">
+                  <div className="bg-[#1EB53A]/20 p-1.5 rounded-lg group-hover:bg-[#1EB53A]/30 transition-all flex-shrink-0">
                     <MapPin size={18} className="text-[#1EB53A]" />
                   </div>
-                  <div className="flex-1">
-                    <p className="text-white mb-0.5 text-sm sm:text-base font-medium">Caçu - GO</p>
-                    <p className="text-gray-400 text-xs mb-1">R. José Reinaldo Viêira, 1223</p>
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <a 
-                        href="https://maps.app.goo.gl/Xy7CDssiqXJjPC9c7"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs sm:text-sm text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
-                      >
-                        Ver no mapa →
-                      </a>
-                      <span className="text-gray-500 text-xs hidden sm:inline">•</span>
-                      <a 
-                        href="https://wa.me/5564999558696"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs sm:text-sm text-gray-300 hover:text-white transition-colors"
-                      >
-                        (64) 99955-8696
-                      </a>
-                    </div>
-                  </div>
+                  <p className="text-white text-sm sm:text-base font-medium">Caçu - GO</p>
                 </div>
-                {/* Mini mapa Caçu */}
-                <div className="mt-2.5 w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-white/15 shadow-sm bg-blue-950/40">
+
+                {/* Mini mapa Caçu logo abaixo do nome */}
+                <div className="w-full h-28 sm:h-32 rounded-xl overflow-hidden border border-white/15 shadow-sm bg-blue-950/40">
                   <iframe 
                     title="Mapa Caçu"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
@@ -229,6 +211,30 @@ export function Footer({ onNavigate }: FooterProps) {
                     loading="lazy" 
                     referrerPolicy="strict-origin-when-cross-origin"
                   />
+                </div>
+
+                {/* Informações de contato e endereço */}
+                <div className="text-xs sm:text-sm">
+                  <p className="text-gray-300 text-xs mb-1">R. José Reinaldo Viêira, 1223</p>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <a 
+                      href="https://maps.app.goo.gl/Xy7CDssiqXJjPC9c7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-400 hover:text-[#1EB53A] transition-colors flex items-center gap-1"
+                    >
+                      Ver no mapa →
+                    </a>
+                    <span className="text-gray-500 text-xs hidden sm:inline">•</span>
+                    <a 
+                      href="https://wa.me/5564999558696"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-300 hover:text-white transition-colors"
+                    >
+                      (64) 99955-8696
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

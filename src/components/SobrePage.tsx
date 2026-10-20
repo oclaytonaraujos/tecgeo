@@ -97,9 +97,9 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
                     <span className="text-white text-sm font-medium">Fundadora & Técnica em Agrimensura</span>
                   </div>
                 </div>
-                <div className="mt-3 text-center sm:text-left">
-                  <p className="text-sm font-bold text-[#001B80]">Ângela S. P. de Oliveira</p>
-                  <p className="text-xs text-gray-500">Fundadora da TECGEO</p>
+                <div style={{marginTop: '6px'}}>
+                  <p style={{margin: 0, fontSize: '14px', fontWeight: 'bold', color: '#001B80'}}>Ângela S. P. de Oliveira</p>
+                  <p style={{margin: 0, marginTop: '2px', fontSize: '11px', color: '#6b7280'}}>Fundadora da TECGEO</p>
                 </div>
               </div>
             </div>
@@ -121,86 +121,95 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
         </div>
       </section>
 
-      {/* Missão, Visão e Valores */}
+      {/* 1. Missão, Visão e Valores */}
       <section className="py-24 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-xl text-center shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="bg-[#1EB53A]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="text-[#1EB53A]" size={32} />
               </div>
-              <h3 className="text-[#001B80] mb-3">Missão</h3>
-              <p className="text-gray-700">
+              <h3 className="text-[#001B80] mb-3 text-xl font-bold">Missão</h3>
+              <p className="text-gray-700 leading-relaxed">
                 Facilitar a regularização de imóveis rurais com excelência técnica, agilidade e conformidade legal, contribuindo para o desenvolvimento sustentável do campo.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl text-center shadow-sm">
+            <div className="bg-white p-8 rounded-xl text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="bg-[#1EB53A]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Eye className="text-[#1EB53A]" size={32} />
               </div>
-              <h3 className="text-[#001B80] mb-3">Visão</h3>
-              <p className="text-gray-700">
+              <h3 className="text-[#001B80] mb-3 text-xl font-bold">Visão</h3>
+              <p className="text-gray-700 leading-relaxed">
                 Ser a empresa mais confiável e inovadora em regularização de imóveis rurais em Goiás, reconhecida pela qualidade e compromisso com nossos clientes.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl text-center shadow-sm">
+            <div className="bg-white p-8 rounded-xl text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="bg-[#1EB53A]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="text-[#1EB53A]" size={32} />
               </div>
-              <h3 className="text-[#001B80] mb-3">Valores</h3>
-              <p className="text-gray-700">
+              <h3 className="text-[#001B80] mb-3 text-xl font-bold">Valores</h3>
+              <p className="text-gray-700 leading-relaxed">
                 Ética, transparência, excelência técnica, comprometimento, inovação e respeito ao meio ambiente e às pessoas.
               </p>
-            </div>
-          </div>
-
-          {/* Valores Detalhados */}
-          <div className="mt-12">
-            <h3 className="text-[#001B80] text-center mb-[10px] mt-[0px] mr-[0px] ml-[0px]">Nossos Valores em Prática</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-                  <div className="bg-[#001B80]/10 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <value.icon className="text-[#001B80]" size={24} />
-                  </div>
-                  <h4 className="text-[#001B80] mb-2">{value.title}</h4>
-                  <p className="text-gray-600 text-sm">{value.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Nossa Equipe */}
-      <section className="py-24 sm:py-28 bg-white">
+      {/* 2. Nossos Valores em Prática */}
+      <section className="py-24 sm:py-28 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-[#001B80] mb-4">Nossa Equipe</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
-              Profissionais qualificados e experientes para garantir a excelência em cada projeto
-            </p>
+            <h2 className="text-[#001B80] text-3xl sm:text-4xl font-bold">
+              Nossos Valores em Prática
+            </h2>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl text-center shadow-sm hover:shadow-md transition-all border border-gray-100">
+                <div className="bg-[#001B80]/10 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <value.icon className="text-[#001B80]" size={24} />
+                </div>
+                <h4 className="text-[#001B80] mb-2 font-semibold">{value.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-100 rounded-xl h-80 flex items-center justify-center">
+      {/* 3. Nossa Equipe */}
+      <section className="py-24 sm:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Foto da Equipe */}
+            <div className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-gray-100">
               <img
                 src={image_dea1c37b8860fa12ad2cebb7d4eb6c1b99167f21}
-                alt="Equipe trabalhando em campo"
-                className="w-full h-full object-cover rounded-xl"
+                alt="Equipe TECGEO"
+                className="w-full h-full object-cover max-h-[480px]"
               />
             </div>
-            <div className="flex flex-col justify-center">
-              <p className="text-gray-700 mb-6">
+
+            {/* Todos os Textos ao lado da Imagem */}
+            <div>
+              <span className="text-sm font-semibold uppercase tracking-wider text-[#1EB53A]">Equipe</span>
+              <h2 className="text-[#001B80] mt-1 mb-3 text-3xl sm:text-4xl font-bold">Nossa Equipe</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Profissionais qualificados e experientes para garantir a excelência em cada projeto.
+              </p>
+
+              <p className="text-gray-700 mb-6 leading-relaxed">
                 Nossa equipe multidisciplinar reúne profissionais altamente capacitados, com formação técnica sólida e experiência prática no campo. Todos comprometidos em oferecer as melhores soluções para cada cliente.
               </p>
+
               <ul className="space-y-3">
                 {team.map((role, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#1EB53A] rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">{role}</span>
+                    <div className="w-2.5 h-2.5 bg-[#1EB53A] rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700 font-medium">{role}</span>
                   </li>
                 ))}
               </ul>
@@ -214,115 +223,114 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-[#001B80] mb-[25px] text-center mt-[0px] mr-[0px] ml-[0px]">Nossas Localizações</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-[25px] mr-[0px] mb-[0px] ml-[0px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
             {/* Cachoeira Alta */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Cachoeira Alta - Goiás</p>
+            <div className="space-y-6">
+              {/* Nome da cidade do escritório */}
+              <div className="flex items-center gap-3">
+                <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-[#1EB53A]" size={24} />
                 </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
+                <div>
+                  <h3 className="text-[#001B80] text-2xl font-bold">Escritório de Cachoeira Alta, Goiás</h3>
                 </div>
               </div>
 
-              <div className="space-y-6">
+              {/* Mapa logo abaixo do nome */}
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+                <iframe 
+                  title="Mapa Cachoeira Alta"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d533.8085690304921!2d-50.935205299095415!3d-18.75569910715441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ1JzIwLjkiUyA1MMKwNTYnMDUuNSJX!5e1!3m2!1spt-BR!2sbr!4v1791908276525!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              {/* Informações detalhadas */}
+              <div className="space-y-4 pt-1">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Cachoeira Alta, Goiás</h3>
-                    <p className="text-gray-600 mt-1">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Endereço</h4>
+                    <p className="text-gray-700">Setor Canaã, Av. A, Qd. 06, Lt. 06</p>
                     <p className="text-gray-500 text-sm">CEP 75870-000 — Cachoeira Alta - GO</p>
-                    <p className="text-gray-600 mt-2">
-                      Tel/WhatsApp: (64) 99955-8696
+                    <p className="text-gray-700 font-medium mt-1">
+                      Tel/WhatsApp:{' '}
+                      <a href="https://wa.me/5564999558696" target="_blank" rel="noopener noreferrer" className="text-[#001B80] hover:text-[#1EB53A] transition-colors">
+                        (64) 99955-8696
+                      </a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Horário de Atendimento</h4>
+                    <p className="text-gray-700">Segunda a Sexta: 08h às 11h e das 13h às 17h</p>
+                    <p className="text-gray-700">Sábado: 08h às 12h</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Caçu */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
-                <div className="bg-gray-100 p-6 text-center border-b border-gray-200">
-                  <div className="inline-flex items-center justify-center gap-2 mb-2">
-                    <div className="bg-[#1EB53A] w-12 h-12 rounded-full flex items-center justify-center">
-                      <MapPin className="text-white" size={24} />
-                    </div>
-                  </div>
-                  <h4 className="text-[#001B80] mb-1">Mapa de localização</h4>
-                  <p className="text-gray-600">Caçu - Goiás</p>
+            <div className="space-y-6">
+              {/* Nome da cidade do escritório */}
+              <div className="flex items-center gap-3">
+                <div className="bg-[#1EB53A]/10 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-[#1EB53A]" size={24} />
                 </div>
-                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy" 
-                    referrerPolicy="strict-origin-when-cross-origin"
-                  ></iframe>
+                <div>
+                  <h3 className="text-[#001B80] text-2xl font-bold">Escritório de Caçu, Goiás</h3>
                 </div>
               </div>
 
-              <div className="space-y-6">
+              {/* Mapa logo abaixo do nome */}
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+                <iframe 
+                  title="Mapa Caçu"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.7084534185456!2d-51.1366!3d-18.5643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949e63aa87f9c4c3%3A0x1c465962ac69a40c!2sR.%20Jos%C3%A9%20Reinaldo%20Vi%C3%AAira%2C%201223%20-%20%C3%81gua%20Fria%2C%20Ca%C3%A7u%20-%20GO%2C%2075813-000!5e1!3m2!1spt-BR!2sbr!4v1765121341003!5m2!1spt-BR!2sbr" 
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+
+              {/* Informações detalhadas */}
+              <div className="space-y-4 pt-1">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Escritório de Caçu, Goiás</h3>
-                    <p className="text-gray-600 mt-1">
-                      R. José Reinaldo Viêira, 1223
-                    </p>
-                    <p className="text-gray-600">
-                      Tel/WhatsApp: (64) 99955-8696
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Endereço</h4>
+                    <p className="text-gray-700">R. José Reinaldo Viêira, 1223 — Água Fria</p>
+                    <p className="text-gray-500 text-sm">CEP 75813-000 — Caçu - GO</p>
+                    <p className="text-gray-700 font-medium mt-1">
+                      Tel/WhatsApp:{' '}
+                      <a href="https://wa.me/5564999558696" target="_blank" rel="noopener noreferrer" className="text-[#001B80] hover:text-[#1EB53A] transition-colors">
+                        (64) 99955-8696
+                      </a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1EB53A]/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#1EB53A]" size={28} />
+                  <div className="bg-[#1EB53A]/10 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="text-[#1EB53A]" size={22} />
                   </div>
                   <div>
-                    <h3 className="text-[#001B80] mb-2">Horário de Atendimento</h3>
-                    <p className="text-gray-700 text-lg">
-                      Segunda a Sexta: 8h às 18h
-                    </p>
-                    <p className="text-gray-700 text-lg">
-                      Sábado: 8h às 12h
-                    </p>
+                    <h4 className="text-[#001B80] font-semibold text-base mb-0.5">Horário de Atendimento</h4>
+                    <p className="text-gray-700">Segunda a Sexta: 08h às 11h e das 13h às 17h</p>
+                    <p className="text-gray-700">Sábado: 08h às 12h</p>
                   </div>
                 </div>
               </div>
@@ -344,13 +352,13 @@ export function SobrePage({ onNavigate }: SobrePageProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => onNavigate('contato')}
-              className="bg-white text-[#1EB53A] px-8 py-4 rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
+              className="bg-white text-[#1EB53A] px-8 py-4 rounded-xl hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
             >
               Entrar em contato
             </button>
             <button
               onClick={() => onNavigate('consultoria')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-semibold"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-semibold"
             >
               <Briefcase size={18} />
               Conhecer a Consultoria

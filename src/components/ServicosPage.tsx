@@ -107,9 +107,9 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
     <div>
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#001B80] via-[#002bb3] to-[#001B80] text-white py-28 sm:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="mb-6" style={{ textAlign: 'center' }}>Serviços &amp; Consultoria TECGEO</h1>
-          <p className="text-xl text-gray-100 leading-relaxed" style={{ textAlign: 'center', maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">Serviços &amp; Consultoria TECGEO</h1>
+          <p className="text-lg sm:text-xl text-gray-100 leading-relaxed max-w-2xl mx-auto text-pretty">
             Tecnologia de ponta, equipe especializada e conformidade legal para regularizar seu imóvel rural ou urbano — agora também com <strong>consultoria estratégica</strong> completa
           </p>
         </div>
@@ -206,18 +206,8 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                   </div>
                 </div>
 
-                {/* Badge flutuante */}
-                <div
-                  className="absolute -top-4 -right-4 bg-[#001B80] text-white rounded-xl shadow-xl border-4 border-white overflow-hidden"
-                >
-                  <div className="flex flex-col items-center gap-1.5 p-3">
-                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                      <Star className="text-white" size={18} fill="white" />
-                    </div>
-                    <div className="text-xs uppercase tracking-wide">Mais vendido</div>
-                  </div>
-                </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -226,9 +216,9 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       {/* Lista de Serviços - Grid Moderno */}
       <section className="py-28 sm:py-32 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[#001B80] mb-4">O que oferecemos</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">O que oferecemos</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Cada serviço projetado para resolver desafios específicos da sua propriedade
             </p>
           </div>
@@ -310,9 +300,9 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       {/* Nossas Aplicações */}
       <section className="py-28 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[#001B80] mb-4">Aplicações em Georreferenciamento</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">Aplicações em Georreferenciamento</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Atendemos diferentes necessidades com soluções técnicas especializadas
             </p>
           </div>
@@ -436,14 +426,14 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       {/* Tecnologias */}
       <section className="py-28 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-[#001B80] mb-4">Tecnologias que Utilizamos</h2>
-            <p className="text-xl text-gray-600 leading-relaxed" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-[#001B80] mb-4 text-3xl sm:text-4xl font-bold tracking-tight text-balance">Tecnologias que Utilizamos</h2>
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-pretty max-w-2xl mx-auto">
               Equipamentos de última geração para garantir a máxima precisão em nossos levantamentos
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* GPS Geodésico */}
             <div
               className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100"
@@ -489,12 +479,11 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
       {/* Banner Consultoria */}
       <section className="py-20 sm:py-24 bg-gradient-to-br from-[#001B80] to-[#002f99] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-[#1EB53A] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-5">
-                <Sparkles size={14} />
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+            <div className="mb-8">
+              <span className="inline-block text-sm font-semibold text-[#1EB53A] border-b-2 border-[#1EB53A] pb-1 mb-5 tracking-wide">
                 Nova Frente TECGEO
-              </div>
+              </span>
               <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
                 Precisa de mais do que um serviço técnico?
               </h2>
@@ -502,10 +491,10 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
                 A TECGEO agora oferece <strong>consultoria estratégica</strong> para produtores, investidores e profissionais: auditoria territorial, due diligence, parecer técnico e gestão fundiária integrada.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <button
                 onClick={() => onNavigate('consultoria')}
-                className="group flex-1 bg-[#1EB53A] text-white px-6 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-lg hover:scale-105"
+                className="group bg-[#1EB53A] text-white px-6 py-4 rounded-xl hover:bg-[#189c30] transition-all flex items-center justify-center gap-3 font-semibold shadow-lg hover:scale-105"
               >
                 <Briefcase size={20} />
                 Ver Consultoria TECGEO
@@ -513,7 +502,7 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
               </button>
               <button
                 onClick={() => onNavigate('contato')}
-                className="flex-1 border-2 border-white/60 text-white px-6 py-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
+                className="border-2 border-white/60 text-white px-6 py-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
               >
                 Falar com Consultor
               </button>
@@ -524,9 +513,9 @@ export function ServicosPage({ onNavigate }: ServicosPageProps) {
 
       {/* CTA Final */}
       <section className="py-24 sm:py-28 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-[#001B80] mb-6">Precisa de algum desses serviços?</h2>
-          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-[#001B80] mb-4 sm:mb-6 text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-balance">Precisa de algum desses serviços?</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-10 leading-relaxed text-pretty max-w-2xl mx-auto">
             Entre em contato conosco e receba um diagnóstico inicial gratuito com orçamento personalizado para sua propriedade
           </p>
           <button
